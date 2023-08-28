@@ -45,8 +45,12 @@ app.post('/guardar-servicio', (req, res) => {
             modelo: req.body.modelo,
             numero_serie: req.body.numero_serie,
             accesorios: req.body.accesorios,
-            tareas: req.body.tareas
+            tareas: req.body.tareas,
+            estado: req.body.estado,
+            observaciones: req.body.observaciones || "",
+            foto: req.body.foto || ""
         };
+       
 
         const archivoJSON = fs.readFileSync(path.join(__dirname, 'servicios.json'), 'utf-8');
         const servicios = JSON.parse(archivoJSON);
@@ -95,7 +99,10 @@ app.post('/update/:id', (req, res) => {
             modelo: req.body.modelo,
             numero_serie: req.body.numero_serie,
             accesorios: req.body.accesorios,
-            tareas: req.body.tareas
+            tareas: req.body.tareas,
+            estado: req.body.estado, // Agregar esta línea para actualizar el estado
+            observaciones: req.body.observaciones || "", // Agregar esta línea para actualizar las observaciones
+            foto: req.body.foto || "" // Agregar esta línea para actualizar la foto
         };
 
         fs.writeFileSync(path.join(__dirname, 'servicios.json'), JSON.stringify(servicios, null, 2));

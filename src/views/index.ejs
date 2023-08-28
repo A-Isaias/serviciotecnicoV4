@@ -6,7 +6,7 @@
     <title>Servicio Técnico</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/index.css" type="text/css">
-
+    
 </head>
 
 <body>
@@ -32,9 +32,15 @@
         </div>
     </div>
 
+    <div class="fullscreen-image" id="fullscreenImageContainer">
+        <img src="" alt="Fullscreen Image" id="fullscreenImage">
+    </div>
+
     <script>
         // Código JavaScript
         const ordersContainer = document.getElementById("orders-container");
+        const fullscreenImageContainer = document.getElementById("fullscreenImageContainer");
+        const fullscreenImage = document.getElementById("fullscreenImage");
 
         // Carga los datos del archivo JSON
         fetch('/servicios')
@@ -63,6 +69,9 @@
                         <strong>Número de Serie:</strong> ${order.numero_serie}<br>
                         <strong>Accesorios:</strong> ${order.accesorios}<br>
                         <strong>Tareas:</strong> ${order.tareas}<br>
+                        <strong>Estado:</strong> ${order.estado}<br>
+                        <strong>Observaciones:</strong> ${order.observaciones}<br>
+                        <strong>Foto:</strong> ${order.foto ? `<img src="/img/${order.foto}" alt="Foto" width="200" class="fullscreenable-image" data-src="/img/${order.foto}">` : "N/A"}<br>
                         <a href="/edit/${order.id}" class="btn btn-primary">Editar</a>
                         <button class="btn btn-danger delete-btn" data-order-id="${order.id}">Borrar</button>
                         <a href="/print/${order.id}" class="btn btn-secondary">Imprimir</a>
@@ -84,6 +93,15 @@
                     }
                 });
 
+                // Agregar un controlador de evento para las imágenes en pantalla completa
+                const fullscreenableImages = orderElement.querySelectorAll(".fullscreenable-image");
+                fullscreenableImages.forEach(image => {
+                    image.addEventListener("click", () => {
+                        fullscreenImage.src = image.getAttribute("data-src");
+                        fullscreenImageContainer.style.display = "flex";
+                    });
+                });
+
                 // Agregar una línea separadora
                 const separator = document.createElement("hr");
                 separator.style.marginTop = "10px";
@@ -103,6 +121,12 @@
                         location.reload();
                     }
                 });
+            });
+
+            // Controlador de evento para cerrar la imagen en pantalla completa
+            fullscreenImageContainer.addEventListener("click", () => {
+                fullscreenImageContainer.style.display = "none";
+                fullscreenImage.src = "";
             });
         }
 

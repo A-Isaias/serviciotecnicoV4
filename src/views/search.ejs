@@ -1,41 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buscar en la base de datos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/index.css" type="text/css">
 </head>
+
 <body>
-    <h1>Buscar en la base de datos</h1>
-    <form id="searchForm" method="POST" action="/search">
-        <label for="searchId">Buscar por ID:</label>
-        <input type="number" id="searchId" name="searchId">
-        <br>
-        <label for="searchName">Buscar por nombre y apellido:</label>
-        <input type="text" id="searchName" name="searchName">
-        <br>
-        <button type="submit">Buscar</button>
-    </form>
-    <div id="searchResult">
-        <% if (results && results.length > 0) { %>
-            <h2>Resultados de la búsqueda:</h2>
-            <ul>
-                <% results.forEach(result => { %>
-                    <li>ID: <%= result.id %>, Cliente: <%= result.nombre_cliente %>
-                        <a href="/edit/<%= result.id %>">Editar</a>
-                        <form action="/delete/<%= result.id %>" method="POST" style="display: inline;">
-                            <button type="submit">Borrar</button>
-                        </form>
-                        <a href="/print/<%= result.id %>">Imprimir</a>
-                    </li>
-                <% }); %>
-            </ul>
-        <% } else { %>
-            <p>No se encontraron resultados.</p>
-        <% } %>
-    </div>
-    <!-- Botón de Volver al Inicio -->
-    <a href="/" class="btn btn-secondary mt-3">Volver al Inicio</a>
+    <div class="container mt-4">
+        <!-- Título y botones fijos -->
+        <div class="fixed-header">
+            <h1>Buscar en la base de datos</h1>
+            <div class="btn-group">
+                <button class="btn btn-success"><a href="/new" class="text-white">Nueva Orden</a></button>
+                <button class="btn btn-warning"><a href="/search" class="text-white">Buscar Orden</a></button>
+            </div>
+        </div>
+
+        <!-- Formulario de búsqueda -->
+        <form id="searchForm" method="POST" action="/search">
+            <div class="form-group">
+                <label for="searchId">Buscar por ID:</label>
+                <input type="number" id="searchId" name="searchId" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="searchName">Buscar por nombre y apellido:</label>
+                <input type="text" id="searchName" name="searchName" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary">Buscar</button>
+        </form>
+
+        <!-- Resultados de la búsqueda -->
+        <div id="searchResult">
+            <% if (results && results.length> 0) { %>
+                <h2>Resultados de la búsqueda:</h2>
+                <div class="row">
+                    <% results.forEach(result=> { %>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title expand-btn"><strong>Cliente:</strong>
+                                        <%= result.nombre_cliente %>
+                                    </h5>
+                                    <p class="card-text"><strong>ID:</strong>
+                                        <%= result.id %>
+                                    </p>
+                                    <p class="card-text"><strong>Tipo de Equipo:</strong>
+                                        <%= result.tipo_equipo %>
+                                    </p>
+                                    <p class="card-text"><strong>Estado:</strong>
+                                        <%= result.estado %>
+                                    </p>
+                                    <div class="expanded-details" style="display: none;">
+                                        <p><strong>Teléfono:</strong>
+                                            <%= result.telefono %>
+                                        </p>
+                                        <p><strong>Marca:</strong>
+                                            <%= result.marca %>
+                                        </p>
+                                        <p><strong>Modelo:</strong>
+                                            <%= result.modelo %>
+                                        </p>
+                                        <p><strong>Número de Serie:</strong>
+                                            <%= result.numero_serie %>
+                                        </p>
+                                        <p><strong>Accesorios:</strong>
+                                            <%= result.accesorios %>
+                                        </p>
+                                        <p><strong>Tareas:</strong>
+                                            <%= result.tareas %>
+                                        </p>
+                                        <p><strong>Observaciones:</strong>
+                                            <%= result.observaciones %>
+                                        </p>
+                                        <p><strong>Foto:</strong> <%= result.foto ? `<img src="/img/${result.foto}" alt="Foto" width="200" class="expand-image">` : "N/A" %></p>
+                                        
+                                        <a href="/edit/<%= result.id %>" class="btn btn-primary">Editar</a>
+                                        <form action="/delete/<%= result.id %>" method="POST" style="display: inline;">
+                                            <button type="submit" class="btn btn-danger">Borrar</button>
+                                        </form>
+                                        <a href="/print/<%= result.id %>" class="btn btn-secondary">Imprimir</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <% }); %>
+                </div>
+                <% } else { %>
+                    <p>No se encontraron resultados.</p>
+                    <% } %>
+        </div>
+
+        <script>
+            // Agregar un controlador de evento para expandir los detalles al hacer clic en cualquier parte del resumen
+            const expandSummaries = document.querySelectorAll('.expand-btn');
+            expandSummaries.forEach(summary => {
+                summary.addEventListener('click', () => {
+                    const expandedDetails = summary.parentElement.querySelector('.expanded-details');
+                    expandedDetails.style.display = expandedDetails.style.display === 'none' ? 'block' : 'none';
+                });
+            });
+        </script>
 </body>
+
 </html>

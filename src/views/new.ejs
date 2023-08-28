@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,6 +13,7 @@
         }
     </style>
 </head>
+
 <body>
     <h1>Nueva Orden de Servicio técnico</h1>
     <form action="/guardar-servicio" method="POST">
@@ -41,9 +43,22 @@
 
         <label for="tareas">Tareas a realizar:</label>
         <input type="text" id="tareas" name="tareas" required>
+        <label for="estado">Estado:</label>
+        <select id="estado" name="estado">
+            <option value="INGRESADO">Ingresado</option>
+            <option value="EN_PROCESO">En Proceso</option>
+            <option value="TERMINADO">Terminado</option>
+        </select>
+
+        <label for="observaciones">Observaciones:</label>
+        <textarea id="observaciones" name="observaciones"></textarea>
+
+        <label for="foto">Foto:</label>
+        <input type="file" id="foto" name="foto">
 
         <button type="submit">Cargar servicio</button>
         <a href="/" class="btn btn-primary">Volver al Inicio</a>
     </form>
 </body>
+
 </html>

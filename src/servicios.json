@@ -8,7 +8,10 @@
     "modelo": "x360la",
     "numero_serie": "2546584",
     "accesorios": "no",
-    "tareas": "Cambio de Bateria"
+    "tareas": "Cambio de Bateria",
+    "estado": "INGRESADO",
+    "observaciones": "Observaciones 1",
+    "foto": "photo_2023-08-28_11-55-54 (2).jpg"
   },
   {
     "id": 1002,
@@ -19,7 +22,10 @@
     "modelo": "CORE I3 8GB DISCO 500",
     "numero_serie": "SIN SERIE",
     "accesorios": "NO",
-    "tareas": "NO INICIA WINDOWS"
+    "tareas": "NO INICIA WINDOWS",
+    "estado": "INGRESADO",
+    "observaciones": "Observaciones 1",
+    "foto": "src/img/foto1.jpg"
   },
   {
     "id": 1003,
@@ -30,7 +36,10 @@
     "modelo": "DL1212",
     "numero_serie": "121231",
     "accesorios": "CARGADOR",
-    "tareas": "REVISAR"
+    "tareas": "REVISAR",
+    "estado": "INGRESADO",
+    "observaciones": "Observaciones 1",
+    "foto": "src/img/foto1.jpg"
   },
   {
     "id": 1004,
@@ -41,7 +50,10 @@
     "modelo": "G71 LA001",
     "numero_serie": "1234565",
     "accesorios": "CARGADOR",
-    "tareas": "REVISAR"
+    "tareas": "REVISAR",
+    "estado": "EN_PROCESO",
+    "observaciones": "TIENE ROTO BOTON DE ENCENDIDO",
+    "foto": ""
   },
   {
     "id": 1005,
@@ -52,7 +64,10 @@
     "modelo": "ASPÍRE 5571",
     "numero_serie": "645465894",
     "accesorios": "NO",
-    "tareas": "NO INICIA"
+    "tareas": "NO INICIA",
+    "estado": "INGRESADO",
+    "observaciones": "Observaciones 1",
+    "foto": "src/img/foto1.jpg"
   },
   {
     "id": 1006,
@@ -63,7 +78,10 @@
     "modelo": "19B300",
     "numero_serie": "4564812354",
     "accesorios": "FUENTE",
-    "tareas": "NO DA IMAGEN"
+    "tareas": "NO DA IMAGEN",
+    "estado": "INGRESADO",
+    "observaciones": "Observaciones 1",
+    "foto": "src/img/foto1.jpg"
   },
   {
     "id": 1007,
@@ -74,6 +92,23 @@
     "modelo": "64",
     "numero_serie": "12415465",
     "accesorios": "DISK DRIVE 1541 + FUENTES+JOYSTICKS",
-    "tareas": "REVISAR PUERTO DE JOYSTICK"
+    "tareas": "REVISAR PUERTO DE JOYSTICK",
+    "estado": "INGRESADO",
+    "observaciones": "Observaciones 1",
+    "foto": "src/img/foto1.jpg"
+  },
+  {
+    "id": 1008,
+    "nombre_cliente": "JOSE BALESTRINO",
+    "telefono": "33645858585",
+    "tipo_equipo": "IMPRESORA",
+    "marca": "HP",
+    "modelo": "1200",
+    "numero_serie": "4546565",
+    "accesorios": "CABLE 220",
+    "tareas": "CAMBIAR TONER",
+    "estado": "INGRESADO",
+    "observaciones": "",
+    "foto": "foto1.jpg"
   }
 ]

@@ -48,6 +48,24 @@
                     <th>Tareas a Realizar</th>
                     <td><%= order.tareas %></td>
                 </tr>
+                <tr>
+                    <th>Estado</th>
+                    <td><%= order.estado %></td>
+                </tr>
+                <tr>
+                    <th>Observaciones</th>
+                    <td><%= order.observaciones %></td>
+                </tr>
+                <tr>
+                    <th>Foto</th>
+                    <td>
+                        <% if (order.foto) { %>
+                            <img src="<%= order.foto %>" alt="Foto">
+                        <% } else { %>
+                            N/A
+                        <% } %>
+                    </td>
+                </tr>
             </tbody>
         </table>
         <a href="/" class="btn btn-primary">Volver al Inicio</a>
