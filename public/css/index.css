@@ -1,9 +1,39 @@
 /* Estilos personalizados para la vista index */
+
 body {
   font-family: Arial, sans-serif;
-  margin-top: 70px; /* Ajusta según la altura del encabezado fijo */
   margin: 0;
   padding: 0;
+}
+
+.container {
+  margin-top: 100px; /* Ajusta este valor según sea necesario */
+}
+
+.fixed-header {
+  height: 60px; /* Ajusta la altura del encabezado */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: lightgray; /* Puedes ajustar el color de fondo según tus necesidades */
+  z-index: 1000; /* Asegura que el contenedor esté en el frente */
+  padding: 10px; /* Espaciado interior para que el contenido no quede pegado a los bordes */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Agrega una sombra sutil */
+}
+
+/* Ajustamos el margen superior del contenido para evitar que se solape con la barra fija */
+#newForm {
+  margin-top: 100px; /* Ajusta este valor según sea necesario */
+}
+
+/* Espaciado para los campos de formulario */
+.form-control {
+  margin-bottom: 10px;
 }
 
 /* Estilo para el contenedor de contenido */
@@ -11,26 +41,15 @@ body {
   margin-top: 100px; /* Ajusta según la altura del encabezado fijo */
 }
 .container {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 /* Mantener el contenedor superior fijo */
-.fixed-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: white; /* Puedes ajustar el color de fondo según tus necesidades */
-  z-index: 1000; /* Asegura que el contenedor esté en el frente */
-  padding: 10px; /* Espaciado interior para que el contenido no quede pegado a los bordes */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Agrega una sombra sutil */
-}
-
 
 .order {
   padding: 10px;
   border: 1px solid #ccc;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   cursor: pointer;
 }
 
@@ -40,8 +59,8 @@ body {
 }
 
 .order-details {
-  margin-top: 10px;
-  padding-top: 10px;
+  margin-top: 15px; /*DISTANCIA SUPERIOR PARA QUE NO LO TAPE EL HEADER*/
+  padding-top: 5px;
   border-top: 1px dashed #ccc;
 }
 

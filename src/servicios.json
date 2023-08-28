@@ -152,5 +152,33 @@
     "estado": "INGRESADO",
     "observaciones": "TIENE PORTAPATENTES REBATIBLE",
     "foto": "a6083f224c5d9a036fb918b9ed5e7e47"
+  },
+  {
+    "id": 1012,
+    "nombre_cliente": "LUIS GIMENEZ",
+    "telefono": "3364528988",
+    "tipo_equipo": "PC DE ESCRITORIO",
+    "marca": "GENERICA",
+    "modelo": "CELERON G1210 4GB RAM DDR3 500GB",
+    "numero_serie": "NO POSEE",
+    "accesorios": "NO",
+    "tareas": "REVISAR",
+    "estado": "INGRESADO",
+    "observaciones": "",
+    "foto": "24385d510a95faf5af3c20b00022cc75"
+  },
+  {
+    "id": 1013,
+    "nombre_cliente": "JOSE OMAR RUBIES",
+    "telefono": "33645454848",
+    "tipo_equipo": "NOTEBOOK",
+    "marca": "CX",
+    "modelo": "CX5656",
+    "numero_serie": "CS265656565",
+    "accesorios": "NO",
+    "tareas": "REVISAR",
+    "estado": "INGRESADO",
+    "observaciones": "",
+    "foto": "60b0b0226a259a0051b603eee9e366d0"
   }
 ]
