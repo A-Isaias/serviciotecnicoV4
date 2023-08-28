@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Editar Orden</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/edit.css" type="text/css">
 </head>
+
 <body>
     <div class="container mt-4">
         <!-- Título y botones fijos -->
@@ -23,61 +25,78 @@
                 <form action="/update/<%= servicio.id %>" method="POST">
                     <div class="form-group">
                         <label for="nombre_cliente">Nombre del cliente:</label>
-                        <input type="text" id="nombre_cliente" name="nombre_cliente" value="<%= servicio.nombre_cliente %>" required class="form-control">
+                        <input type="text" id="nombre_cliente" name="nombre_cliente"
+                            value="<%= servicio.nombre_cliente %>" required class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="telefono">Teléfono:</label>
-                        <input type="text" id="telefono" name="telefono" value="<%= servicio.telefono %>" required class="form-control">
+                        <input type="text" id="telefono" name="telefono" value="<%= servicio.telefono %>" required
+                            class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="tipo_equipo">Tipo de equipo:</label>
-                        <input type="text" id="tipo_equipo" name="tipo_equipo" value="<%= servicio.tipo_equipo %>" required class="form-control">
+                        <input type="text" id="tipo_equipo" name="tipo_equipo" value="<%= servicio.tipo_equipo %>"
+                            required class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="marca">Marca:</label>
-                        <input type="text" id="marca" name="marca" value="<%= servicio.marca %>" required class="form-control">
+                        <input type="text" id="marca" name="marca" value="<%= servicio.marca %>" required
+                            class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="modelo">Modelo:</label>
-                        <input type="text" id="modelo" name="modelo" value="<%= servicio.modelo %>" required class="form-control">
+                        <input type="text" id="modelo" name="modelo" value="<%= servicio.modelo %>" required
+                            class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="numero_serie">Número de serie:</label>
-                        <input type="text" id="numero_serie" name="numero_serie" value="<%= servicio.numero_serie %>" required class="form-control">
+                        <input type="text" id="numero_serie" name="numero_serie" value="<%= servicio.numero_serie %>"
+                            required class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="accesorios">Accesorios:</label>
-                        <input type="text" id="accesorios" name="accesorios" value="<%= servicio.accesorios %>" required class="form-control">
+                        <input type="text" id="accesorios" name="accesorios" value="<%= servicio.accesorios %>" required
+                            class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="tareas">Tareas a realizar:</label>
-                        <input type="text" id="tareas" name="tareas" value="<%= servicio.tareas %>" required class="form-control">
+                        <input type="text" id="tareas" name="tareas" value="<%= servicio.tareas %>" required
+                            class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="estado">Estado:</label>
                         <select id="estado" name="estado" class="form-control">
                             <option value="INGRESADO">Ingresado</option>
-                            <option value="EN_PROCESO">En Proceso</option>
-                            <option value="TERMINADO">Terminado</option>
+                            <option value="PRESUPUESTADO">Presupuestado</option>
+                            <option value="PRESUPUESTADO_AVISADO">Presupuestado Avisado</option>
+                            <option value="PRESUPUESTADO_APROBADO">Presupuestado Aprobado</option>
+                            <option value="RECHAZADO_A_DEVOLVER">Rechazado a Devolver</option>
+                            <option value="REPARADO">Reparado</option>
+                            <option value="REPARADO_AVISADO">Reparado Avisado</option>
+                            <option value="REVISAR">Revisar</option>
+                            <option value="LLAMAR">Llamar</option>
+                            <option value="RETIRADO">Retirado</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="observaciones">Observaciones:</label>
-                        <textarea id="observaciones" name="observaciones" class="form-control"><%= servicio.observaciones %></textarea>
+                        <textarea id="observaciones" name="observaciones"
+                            class="form-control"><%= servicio.observaciones %></textarea>
                     </div>
                     <div class="form-group">
                         <label for="foto">Foto:</label>
                         <input type="file" id="foto" name="foto" class="form-control-file">
                     </div>
                     <div class="d-flex justify-content-between mt-3">
-                      <button type="submit" class="btn btn-primary">Guardar Cambios</button>
-                      <a href="/print/<%= servicio.id %>" class="btn btn-secondary">Ir a la vista de impresión</a>
-                      <a href="/search" class="btn btn-secondary">Cancelar</a>
-                      <form action="/delete/<%= servicio.id %>" method="POST">
-                          <button type="submit" class="btn btn-danger">Borrar este registro</button>
-                </form>
+                        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                        <a href="/print/<%= servicio.id %>" class="btn btn-secondary">Ir a la vista de impresión</a>
+                        <a href="/search" class="btn btn-secondary">Cancelar</a>
+                        <form action="/delete/<%= servicio.id %>" method="POST">
+                            <button type="submit" class="btn btn-danger">Borrar este registro</button>
+                        </form>
+                    </div>
             </div>
         </div>
-    </div>
 </body>
+
 </html>

@@ -29,40 +29,47 @@
             <label for="telefono">Teléfono:</label>
             <input type="text" id="telefono" name="telefono" required class="form-control">
 
-        <label for="tipo_equipo">Tipo de equipo:</label>
-        <input type="text" id="tipo_equipo" name="tipo_equipo" required class="form-control">
+            <label for="tipo_equipo">Tipo de equipo:</label>
+            <input type="text" id="tipo_equipo" name="tipo_equipo" required class="form-control">
 
-        <label for="marca">Marca:</label>
-        <input type="text" id="marca" name="marca" required class="form-control">
+            <label for="marca">Marca:</label>
+            <input type="text" id="marca" name="marca" required class="form-control">
 
-        <label for="modelo">Modelo:</label>
-        <input type="text" id="modelo" name="modelo" required class="form-control">
+            <label for="modelo">Modelo:</label>
+            <input type="text" id="modelo" name="modelo" required class="form-control">
 
-        <label for="numero_serie">Número de serie:</label>
-        <input type="text" id="numero_serie" name="numero_serie" required class="form-control">
+            <label for="numero_serie">Número de serie:</label>
+            <input type="text" id="numero_serie" name="numero_serie" required class="form-control">
 
-        <label for="accesorios">Accesorios:</label>
-        <input type="text" id="accesorios" name="accesorios" required class="form-control">
+            <label for="accesorios">Accesorios:</label>
+            <input type="text" id="accesorios" name="accesorios" required class="form-control">
 
-        <label for="tareas">Tareas a realizar:</label>
-        <input type="text" id="tareas" name="tareas" required class="form-control">
+            <label for="tareas">Tareas a realizar:</label>
+            <input type="text" id="tareas" name="tareas" required class="form-control">
 
-        <label for="estado">Estado:</label>
-        <select id="estado" name="estado">
-            <option value="INGRESADO">Ingresado</option>
-            <option value="EN_PROCESO">En Proceso</option>
-            <option value="TERMINADO">Terminado</option>
-        </select>
+            <label for="estado">Estado:</label>
+            <select id="estado" name="estado" class="form-control">
+                <option value="INGRESADO">Ingresado</option>
+                <option value="PRESUPUESTADO">Presupuestado</option>
+                <option value="PRESUPUESTADO_AVISADO">Presupuestado Avisado</option>
+                <option value="PRESUPUESTADO_APROBADO">Presupuestado Aprobado</option>
+                <option value="RECHAZADO_A_DEVOLVER">Rechazado a Devolver</option>
+                <option value="REPARADO">Reparado</option>
+                <option value="REPARADO_AVISADO">Reparado Avisado</option>
+                <option value="REVISAR">Revisar</option>
+                <option value="LLAMAR">Llamar</option>
+                <option value="RETIRADO">Retirado</option>
+            </select>
 
-        <br><label for="observaciones">Observaciones:</label>
-        <textarea id="observaciones" name="observaciones"></textarea>
+            <br><label for="observaciones">Observaciones:</label>
+            <textarea id="observaciones" name="observaciones"></textarea>
 
-        <br><label for="foto">Foto:</label>
-        <input type="file" id="foto" name="foto"><br>
+            <br><label for="foto">Foto:</label>
+            <input type="file" id="foto" name="foto"><br>
 
-        <br><button type="submit" class="btn btn-success">Cargar servicio</button>
-        <a href="/" class="btn btn-primary">Volver al Inicio</a>
-    </form>
+            <br><button type="submit" class="btn btn-success">Cargar servicio</button>
+            <a href="/" class="btn btn-primary">Volver al Inicio</a>
+        </form>
 </body>
 
 </html>
