@@ -2,15 +2,15 @@
   {
     "id": 1001,
     "nombre_cliente": "ARIEL ISAIAS",
-    "telefono": "123456789",
-    "tipo_equipo": "Laptop",
+    "telefono": "3364338670",
+    "tipo_equipo": "NOTEBOOK ",
     "marca": "HP",
-    "modelo": "x360la",
-    "numero_serie": "2546584",
-    "accesorios": "no",
-    "tareas": "Cambio de Bateria",
+    "modelo": "X360BALA1",
+    "numero_serie": "123546",
+    "accesorios": "NO",
+    "tareas": "REVISAR",
     "estado": "INGRESADO",
-    "observaciones": "Observaciones 1",
+    "observaciones": "PANTALLA ASTILLADA",
     "foto": "photo_2023-08-28_11-55-54 (2).jpg"
   },
   {
@@ -25,7 +25,7 @@
     "tareas": "NO INICIA WINDOWS",
     "estado": "INGRESADO",
     "observaciones": "Observaciones 1",
-    "foto": "src/img/foto1.jpg"
+    "foto": "foto1.jpg"
   },
   {
     "id": 1003,
@@ -39,21 +39,21 @@
     "tareas": "REVISAR",
     "estado": "INGRESADO",
     "observaciones": "Observaciones 1",
-    "foto": "src/img/foto1.jpg"
+    "foto": "foto1.jpg"
   },
   {
     "id": 1004,
     "nombre_cliente": "MAGDALENA BAZ",
     "telefono": "3364529859",
-    "tipo_equipo": "NOTEBOOK",
+    "tipo_equipo": "NOTEBOOK ",
     "marca": "HP",
-    "modelo": "G71 LA001",
-    "numero_serie": "1234565",
-    "accesorios": "CARGADOR",
+    "modelo": "PC XT 8088",
+    "numero_serie": "121231",
+    "accesorios": "SDF",
     "tareas": "REVISAR",
-    "estado": "EN_PROCESO",
-    "observaciones": "TIENE ROTO BOTON DE ENCENDIDO",
-    "foto": ""
+    "estado": "INGRESADO",
+    "observaciones": "",
+    "foto": "foto1.jpg"
   },
   {
     "id": 1005,
@@ -67,7 +67,7 @@
     "tareas": "NO INICIA",
     "estado": "INGRESADO",
     "observaciones": "Observaciones 1",
-    "foto": "src/img/foto1.jpg"
+    "foto": "foto1.jpg"
   },
   {
     "id": 1006,
@@ -81,7 +81,7 @@
     "tareas": "NO DA IMAGEN",
     "estado": "INGRESADO",
     "observaciones": "Observaciones 1",
-    "foto": "src/img/foto1.jpg"
+    "foto": "foto1.jpg"
   },
   {
     "id": 1007,
@@ -95,7 +95,7 @@
     "tareas": "REVISAR PUERTO DE JOYSTICK",
     "estado": "INGRESADO",
     "observaciones": "Observaciones 1",
-    "foto": "src/img/foto1.jpg"
+    "foto": "foto1.jpg"
   },
   {
     "id": 1008,
@@ -110,5 +110,19 @@
     "estado": "INGRESADO",
     "observaciones": "",
     "foto": "foto1.jpg"
+  },
+  {
+    "id": 1009,
+    "nombre_cliente": "BENITO CAMELA",
+    "telefono": "3364285698",
+    "tipo_equipo": "MONITOR",
+    "marca": "SAMSUNG",
+    "modelo": "19A300",
+    "numero_serie": "56564",
+    "accesorios": "NO",
+    "tareas": "REVISAR NO SE VE",
+    "estado": "INGRESADO",
+    "observaciones": "SIN CABLES",
+    "foto": "photo_2023-08-28_11-56-44.jpg"
   }
 ]

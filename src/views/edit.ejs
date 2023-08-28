@@ -2,59 +2,82 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Orden</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/edit.css" type="text/css">
 </head>
 <body>
-    <h1>Editar Orden</h1>
-    <form action="/update/<%= servicio.id %>" method="POST">
-        <label for="nombre_cliente">Nombre del cliente:</label>
-        <input type="text" id="nombre_cliente" name="nombre_cliente" value="<%= servicio.nombre_cliente %>" required>
+    <div class="container mt-4">
+        <!-- Título y botones fijos -->
+        <div class="fixed-header">
+            <h1>Editar Orden</h1>
+            <div class="btn-group">
+                <button class="btn btn-success"><a href="/new" class="text-white">Nueva Orden</a></button>
+                <a href="/search" class="btn btn-warning text-white">Buscar Orden</a>
+                <a href="/" class="btn btn-secondary">Volver al Inicio</a>
+            </div>
+        </div>
 
-        <label for="telefono">Teléfono:</label>
-        <input type="text" id="telefono" name="telefono" value="<%= servicio.telefono %>" required>
-
-        <label for="tipo_equipo">Tipo de equipo:</label>
-        <input type="text" id="tipo_equipo" name="tipo_equipo" value="<%= servicio.tipo_equipo %>" required>
-
-        <label for="marca">Marca:</label>
-        <input type="text" id="marca" name="marca" value="<%= servicio.marca %>" required>
-
-        <label for="modelo">Modelo:</label>
-        <input type="text" id="modelo" name="modelo" value="<%= servicio.modelo %>" required>
-
-        <label for="numero_serie">Número de serie:</label>
-        <input type="text" id="numero_serie" name="numero_serie" value="<%= servicio.numero_serie %>" required>
-
-        <label for="accesorios">Accesorios:</label>
-        <input type="text" id="accesorios" name="accesorios" value="<%= servicio.accesorios %>" required>
-
-        <label for="tareas">Tareas a realizar:</label>
-        <input type="text" id="tareas" name="tareas" value="<%= servicio.tareas %>" required>
-
-        <label for="estado">Estado:</label>
-<select id="estado" name="estado">
-    <option value="INGRESADO">Ingresado</option>
-    <option value="EN_PROCESO">En Proceso</option>
-    <option value="TERMINADO">Terminado</option>
-</select>
-
-<label for="observaciones">Observaciones:</label>
-<textarea id="observaciones" name="observaciones"><%= servicio.observaciones %></textarea>
-
-<label for="foto">Foto:</label>
-<input type="file" id="foto" name="foto">
-
-        <button type="submit">Guardar Cambios</button>
-    </form>
-    <a href="/search">Cancelar</a>
-    <a href="/print/<%= servicio.id %>">Ir a la vista de impresión</a>
-  </div>
-    <form action="/delete/<%= servicio.id %>" method="POST">
-      <button type="submit">Borrar este registro</button>
-  </form>
-  <!-- Botón de Volver al Inicio -->
-  <a href="/" class="btn btn-secondary mt-3">Volver al Inicio</a>
+        <div class="row mt-4">
+            <div class="col-md-8 offset-md-2">
+                <form action="/update/<%= servicio.id %>" method="POST">
+                    <div class="form-group">
+                        <label for="nombre_cliente">Nombre del cliente:</label>
+                        <input type="text" id="nombre_cliente" name="nombre_cliente" value="<%= servicio.nombre_cliente %>" required class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Teléfono:</label>
+                        <input type="text" id="telefono" name="telefono" value="<%= servicio.telefono %>" required class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="tipo_equipo">Tipo de equipo:</label>
+                        <input type="text" id="tipo_equipo" name="tipo_equipo" value="<%= servicio.tipo_equipo %>" required class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="marca">Marca:</label>
+                        <input type="text" id="marca" name="marca" value="<%= servicio.marca %>" required class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="modelo">Modelo:</label>
+                        <input type="text" id="modelo" name="modelo" value="<%= servicio.modelo %>" required class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="numero_serie">Número de serie:</label>
+                        <input type="text" id="numero_serie" name="numero_serie" value="<%= servicio.numero_serie %>" required class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="accesorios">Accesorios:</label>
+                        <input type="text" id="accesorios" name="accesorios" value="<%= servicio.accesorios %>" required class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="tareas">Tareas a realizar:</label>
+                        <input type="text" id="tareas" name="tareas" value="<%= servicio.tareas %>" required class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="estado">Estado:</label>
+                        <select id="estado" name="estado" class="form-control">
+                            <option value="INGRESADO">Ingresado</option>
+                            <option value="EN_PROCESO">En Proceso</option>
+                            <option value="TERMINADO">Terminado</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="observaciones">Observaciones:</label>
+                        <textarea id="observaciones" name="observaciones" class="form-control"><%= servicio.observaciones %></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="foto">Foto:</label>
+                        <input type="file" id="foto" name="foto" class="form-control-file">
+                    </div>
+                    <div class="d-flex justify-content-between mt-3">
+                      <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                      <a href="/print/<%= servicio.id %>" class="btn btn-secondary">Ir a la vista de impresión</a>
+                      <a href="/search" class="btn btn-secondary">Cancelar</a>
+                      <form action="/delete/<%= servicio.id %>" method="POST">
+                          <button type="submit" class="btn btn-danger">Borrar este registro</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

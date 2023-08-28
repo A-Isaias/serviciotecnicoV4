@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Buscar en la base de datos</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/index.css" type="text/css">
+    <link rel="stylesheet" href="/css/search.css" type="text/css">
 </head>
 
 <body>
@@ -15,7 +15,8 @@
             <h1>Buscar en la base de datos</h1>
             <div class="btn-group">
                 <button class="btn btn-success"><a href="/new" class="text-white">Nueva Orden</a></button>
-                <button class="btn btn-warning"><a href="/search" class="text-white">Buscar Orden</a></button>
+                <!-- <button class="btn btn-warning"><a href="/search" class="text-white">Buscar Orden</a></button> -->
+                <a href="/" class="btn btn-secondary">Volver al Inicio</a>
             </div>
         </div>
 
@@ -75,8 +76,7 @@
                                         <p><strong>Observaciones:</strong>
                                             <%= result.observaciones %>
                                         </p>
-                                        <p><strong>Foto:</strong> <%= result.foto ? `<img src="/img/${result.foto}" alt="Foto" width="200" class="expand-image">` : "N/A" %></p>
-                                        
+                                        <p><strong>Foto:</strong> <%= result.foto ? '<img src="/img/' + result.foto + '" alt="Foto" width="200" class="expand-image">' : "N/A" %></p>
                                         <a href="/edit/<%= result.id %>" class="btn btn-primary">Editar</a>
                                         <form action="/delete/<%= result.id %>" method="POST" style="display: inline;">
                                             <button type="submit" class="btn btn-danger">Borrar</button>

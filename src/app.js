@@ -15,7 +15,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.get('/', (req, res) => {
     const archivoJSON = fs.readFileSync(path.join(__dirname, 'servicios.json'), 'utf-8');
     const servicios = JSON.parse(archivoJSON);
-    res.render('index', { servicios });
+    res.render('index', { servicios, fixedHeader: true });
 });
 
 app.get('/servicios', (req, res) => {
@@ -100,16 +100,31 @@ app.post('/update/:id', (req, res) => {
             numero_serie: req.body.numero_serie,
             accesorios: req.body.accesorios,
             tareas: req.body.tareas,
-            estado: req.body.estado, // Agregar esta línea para actualizar el estado
-            observaciones: req.body.observaciones || "", // Agregar esta línea para actualizar las observaciones
-            foto: req.body.foto || "" // Agregar esta línea para actualizar la foto
+            estado: req.body.estado,
+            observaciones: req.body.observaciones || "",
+            foto: servicios[servicioIndex].foto // Mantener la foto existente
         };
+
+        // Manejar la carga de una nueva foto si se proporciona
+        if (req.files && req.files.foto) {
+            const nuevaFoto = req.files.foto;
+            const extension = nuevaFoto.name.split('.').pop();
+            const nuevaFotoNombre = `photo_${Date.now()}.${extension}`;
+            nuevaFoto.mv(path.join(__dirname, 'public', 'img', nuevaFotoNombre), err => {
+                if (err) {
+                    console.error('Error al cargar la nueva foto:', err);
+                } else {
+                    servicios[servicioIndex].foto = nuevaFotoNombre; // Actualizar la foto si se cargó exitosamente
+                }
+            });
+        }
 
         fs.writeFileSync(path.join(__dirname, 'servicios.json'), JSON.stringify(servicios, null, 2));
     }
 
     res.redirect('/');
 });
+
 
 app.post('/search', (req, res) => {
     const searchId = parseInt(req.body.searchId);

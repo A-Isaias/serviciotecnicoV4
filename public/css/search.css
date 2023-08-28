@@ -1,31 +1,20 @@
 /* Estilos personalizados para la vista index */
 body {
   font-family: Arial, sans-serif;
-  margin-top: 70px; /* Ajusta según la altura del encabezado fijo */
   margin: 0;
   padding: 0;
 }
 
-/* Estilo para el contenedor de contenido */
-.content-container {
-  margin-top: 100px; /* Ajusta según la altura del encabezado fijo */
-}
 .container {
   margin-top: 20px;
 }
 
-/* Mantener el contenedor superior fijo */
 .fixed-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: white; /* Puedes ajustar el color de fondo según tus necesidades */
-  z-index: 1000; /* Asegura que el contenedor esté en el frente */
-  padding: 10px; /* Espaciado interior para que el contenido no quede pegado a los bordes */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Agrega una sombra sutil */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
-
 
 .order {
   padding: 10px;
