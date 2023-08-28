@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1001,
+    "nombre_cliente": "ARIEL ISAIAS",
+    "telefono": "123456789",
+    "tipo_equipo": "Laptop",
+    "marca": "HP",
+    "modelo": "Pavilion",
+    "numero_serie": "ABC123",
+    "accesorios": "Cargador, Mouse",
+    "tareas": "Reparación de pantalla"
+  },
+  {
+    "id": 1002,
+    "nombre_cliente": "BENJAMIN ISAIAS",
+    "telefono": "3364888888",
+    "tipo_equipo": "NOTEBOOK",
+    "marca": "GENERICA",
+    "modelo": "CORE I3 8GB DISCO 500",
+    "numero_serie": "SIN SERIE",
+    "accesorios": "NO",
+    "tareas": "NO INICIA WINDOWS"
+  },
+  {
+    "id": 1003,
+    "nombre_cliente": "LUCILA ISAIAS",
+    "telefono": "3364888888",
+    "tipo_equipo": "NOTEBOOK",
+    "marca": "DELL",
+    "modelo": "DL1212",
+    "numero_serie": "121231",
+    "accesorios": "CARGADOR",
+    "tareas": "REVISAR"
+  }
+]

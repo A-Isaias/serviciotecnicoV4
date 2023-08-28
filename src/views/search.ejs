@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar en la base de datos</title>
+</head>
+<body>
+    <h1>Buscar en la base de datos</h1>
+    <form id="searchForm" method="POST" action="/search">
+        <label for="searchId">Buscar por ID:</label>
+        <input type="number" id="searchId" name="searchId">
+        <br>
+        <label for="searchName">Buscar por nombre y apellido:</label>
+        <input type="text" id="searchName" name="searchName">
+        <br>
+        <button type="submit">Buscar</button>
+    </form>
+    <div id="searchResult">
+        <% if (results && results.length > 0) { %>
+            <h2>Resultados de la búsqueda:</h2>
+            <ul>
+                <% results.forEach(result => { %>
+                    <li>ID: <%= result.id %>, Cliente: <%= result.nombre_cliente %>
+                        <a href="/edit/<%= result.id %>">Editar</a>
+                        <form action="/delete/<%= result.id %>" method="POST" style="display: inline;">
+                            <button type="submit">Borrar</button>
+                        </form>
+                        <a href="/print/<%= result.id %>">Imprimir</a>
+                    </li>
+                <% }); %>
+            </ul>
+        <% } else { %>
+            <p>No se encontraron resultados.</p>
+        <% } %>
+    </div>
+    <!-- Botón de Volver al Inicio -->
+    <a href="/" class="btn btn-secondary mt-3">Volver al Inicio</a>
+</body>
+</html>

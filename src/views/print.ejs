@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imprimir Orden</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <h1>Detalles de la Orden</h1>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>ID</th>
+                    <td><%= order.id %></td>
+                </tr>
+                <tr>
+                    <th>Cliente</th>
+                    <td><%= order.nombre_cliente %></td>
+                </tr>
+                <tr>
+                    <th>Teléfono</th>
+                    <td><%= order.telefono %></td>
+                </tr>
+                <tr>
+                    <th>Tipo de Equipo</th>
+                    <td><%= order.tipo_equipo %></td>
+                </tr>
+                <tr>
+                    <th>Marca</th>
+                    <td><%= order.marca %></td>
+                </tr>
+                <tr>
+                    <th>Modelo</th>
+                    <td><%= order.modelo %></td>
+                </tr>
+                <tr>
+                    <th>Número de Serie</th>
+                    <td><%= order.numero_serie %></td>
+                </tr>
+                <tr>
+                    <th>Accesorios</th>
+                    <td><%= order.accesorios %></td>
+                </tr>
+                <tr>
+                    <th>Tareas a Realizar</th>
+                    <td><%= order.tareas %></td>
+                </tr>
+            </tbody>
+        </table>
+        <a href="/" class="btn btn-primary">Volver al Inicio</a>
+        <button class="btn btn-secondary" onclick="window.print()">Imprimir Orden</button> <!-- Botón para imprimir -->
+    </div>
+</body>
+</html>

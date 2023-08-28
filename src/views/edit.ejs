@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Orden</title>
+</head>
+<body>
+    <h1>Editar Orden</h1>
+    <form action="/update/<%= servicio.id %>" method="POST">
+        <label for="nombre_cliente">Nombre del cliente:</label>
+        <input type="text" id="nombre_cliente" name="nombre_cliente" value="<%= servicio.nombre_cliente %>" required>
+
+        <label for="telefono">Teléfono:</label>
+        <input type="text" id="telefono" name="telefono" value="<%= servicio.telefono %>" required>
+
+        <label for="tipo_equipo">Tipo de equipo:</label>
+        <input type="text" id="tipo_equipo" name="tipo_equipo" value="<%= servicio.tipo_equipo %>" required>
+
+        <label for="marca">Marca:</label>
+        <input type="text" id="marca" name="marca" value="<%= servicio.marca %>" required>
+
+        <label for="modelo">Modelo:</label>
+        <input type="text" id="modelo" name="modelo" value="<%= servicio.modelo %>" required>
+
+        <label for="numero_serie">Número de serie:</label>
+        <input type="text" id="numero_serie" name="numero_serie" value="<%= servicio.numero_serie %>" required>
+
+        <label for="accesorios">Accesorios:</label>
+        <input type="text" id="accesorios" name="accesorios" value="<%= servicio.accesorios %>" required>
+
+        <label for="tareas">Tareas a realizar:</label>
+        <input type="text" id="tareas" name="tareas" value="<%= servicio.tareas %>" required>
+
+        <button type="submit">Guardar Cambios</button>
+    </form>
+    <a href="/search">Cancelar</a>
+    <a href="/print/<%= servicio.id %>">Ir a la vista de impresión</a>
+  </div>
+    <form action="/delete/<%= servicio.id %>" method="POST">
+      <button type="submit">Borrar este registro</button>
+  </form>
+  <!-- Botón de Volver al Inicio -->
+  <a href="/" class="btn btn-secondary mt-3">Volver al Inicio</a>
+</body>
+</html>

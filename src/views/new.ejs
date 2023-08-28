@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargar servicio técnico</title>
+    <style>
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Nueva Orden de Servicio técnico</h1>
+    <form action="/guardar-servicio" method="POST">
+        <label for="id">ID:</label>
+        <input type="text" id="id" name="id" value="<%= nextId %>" readonly>
+
+        <label for="nombre_cliente">Nombre del cliente:</label>
+        <input type="text" id="nombre_cliente" name="nombre_cliente" required>
+
+        <label for="telefono">Teléfono:</label>
+        <input type="text" id="telefono" name="telefono" required>
+
+        <label for="tipo_equipo">Tipo de equipo:</label>
+        <input type="text" id="tipo_equipo" name="tipo_equipo" required>
+
+        <label for="marca">Marca:</label>
+        <input type="text" id="marca" name="marca" required>
+
+        <label for="modelo">Modelo:</label>
+        <input type="text" id="modelo" name="modelo" required>
+
+        <label for="numero_serie">Número de serie:</label>
+        <input type="text" id="numero_serie" name="numero_serie" required>
+
+        <label for="accesorios">Accesorios:</label>
+        <input type="text" id="accesorios" name="accesorios" required>
+
+        <label for="tareas">Tareas a realizar:</label>
+        <input type="text" id="tareas" name="tareas" required>
+
+        <button type="submit">Cargar servicio</button>
+        <a href="/" class="btn btn-primary">Volver al Inicio</a>
+    </form>
+</body>
+</html>
