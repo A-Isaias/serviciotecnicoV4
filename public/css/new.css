@@ -1,0 +1,19 @@
+/* Estilos para el encabezado fijo */
+.fixed-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #f8f9fa;
+}
+
+/* Espaciado para los campos de formulario */
+.form-control {
+  margin-bottom: 10px;
+}
+
+/* Ajustes de estilo para el botón de cargar servicio */
+.btn-success {
+  margin-top: 10px;
+}

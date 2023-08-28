@@ -6,43 +6,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cargar servicio técnico</title>
-    <style>
-        label {
-            display: block;
-            margin-top: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/new.css" type="text/css">
 </head>
 
 <body>
-    <h1>Nueva Orden de Servicio técnico</h1>
-    <form action="/guardar-servicio" method="POST">
-        <label for="id">ID:</label>
-        <input type="text" id="id" name="id" value="<%= nextId %>" readonly>
+    <div class="container mt-4">
+        <div class="fixed-header">
+            <h1>Nueva Orden de Servicio técnico</h1>
+            <div class="btn-group">
+                <a href="/" class="btn btn-primary">Volver al Inicio</a>
+            </div>
+        </div>
 
-        <label for="nombre_cliente">Nombre del cliente:</label>
-        <input type="text" id="nombre_cliente" name="nombre_cliente" required>
+        <form action="/guardar-servicio" method="POST">
+            <label for="id">ID:</label>
+            <input type="text" id="id" name="id" value="<%= nextId %>" readonly class="form-control">
 
-        <label for="telefono">Teléfono:</label>
-        <input type="text" id="telefono" name="telefono" required>
+            <label for="nombre_cliente">Nombre del cliente:</label>
+            <input type="text" id="nombre_cliente" name="nombre_cliente" required class="form-control">
+
+            <label for="telefono">Teléfono:</label>
+            <input type="text" id="telefono" name="telefono" required class="form-control">
 
         <label for="tipo_equipo">Tipo de equipo:</label>
-        <input type="text" id="tipo_equipo" name="tipo_equipo" required>
+        <input type="text" id="tipo_equipo" name="tipo_equipo" required class="form-control">
 
         <label for="marca">Marca:</label>
-        <input type="text" id="marca" name="marca" required>
+        <input type="text" id="marca" name="marca" required class="form-control">
 
         <label for="modelo">Modelo:</label>
-        <input type="text" id="modelo" name="modelo" required>
+        <input type="text" id="modelo" name="modelo" required class="form-control">
 
         <label for="numero_serie">Número de serie:</label>
-        <input type="text" id="numero_serie" name="numero_serie" required>
+        <input type="text" id="numero_serie" name="numero_serie" required class="form-control">
 
         <label for="accesorios">Accesorios:</label>
-        <input type="text" id="accesorios" name="accesorios" required>
+        <input type="text" id="accesorios" name="accesorios" required class="form-control">
 
         <label for="tareas">Tareas a realizar:</label>
-        <input type="text" id="tareas" name="tareas" required>
+        <input type="text" id="tareas" name="tareas" required class="form-control">
+
         <label for="estado">Estado:</label>
         <select id="estado" name="estado">
             <option value="INGRESADO">Ingresado</option>
@@ -50,13 +54,13 @@
             <option value="TERMINADO">Terminado</option>
         </select>
 
-        <label for="observaciones">Observaciones:</label>
+        <br><label for="observaciones">Observaciones:</label>
         <textarea id="observaciones" name="observaciones"></textarea>
 
-        <label for="foto">Foto:</label>
-        <input type="file" id="foto" name="foto">
+        <br><label for="foto">Foto:</label>
+        <input type="file" id="foto" name="foto"><br>
 
-        <button type="submit">Cargar servicio</button>
+        <br><button type="submit" class="btn btn-success">Cargar servicio</button>
         <a href="/" class="btn btn-primary">Volver al Inicio</a>
     </form>
 </body>
