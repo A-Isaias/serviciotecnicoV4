@@ -9,7 +9,7 @@
     "numero_serie": "123546",
     "accesorios": "NO",
     "tareas": "REVISAR",
-    "estado": "PRESUPUESTADO",
+    "estado": "INGRESADO",
     "observaciones": "PANTALLA ASTILLADA",
     "foto": "photo_2023-08-28_11-55-54 (2).jpg"
   },
@@ -124,5 +124,33 @@
     "estado": "INGRESADO",
     "observaciones": "SIN CABLES",
     "foto": "photo_2023-08-28_11-56-44.jpg"
+  },
+  {
+    "id": 1010,
+    "nombre_cliente": "JOSE IGNACIO COPANI",
+    "telefono": "1145555555",
+    "tipo_equipo": "RADIOGRABADOR ",
+    "marca": "NOBLEX",
+    "modelo": "NSX800",
+    "numero_serie": "123456",
+    "accesorios": "NO",
+    "tareas": "REVISAR",
+    "estado": "INGRESADO",
+    "observaciones": "ENGANCHA LA CINTA",
+    "foto": "photo_2023-08-28_11-55-54.jpg"
+  },
+  {
+    "id": 1011,
+    "nombre_cliente": "IGNACIO JAWERO",
+    "telefono": "3364888888",
+    "tipo_equipo": "MOTOCICLETA",
+    "marca": "MOTOMEL",
+    "modelo": "110",
+    "numero_serie": "5645646545",
+    "accesorios": "NO",
+    "tareas": "REVISAR",
+    "estado": "INGRESADO",
+    "observaciones": "TIENE PORTAPATENTES REBATIBLE",
+    "foto": "a6083f224c5d9a036fb918b9ed5e7e47"
   }
 ]

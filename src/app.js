@@ -1,16 +1,22 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
+const multer = require('multer'); // Importar el módulo multer
 
 const port = 3000;
 const app = express();
+
+// Configurar el middleware para la carga de archivos utilizando multer
+const upload = multer({ dest: path.join(__dirname, 'public', 'img') });
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Configurar el motor de plantillas EJS
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
+
 
 app.get('/', (req, res) => {
     const archivoJSON = fs.readFileSync(path.join(__dirname, 'servicios.json'), 'utf-8');
@@ -34,7 +40,7 @@ app.get('/new', (req, res) => {
     res.render('new', { nextId });
 });
 
-app.post('/guardar-servicio', (req, res) => {
+app.post('/guardar-servicio', upload.single('foto'), (req, res) => {
     try {
         const nuevoServicio = {
             id: parseInt(req.body.id),
@@ -48,9 +54,10 @@ app.post('/guardar-servicio', (req, res) => {
             tareas: req.body.tareas,
             estado: req.body.estado,
             observaciones: req.body.observaciones || "",
-            foto: req.body.foto || ""
+
+            // El campo "foto" ahora se manejará en req.file
+            foto: req.file ? req.file.filename : "" // Usar req.file.filename para obtener el nombre del archivo
         };
-       
 
         const archivoJSON = fs.readFileSync(path.join(__dirname, 'servicios.json'), 'utf-8');
         const servicios = JSON.parse(archivoJSON);

@@ -13,13 +13,13 @@
 <body>
     <div class="container mt-4">
         <div class="fixed-header">
-            <h1>Nueva Orden de Servicio técnico</h1>
+            <h1>Nueva Orden de Servicio Técnico</h1>
             <div class="btn-group">
                 <a href="/" class="btn btn-primary">Volver al Inicio</a>
             </div>
         </div>
 
-        <form action="/guardar-servicio" method="POST">
+        <form action="/guardar-servicio" method="POST" enctype="multipart/form-data" id="newForm">
             <label for="id">ID:</label>
             <input type="text" id="id" name="id" value="<%= nextId %>" readonly class="form-control">
 
@@ -69,7 +69,7 @@
 
             <br><button type="submit" class="btn btn-success">Cargar servicio</button>
             <a href="/" class="btn btn-primary">Volver al Inicio</a>
-        </form>
+        </d=>
 </body>
 
 </html>

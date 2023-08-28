@@ -1,9 +1,42 @@
-/* Estilos personalizados para la vista index */
+/* Estilos personalizados para la vista search */
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
 }
+
+.container {
+  margin-top: 20px;
+}
+
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px; /* Ajusta la altura del encabezado */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: white;
+  z-index: 999;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Ajustamos el margen superior del contenido para evitar que se solape con la barra fija */
+#searchForm {
+  margin-top: 80px; /* Ajusta este valor según sea necesario */
+}
+
+
+/* body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+} */
 
 .container {
   margin-top: 20px;

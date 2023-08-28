@@ -1,11 +1,34 @@
-/* Estilos para el encabezado fijo */
+/* Estilos personalizados para la vista new */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin-top: 1px; /* Ajusta este valor según sea necesario */
+}
+
 .fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px; /* Ajusta la altura del encabezado */
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
   padding: 10px;
-  background-color: #f8f9fa;
+  background-color: white;
+  z-index: 999;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Ajustamos el margen superior del contenido para evitar que se solape con la barra fija */
+#newForm {
+  margin-top: 80px; /* Ajusta este valor según sea necesario */
 }
 
 /* Espaciado para los campos de formulario */
@@ -14,6 +37,6 @@
 }
 
 /* Ajustes de estilo para el botón de cargar servicio */
-.btn-success {
+/* .btn-success {
   margin-top: 10px;
-}
+} */

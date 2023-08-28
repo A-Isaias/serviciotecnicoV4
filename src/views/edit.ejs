@@ -86,11 +86,12 @@
                     <div class="form-group">
                         <label for="foto">Foto:</label>
                         <input type="file" id="foto" name="foto" class="form-control-file">
+                        <img src="/img/<%= servicio.foto %>" alt="Foto actual" width="200">
                     </div>
                     <div class="d-flex justify-content-between mt-3">
                         <button type="submit" class="btn btn-primary">Guardar Cambios</button>
                         <a href="/print/<%= servicio.id %>" class="btn btn-secondary">Ir a la vista de impresión</a>
-                        <a href="/search" class="btn btn-secondary">Cancelar</a>
+                        <a href="/" class="btn btn-secondary">Cancelar</a>
                         <form action="/delete/<%= servicio.id %>" method="POST">
                             <button type="submit" class="btn btn-danger">Borrar este registro</button>
                         </form>
