@@ -6,26 +6,31 @@
     <title>Servicio Técnico</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/index.css" type="text/css">
-    
+
 </head>
 
 <body>
     <div class="container mt-4">
         <!-- Título y botones fijos -->
         <div class="fixed-header">
-            <h1>Servicio Técnico</h1>
+            <h1>Servicio Técnico</h1><h3>VISTA PRIMARIA</h3>
             <div class="btn-group">
                 <button class="btn btn-success"><a href="/new" class="text-white">Nueva Orden</a></button>
                 <button class="btn btn-warning"><a href="/search" class="text-white">Buscar Orden</a></button>
+                <button class="btn btn-secondary"><a href="/database" class="text-white">Abrir Database</a></button>
                 <a href="/" class="btn btn-primary">Volver al Inicio</a>
             </div>
         </div>
+        
 
+        <!-- Contenedor de órdenes -->
         <div class="row content-container" id="newForm">
             <div class="col">
                 <div class="card">
                     <div class="card-body">
                         <!-- Aquí se mostrarán las órdenes de servicio -->
+                        <!-- Título "ORDENES PENDIENTES" -->
+                        <h4>ORDENES PENDIENTES</h4>
                         <div id="orders-container"></div>
                     </div>
                 </div>
@@ -55,9 +60,10 @@
         function displayOrders(ordersData) {
             ordersContainer.innerHTML = "";
             ordersData.forEach(order => {
-                const orderElement = document.createElement("div");
-                orderElement.classList.add("order");
-                orderElement.innerHTML = `
+                if (order.estado !== 'RETIRADO') { // Filtrar las órdenes en estado 'TERMINADO' asi no se muestran
+                    const orderElement = document.createElement("div");
+                    orderElement.classList.add("order");
+                    orderElement.innerHTML = `
                     <div class="order-summary">
                         <strong>ID:</strong> ${order.id}<br>
                         <strong>Cliente:</strong> ${order.nombre_cliente}<br>
@@ -79,36 +85,37 @@
                     </div>
                 `;
 
-                // Agregar un controlador de evento para alternar la visibilidad de los detalles
-                const orderSummary = orderElement.querySelector(".order-summary");
-                const orderDetails = orderElement.querySelector(".order-details");
-                let isDetailsVisible = false;
+                    // Agregar un controlador de evento para alternar la visibilidad de los detalles
+                    const orderSummary = orderElement.querySelector(".order-summary");
+                    const orderDetails = orderElement.querySelector(".order-details");
+                    let isDetailsVisible = false;
 
-                orderSummary.addEventListener("click", () => {
-                    isDetailsVisible = !isDetailsVisible;
+                    orderSummary.addEventListener("click", () => {
+                        isDetailsVisible = !isDetailsVisible;
 
-                    if (isDetailsVisible) {
-                        orderDetails.style.display = "block";
-                    } else {
-                        orderDetails.style.display = "none";
-                    }
-                });
-
-                // Agregar un controlador de evento para las imágenes en pantalla completa
-                const fullscreenableImages = orderElement.querySelectorAll(".fullscreenable-image");
-                fullscreenableImages.forEach(image => {
-                    image.addEventListener("click", () => {
-                        fullscreenImage.src = image.getAttribute("data-src");
-                        fullscreenImageContainer.style.display = "flex";
+                        if (isDetailsVisible) {
+                            orderDetails.style.display = "block";
+                        } else {
+                            orderDetails.style.display = "none";
+                        }
                     });
-                });
 
-                // Agregar una línea separadora
-                const separator = document.createElement("hr");
-                separator.style.marginTop = "10px";
-                orderElement.appendChild(separator);
+                    // Agregar un controlador de evento para las imágenes en pantalla completa
+                    const fullscreenableImages = orderElement.querySelectorAll(".fullscreenable-image");
+                    fullscreenableImages.forEach(image => {
+                        image.addEventListener("click", () => {
+                            fullscreenImage.src = image.getAttribute("data-src");
+                            fullscreenImageContainer.style.display = "flex";
+                        });
+                    });
 
-                ordersContainer.appendChild(orderElement);
+                    // Agregar una línea separadora
+                    const separator = document.createElement("hr");
+                    separator.style.marginTop = "1px";
+                    orderElement.appendChild(separator);
+
+                    ordersContainer.appendChild(orderElement);
+                }
             });
 
             // Agregar un controlador de evento para el botón de borrar

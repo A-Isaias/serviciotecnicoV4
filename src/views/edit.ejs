@@ -98,6 +98,22 @@
                     </div>
             </div>
         </div>
-</body>
+        <script>
+            // Código JavaScript
+            // Obtén el valor del estado almacenado
+            const storedEstado = "<%= servicio.estado %>";
+            
+            // Encuentra el elemento de opción correspondiente y establécelo como seleccionado
+            const estadoDropdown = document.getElementById("estado");
+            for (let i = 0; i < estadoDropdown.options.length; i++) {
+                if (estadoDropdown.options[i].value === storedEstado) {
+                    estadoDropdown.options[i].setAttribute("selected", "selected");
+                    break;
+                }
+            }
+        </script>
+
+    </body>
+
 
 </html>

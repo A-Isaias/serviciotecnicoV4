@@ -9,7 +9,7 @@
     "numero_serie": "123546",
     "accesorios": "NO",
     "tareas": "REVISAR",
-    "estado": "INGRESADO",
+    "estado": "RETIRADO",
     "observaciones": "PANTALLA ASTILLADA",
     "foto": "photo_2023-08-28_11-55-54 (2).jpg"
   },
@@ -180,5 +180,19 @@
     "estado": "INGRESADO",
     "observaciones": "",
     "foto": "60b0b0226a259a0051b603eee9e366d0"
+  },
+  {
+    "id": 1014,
+    "nombre_cliente": "PRUEBA 52",
+    "telefono": "52525252",
+    "tipo_equipo": "52525252",
+    "marca": "525252",
+    "modelo": "525252",
+    "numero_serie": "52525252",
+    "accesorios": "5252525",
+    "tareas": "52525252",
+    "estado": "INGRESADO",
+    "observaciones": "525252",
+    "foto": ""
   }
 ]

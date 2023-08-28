@@ -31,6 +31,11 @@ body {
   margin-top: 80px; /* Ajusta este valor según sea necesario */
 }
 
+label {
+    font-size: 18px;
+    font-weight: bold;
+}
+
 /* Espaciado para los campos de formulario */
 .form-control {
   margin-bottom: 10px;

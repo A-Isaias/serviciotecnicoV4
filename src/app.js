@@ -24,6 +24,11 @@ app.get('/', (req, res) => {
     res.render('index', { servicios, fixedHeader: true });
 });
 
+//vista que muestra toda la base de datos
+app.get('/database', (req, res) => {
+    res.render('database'); // Renderiza la vista database.ejs
+});
+
 app.get('/servicios', (req, res) => {
     const archivoJSON = fs.readFileSync(path.join(__dirname, 'servicios.json'), 'utf-8');
     const servicios = JSON.parse(archivoJSON);
