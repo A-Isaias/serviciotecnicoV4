@@ -101,7 +101,7 @@ app.post('/update/:id', (req, res) => {
         fs.writeFileSync(path.join(__dirname, 'servicios.json'), JSON.stringify(servicios, null, 2));
     }
 
-    res.redirect('/search');
+    res.redirect('/');
 });
 
 app.post('/search', (req, res) => {

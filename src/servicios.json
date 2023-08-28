@@ -5,10 +5,10 @@
     "telefono": "123456789",
     "tipo_equipo": "Laptop",
     "marca": "HP",
-    "modelo": "Pavilion",
-    "numero_serie": "ABC123",
-    "accesorios": "Cargador, Mouse",
-    "tareas": "Reparación de pantalla"
+    "modelo": "x360la",
+    "numero_serie": "2546584",
+    "accesorios": "no",
+    "tareas": "Cambio de Bateria"
   },
   {
     "id": 1002,
@@ -31,5 +31,49 @@
     "numero_serie": "121231",
     "accesorios": "CARGADOR",
     "tareas": "REVISAR"
+  },
+  {
+    "id": 1004,
+    "nombre_cliente": "MAGDALENA BAZ",
+    "telefono": "3364529859",
+    "tipo_equipo": "NOTEBOOK",
+    "marca": "HP",
+    "modelo": "G71 LA001",
+    "numero_serie": "1234565",
+    "accesorios": "CARGADOR",
+    "tareas": "REVISAR"
+  },
+  {
+    "id": 1005,
+    "nombre_cliente": "OCTAVIO SALBADOR",
+    "telefono": "3364525252",
+    "tipo_equipo": "NOTEBOOK",
+    "marca": "ACER",
+    "modelo": "ASPÍRE 5571",
+    "numero_serie": "645465894",
+    "accesorios": "NO",
+    "tareas": "NO INICIA"
+  },
+  {
+    "id": 1006,
+    "nombre_cliente": "MONCHI BALESTRA",
+    "telefono": "1147679255",
+    "tipo_equipo": "MONITOR",
+    "marca": "SAMSUNG",
+    "modelo": "19B300",
+    "numero_serie": "4564812354",
+    "accesorios": "FUENTE",
+    "tareas": "NO DA IMAGEN"
+  },
+  {
+    "id": 1007,
+    "nombre_cliente": "MARIANO SALBADOR",
+    "telefono": "3415687975",
+    "tipo_equipo": "RETRO COMPUTADORA",
+    "marca": "COMMODORE",
+    "modelo": "64",
+    "numero_serie": "12415465",
+    "accesorios": "DISK DRIVE 1541 + FUENTES+JOYSTICKS",
+    "tareas": "REVISAR PUERTO DE JOYSTICK"
   }
 ]

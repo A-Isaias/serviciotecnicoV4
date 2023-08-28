@@ -6,11 +6,19 @@
     <title>Servicio Técnico</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/index.css" type="text/css">
+
 </head>
 
 <body>
     <div class="container mt-4">
-        <h1 class="mb-4">Servicio Técnico</h1>
+        <!-- Título y botones fijos -->
+        <div class="fixed-header">
+            <h1>Servicio Técnico</h1>
+            <div class="btn-group">
+                <button class="btn btn-success"><a href="/new" class="text-white">Nueva Orden</a></button>
+                <button class="btn btn-warning"><a href="/search" class="text-white">Buscar Orden</a></button>
+            </div>
+        </div>
 
         <div class="row">
             <div class="col">
@@ -22,19 +30,12 @@
                 </div>
             </div>
         </div>
-
-        <div class="row mt-4">
-            <div class="col">
-                <button class="btn btn-success mr-2"><a href="/new" class="text-white">Nueva Orden</a></button>
-                <button class="btn btn-warning mr-2"><a href="/search" class="text-white">Buscar Orden</a></button>
-            </div>
-        </div>
     </div>
 
     <script>
         // Código JavaScript
         const ordersContainer = document.getElementById("orders-container");
-    
+
         // Carga los datos del archivo JSON
         fetch('/servicios')
             .then(response => response.json())
@@ -42,7 +43,7 @@
                 displayOrders(ordersData);
             })
             .catch(error => console.error('Error al cargar los datos:', error));
-    
+
         // Función para mostrar las órdenes en el contenedor
         function displayOrders(ordersData) {
             ordersContainer.innerHTML = "";
@@ -67,25 +68,30 @@
                         <a href="/print/${order.id}" class="btn btn-secondary">Imprimir</a>
                     </div>
                 `;
-    
+
                 // Agregar un controlador de evento para alternar la visibilidad de los detalles
                 const orderSummary = orderElement.querySelector(".order-summary");
                 const orderDetails = orderElement.querySelector(".order-details");
                 let isDetailsVisible = false;
-    
+
                 orderSummary.addEventListener("click", () => {
                     isDetailsVisible = !isDetailsVisible;
-    
+
                     if (isDetailsVisible) {
                         orderDetails.style.display = "block";
                     } else {
                         orderDetails.style.display = "none";
                     }
                 });
-    
+
+                // Agregar una línea separadora
+                const separator = document.createElement("hr");
+                separator.style.marginTop = "10px";
+                orderElement.appendChild(separator);
+
                 ordersContainer.appendChild(orderElement);
             });
-    
+
             // Agregar un controlador de evento para el botón de borrar
             const deleteButtons = document.querySelectorAll('.delete-btn');
             deleteButtons.forEach(button => {
@@ -99,7 +105,7 @@
                 });
             });
         }
-    
+
         // Resto de tu código...
     </script>
 </body>
