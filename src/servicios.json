@@ -251,5 +251,34 @@
     "estado": "INGRESADO",
     "observaciones": "888888888888",
     "foto": "df7659668d3ebbd2952a992df6b3abc9"
+  },
+  {
+    "id": 1017,
+    "nombre_cliente": "PRUEBA 90",
+    "telefono": "90",
+    "tipo_equipo": "90",
+    "marca": "90",
+    "modelo": "90",
+    "numero_serie": "90",
+    "accesorios": "90",
+    "tareas": "90",
+    "estado": "INGRESADO",
+    "observaciones": "90",
+    "foto": ""
+  },
+  {
+    "id": 1018,
+    "fecha_ingreso": "28-08-2023",
+    "nombre_cliente": "PRUEBA 999",
+    "telefono": "9999999",
+    "tipo_equipo": "9999",
+    "marca": "9999",
+    "modelo": "9999",
+    "numero_serie": "9999",
+    "accesorios": "9999",
+    "tareas": "9999",
+    "estado": "INGRESADO",
+    "observaciones": "9999",
+    "foto": "21f26b1e06a4bac75e8ac24acd52e591"
   }
 ]

@@ -53,6 +53,7 @@ app.post('/guardar-servicio', upload.single('foto'), (req, res) => {
     try {
         const nuevoServicio = {
             id: parseInt(req.body.id),
+            fecha_ingreso: req.body.fecha_ingreso, // Agregar la fecha de ingreso
             nombre_cliente: req.body.nombre_cliente,
             telefono: req.body.telefono,
             tipo_equipo: req.body.tipo_equipo,
