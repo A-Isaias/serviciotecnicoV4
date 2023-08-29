@@ -42,7 +42,11 @@ app.get('/new', (req, res) => {
     const lastId = servicios[servicios.length - 1].id;
     const nextId = lastId + 1;
 
-    res.render('new', { nextId });
+    // Agregar la fecha de ingreso actual en el formato DD-MM-AAAA
+    const today = new Date();
+    const formattedDate = `${today.getDate().toString().padStart(2, '0')}-${(today.getMonth() + 1).toString().padStart(2, '0')}-${today.getFullYear()}`;
+
+    res.render('new', { nextId, formattedDate }); // Pasar la fecha a la vista
 });
 
 app.post('/guardar-servicio', upload.single('foto'), (req, res) => {

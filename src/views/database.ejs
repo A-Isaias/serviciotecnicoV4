@@ -24,6 +24,7 @@
         <thead>
             <tr>
                 <th>ID</th>
+                <th>Fecha Ingreso</th>
                 <th>Cliente</th>
                 <th>Teléfono</th>
                 <th>Tipo de Equipo</th>
@@ -69,6 +70,7 @@
                 const orderRow = document.createElement("tr");
                 orderRow.innerHTML = `
                     <td>${order.id}</td>
+                    <td>${order.fecha_ingreso}</td>
                     <td>${order.nombre_cliente}</td>
                     <td>${order.telefono}</td>
                     <td>${order.tipo_equipo}</td>

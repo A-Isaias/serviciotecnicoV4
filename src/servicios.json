@@ -1,6 +1,7 @@
 [
   {
     "id": 1001,
+    "fecha_ingreso": "21-08-2023",
     "nombre_cliente": "ARIEL ISAIAS",
     "telefono": "3364338670",
     "tipo_equipo": "NOTEBOOK ",
@@ -15,6 +16,7 @@
   },
   {
     "id": 1002,
+    "fecha_ingreso": "21-08-2023",
     "nombre_cliente": "BENJAMIN ISAIAS",
     "telefono": "3364888888",
     "tipo_equipo": "NOTEBOOK",
@@ -24,11 +26,12 @@
     "accesorios": "NO",
     "tareas": "NO INICIA WINDOWS",
     "estado": "PRESUPUESTADO",
-    "observaciones": "Observaciones 1",
+    "observaciones": "PRESUPUESTO $5000 REINSTALAR WINDOWS SE AVISO EL 12/12 ",
     "foto": "foto1.jpg"
   },
   {
     "id": 1003,
+    "fecha_ingreso": "22-08-2023",
     "nombre_cliente": "LUCILA ISAIAS",
     "telefono": "3364888888",
     "tipo_equipo": "NOTEBOOK",
@@ -43,6 +46,7 @@
   },
   {
     "id": 1004,
+    "fecha_ingreso": "23-08-2023",
     "nombre_cliente": "MAGDALENA BAZ",
     "telefono": "3364529859",
     "tipo_equipo": "NOTEBOOK ",
@@ -57,6 +61,7 @@
   },
   {
     "id": 1005,
+    "fecha_ingreso": "23-08-2023",
     "nombre_cliente": "OCTAVIO SALBADOR",
     "telefono": "3364525252",
     "tipo_equipo": "NOTEBOOK",
@@ -71,6 +76,7 @@
   },
   {
     "id": 1006,
+    "fecha_ingreso": "24-08-2023",
     "nombre_cliente": "MONCHI BALESTRA",
     "telefono": "1147679255",
     "tipo_equipo": "MONITOR",
@@ -85,6 +91,7 @@
   },
   {
     "id": 1007,
+    "fecha_ingreso": "24-08-2023",
     "nombre_cliente": "MARIANO SALBADOR",
     "telefono": "3415687975",
     "tipo_equipo": "RETRO COMPUTADORA",
@@ -99,6 +106,7 @@
   },
   {
     "id": 1008,
+    "fecha_ingreso": "25-08-2023",
     "nombre_cliente": "JOSE BALESTRINO",
     "telefono": "33645858585",
     "tipo_equipo": "IMPRESORA",
@@ -113,6 +121,7 @@
   },
   {
     "id": 1009,
+    "fecha_ingreso": "25-08-2023",
     "nombre_cliente": "BENITO CAMELA",
     "telefono": "3364285698",
     "tipo_equipo": "MONITOR",
@@ -127,6 +136,7 @@
   },
   {
     "id": 1010,
+    "fecha_ingreso": "25-08-2023",
     "nombre_cliente": "JOSE IGNACIO COPANI",
     "telefono": "1145555555",
     "tipo_equipo": "RADIOGRABADOR ",
@@ -141,6 +151,7 @@
   },
   {
     "id": 1011,
+    "fecha_ingreso": "26-08-2023",
     "nombre_cliente": "IGNACIO JAWERO",
     "telefono": "3364888888",
     "tipo_equipo": "MOTOCICLETA",
@@ -155,6 +166,7 @@
   },
   {
     "id": 1012,
+    "fecha_ingreso": "26-08-2023",
     "nombre_cliente": "LUIS GIMENEZ",
     "telefono": "3364528988",
     "tipo_equipo": "PC DE ESCRITORIO",
@@ -169,6 +181,7 @@
   },
   {
     "id": 1013,
+    "fecha_ingreso": "27-08-2023",
     "nombre_cliente": "JOSE OMAR RUBIES",
     "telefono": "33645454848",
     "tipo_equipo": "NOTEBOOK",
@@ -183,6 +196,7 @@
   },
   {
     "id": 1014,
+    "fecha_ingreso": "28-08-2023",
     "nombre_cliente": "PRUEBA 52",
     "telefono": "52525252",
     "tipo_equipo": "52525252",
@@ -197,6 +211,7 @@
   },
   {
     "id": 1015,
+    "fecha_ingreso": "28-08-2023",
     "nombre_cliente": "PRUEBA 53",
     "telefono": "535353535",
     "tipo_equipo": "53535353",
@@ -208,5 +223,33 @@
     "estado": "INGRESADO",
     "observaciones": "53535353",
     "foto": "ab37b06d3a853f9b3b2b787a77af2c90"
+  },
+  {
+    "id": 1016,
+    "nombre_cliente": "PRUEBA 88",
+    "telefono": "8888888",
+    "tipo_equipo": "888888",
+    "marca": "8888888",
+    "modelo": "888888",
+    "numero_serie": "888888888888",
+    "accesorios": "888888888",
+    "tareas": "888888888888",
+    "estado": "INGRESADO",
+    "observaciones": "888888888888",
+    "foto": "3db8173be24f4033b132311e2eb67607"
+  },
+  {
+    "id": 1016,
+    "nombre_cliente": "PRUEBA 88",
+    "telefono": "8888888",
+    "tipo_equipo": "888888",
+    "marca": "8888888",
+    "modelo": "888888",
+    "numero_serie": "888888888888",
+    "accesorios": "888888888",
+    "tareas": "888888888888",
+    "estado": "INGRESADO",
+    "observaciones": "888888888888",
+    "foto": "df7659668d3ebbd2952a992df6b3abc9"
   }
 ]
