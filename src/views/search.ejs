@@ -67,6 +67,9 @@
                                     <p class="card-text"><strong>Estado:</strong>
                                         <%= result.estado %>
                                     </p>
+                                    <p class="card-text"><strong>Fecha de Retiro:</strong>
+                                        <%= result.fecha_retiro ? result.fecha_retiro : "NO RETIRADO AUN" %>
+                                    </p>
                                     <div class="expanded-details" style="display: none;">
                                         <p><strong>Teléfono:</strong>
                                             <%= result.telefono %>

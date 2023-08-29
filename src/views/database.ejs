@@ -47,6 +47,7 @@
                 <th>Tareas</th>
                 <th>Estado</th>
                 <th>Observaciones</th>
+                <th>Fecha de Retiro</th>
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -92,6 +93,7 @@
                     <td>${order.tareas}</td>
                     <td>${order.estado}</td>
                     <td>${order.observaciones}</td>
+                    <td>${order.fecha_retiro ? order.fecha_retiro : "NO RETIRADO AUN"}</td> 
                     <td>
                         <button class="btn btn-primary btn-sm"><a href="/edit/${order.id}" class="text-white">Editar</a></button>
                         <button class="btn btn-secondary btn-sm"><a href="/print/${order.id}" class="text-white">Imprimir</a></button>

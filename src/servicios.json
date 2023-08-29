@@ -12,26 +12,27 @@
     "tareas": "REVISAR",
     "estado": "RETIRADO",
     "observaciones": "PANTALLA ASTILLADA\r\nASDAS\r\n\r\nASDASD\r\naSD\r\nasD\r\nasd",
-    "foto": "photo_2023-08-28_11-55-54 (2).jpg"
+    "foto": "photo_2023-08-28_11-55-54 (2).jpg",
+    "fecha_retiro": "21-08-2023"
   },
   {
     "id": 1002,
     "fecha_ingreso": "21-08-2023",
     "nombre_cliente": "BENJAMIN ISAIAS",
-    "telefono": "3364888888",
-    "tipo_equipo": "NOTEBOOK",
+    "telefono": "3364222222",
+    "tipo_equipo": "PC DE ESCRITORIO",
     "marca": "GENERICA",
-    "modelo": "CORE I3 8GB DISCO 500",
-    "numero_serie": "SIN SERIE",
+    "modelo": "CORE I3 4100 8GB RAM DISCO 2TB",
+    "numero_serie": "123546",
     "accesorios": "NO",
-    "tareas": "NO INICIA WINDOWS",
-    "estado": "PRESUPUESTADO",
-    "observaciones": "PRESUPUESTO $5000 REINSTALAR WINDOWS SE AVISO EL 12/12 ",
-    "foto": "foto1.jpg"
+    "tareas": "REVISAR",
+    "estado": "RETIRADO",
+    "observaciones": "pepepep",
+    "foto": "foto1.jpg",
+    "fecha_retiro": "21-08-2023"
   },
   {
     "id": 1003,
-    "fecha_ingreso": "22-08-2023",
     "nombre_cliente": "LUCILA ISAIAS",
     "telefono": "3364888888",
     "tipo_equipo": "NOTEBOOK",
@@ -40,9 +41,10 @@
     "numero_serie": "121231",
     "accesorios": "CARGADOR",
     "tareas": "REVISAR",
-    "estado": "PRESUPUESTADO_AVISADO",
+    "estado": "RETIRADO",
     "observaciones": "Observaciones 1",
-    "foto": "foto1.jpg"
+    "foto": "foto1.jpg",
+    "fecha_retiro": "21-08-2023"
   },
   {
     "id": 1004,
@@ -56,8 +58,9 @@
     "accesorios": "SDF",
     "tareas": "REVISAR",
     "estado": "PRESUPUESTADO_APROBADO",
-    "observaciones": "",
-    "foto": "foto1.jpg"
+    "observaciones": "presupuestado aprobado",
+    "foto": "foto1.jpg",
+    "fecha_retiro": ""
   },
   {
     "id": 1005,
@@ -72,7 +75,8 @@
     "tareas": "NO INICIA",
     "estado": "RECHAZADO_A_DEVOLVER",
     "observaciones": "Observaciones 1",
-    "foto": "foto1.jpg"
+    "foto": "foto1.jpg",
+    "fecha_retiro": ""
   },
   {
     "id": 1006,
@@ -87,7 +91,8 @@
     "tareas": "NO DA IMAGEN",
     "estado": "REPARADO",
     "observaciones": "Observaciones 1",
-    "foto": "foto1.jpg"
+    "foto": "foto1.jpg",
+    "fecha_retiro": ""
   },
   {
     "id": 1007,
@@ -102,7 +107,8 @@
     "tareas": "REVISAR PUERTO DE JOYSTICK",
     "estado": "REPARADO_AVISADO",
     "observaciones": "Observaciones 1",
-    "foto": "foto1.jpg"
+    "foto": "foto1.jpg",
+    "fecha_retiro": ""
   },
   {
     "id": 1008,
@@ -117,7 +123,8 @@
     "tareas": "CAMBIAR TONER",
     "estado": "REVISAR",
     "observaciones": "",
-    "foto": "foto1.jpg"
+    "foto": "foto1.jpg",
+    "fecha_retiro": ""
   },
   {
     "id": 1009,
@@ -132,7 +139,8 @@
     "tareas": "REVISAR NO SE VE",
     "estado": "INGRESADO",
     "observaciones": "SIN CABLES",
-    "foto": "photo_2023-08-28_11-56-44.jpg"
+    "foto": "photo_2023-08-28_11-56-44.jpg",
+    "fecha_retiro": ""
   },
   {
     "id": 1010,
@@ -145,9 +153,10 @@
     "numero_serie": "123456",
     "accesorios": "NO",
     "tareas": "REVISAR",
-    "estado": "LLAMAR",
+    "estado": "RETIRADO",
     "observaciones": "ENGANCHA LA CINTA",
-    "foto": "photo_2023-08-28_11-55-54.jpg"
+    "foto": "photo_2023-08-28_11-55-54.jpg",
+    "fecha_retiro": "29/8/2023"
   },
   {
     "id": 1011,
@@ -162,7 +171,8 @@
     "tareas": "REVISAR",
     "estado": "INGRESADO",
     "observaciones": "TIENE PORTAPATENTES REBATIBLE",
-    "foto": "a6083f224c5d9a036fb918b9ed5e7e47"
+    "foto": "a6083f224c5d9a036fb918b9ed5e7e47",
+    "fecha_retiro": ""
   },
   {
     "id": 1012,
@@ -175,13 +185,13 @@
     "numero_serie": "NO POSEE",
     "accesorios": "NO",
     "tareas": "REVISAR",
-    "estado": "INGRESADO",
+    "estado": "RETIRADO",
     "observaciones": "",
-    "foto": "24385d510a95faf5af3c20b00022cc75"
+    "foto": "24385d510a95faf5af3c20b00022cc75",
+    "fecha_retiro": "29/8/2023"
   },
   {
     "id": 1013,
-    "fecha_ingreso": "27-08-2023",
     "nombre_cliente": "JOSE OMAR RUBIES",
     "telefono": "33645454848",
     "tipo_equipo": "NOTEBOOK",
@@ -190,9 +200,10 @@
     "numero_serie": "CS265656565",
     "accesorios": "NO",
     "tareas": "REVISAR",
-    "estado": "INGRESADO",
+    "estado": "RETIRADO",
     "observaciones": "",
-    "foto": "60b0b0226a259a0051b603eee9e366d0"
+    "foto": "60b0b0226a259a0051b603eee9e366d0",
+    "fecha_retiro": "29/8/2023"
   },
   {
     "id": 1014,
@@ -207,7 +218,8 @@
     "tareas": "52525252",
     "estado": "RETIRADO",
     "observaciones": "525252",
-    "foto": ""
+    "foto": "",
+    "fecha_retiro": "21-08-2023"
   },
   {
     "id": 1015,
@@ -222,7 +234,8 @@
     "tareas": "53535353",
     "estado": "INGRESADO",
     "observaciones": "53535353",
-    "foto": "ab37b06d3a853f9b3b2b787a77af2c90"
+    "foto": "ab37b06d3a853f9b3b2b787a77af2c90",
+    "fecha_retiro": ""
   },
   {
     "id": 1016,
@@ -237,7 +250,8 @@
     "tareas": "888888888888",
     "estado": "INGRESADO",
     "observaciones": "888888888888",
-    "foto": "3db8173be24f4033b132311e2eb67607"
+    "foto": "3db8173be24f4033b132311e2eb67607",
+    "fecha_retiro": ""
   },
   {
     "id": 1017,
@@ -252,11 +266,11 @@
     "tareas": "90",
     "estado": "INGRESADO",
     "observaciones": "90",
-    "foto": ""
+    "foto": "",
+    "fecha_retiro": ""
   },
   {
     "id": 1018,
-    "fecha_ingreso": "28-08-2023",
     "nombre_cliente": "PRUEBA 999",
     "telefono": "9999999",
     "tipo_equipo": "9999",
@@ -265,9 +279,10 @@
     "numero_serie": "9999",
     "accesorios": "9999",
     "tareas": "9999",
-    "estado": "INGRESADO",
+    "estado": "RETIRADO",
     "observaciones": "9999",
-    "foto": "21f26b1e06a4bac75e8ac24acd52e591"
+    "foto": "21f26b1e06a4bac75e8ac24acd52e591",
+    "fecha_retiro": "29/8/2023"
   },
   {
     "id": 1019,
@@ -282,6 +297,7 @@
     "tareas": "1000",
     "estado": "INGRESADO",
     "observaciones": "10000",
-    "foto": "60fcbe7127bc9d44e665b6b135e379d0"
+    "foto": "60fcbe7127bc9d44e665b6b135e379d0",
+    "fecha_retiro": ""
   }
 ]

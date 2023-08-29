@@ -78,10 +78,15 @@ h4  {
   padding-top: 5px;
   border-top: 1px dashed #ccc;
 }
-
-.delete-btn {
+/* .edit-btn {
   margin-left: 10px;
 }
+.print-btn {
+  margin-left: 10px;
+}
+.delete-btn {
+  margin-left: 10px;
+} */
 
 .fullscreen-image {
   display: none;

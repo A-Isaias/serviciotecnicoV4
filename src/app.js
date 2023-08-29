@@ -98,7 +98,7 @@ app.get('/edit/:id', (req, res) => {
     res.render('edit', { servicio });
 });
 
-app.post('/update/:id', (req, res) => {
+app.post('/update/:id', upload.single('foto'), (req, res) => {
     const id = parseInt(req.params.id);
 
     const archivoJSON = fs.readFileSync(path.join(__dirname, 'servicios.json'), 'utf-8');
@@ -107,8 +107,8 @@ app.post('/update/:id', (req, res) => {
     const servicioIndex = servicios.findIndex(servicio => servicio.id === id);
 
     if (servicioIndex !== -1) {
-        servicios[servicioIndex] = {
-            id: id,
+        const updatedServicio = {
+            ...servicios[servicioIndex], // Mantener los valores existentes
             nombre_cliente: req.body.nombre_cliente,
             telefono: req.body.telefono,
             tipo_equipo: req.body.tipo_equipo,
@@ -119,7 +119,6 @@ app.post('/update/:id', (req, res) => {
             tareas: req.body.tareas,
             estado: req.body.estado,
             observaciones: req.body.observaciones || "",
-            foto: servicios[servicioIndex].foto // Mantener la foto existente
         };
 
         // Manejar la carga de una nueva foto si se proporciona
@@ -131,16 +130,26 @@ app.post('/update/:id', (req, res) => {
                 if (err) {
                     console.error('Error al cargar la nueva foto:', err);
                 } else {
-                    servicios[servicioIndex].foto = nuevaFotoNombre; // Actualizar la foto si se cargó exitosamente
+                    updatedServicio.foto = nuevaFotoNombre; // Actualizar la foto si se cargó exitosamente
                 }
             });
         }
+
+        // Agregar la fecha de retiro si el estado es "RETIRADO"
+        if (req.body.estado === "RETIRADO") {
+            updatedServicio.fecha_retiro = req.body.fecha_retiro || req.body.current_date;
+        } else {
+            updatedServicio.fecha_retiro = ""; // Limpiar la fecha de retiro
+        }
+
+        servicios[servicioIndex] = updatedServicio;
 
         fs.writeFileSync(path.join(__dirname, 'servicios.json'), JSON.stringify(servicios, null, 2));
     }
 
     res.redirect('/');
 });
+
 
 
 app.post('/search', (req, res) => {
