@@ -146,28 +146,34 @@ app.post('/update/:id', (req, res) => {
 app.post('/search', (req, res) => {
     const searchId = parseInt(req.body.searchId);
     const searchName = req.body.searchName.toLowerCase();
+    const selectedEstado = req.body.searchEstado; // Obtén el estado seleccionado
 
     const archivoJSON = fs.readFileSync(path.join(__dirname, 'servicios.json'), 'utf-8');
     const servicios = JSON.parse(archivoJSON);
 
-    let searchResults = [];
+    let searchResults = servicios;
+
+    if (selectedEstado === 'PENDIENTE') {
+        searchResults = servicios.filter(servicio => servicio.estado !== 'RETIRADO');
+    } else if (selectedEstado === 'RETIRADO') {
+        searchResults = servicios.filter(servicio => servicio.estado === 'RETIRADO');
+    }
 
     if (!isNaN(searchId)) {
-        // Si se proporciona un ID válido, buscar por ID
-        const resultById = servicios.find(servicio => servicio.id === searchId);
+        const resultById = searchResults.find(servicio => servicio.id === searchId);
         if (resultById) {
-            searchResults.push(resultById);
+            searchResults = [resultById];
+        } else {
+            searchResults = [];
         }
     } else if (searchName.trim() !== '') {
-        // Si se proporciona un nombre no vacío, buscar por nombre
-        searchResults = servicios.filter(servicio =>
+        searchResults = searchResults.filter(servicio =>
             servicio.nombre_cliente.toLowerCase().includes(searchName)
         );
     }
 
     res.render('search', { results: searchResults });
 });
-
 
 app.get('/search', (req, res) => {
     res.render('search', { results: [] }); // Pasamos una lista vacía inicialmente

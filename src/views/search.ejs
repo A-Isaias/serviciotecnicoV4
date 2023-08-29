@@ -12,7 +12,7 @@
     <div class="container mt-4">
         <!-- Título y botones fijos -->
         <div class="fixed-header">
-            <h1>Buscar en la base de datos</h1>
+            <h3>Buscar en la base de datos</h3>
             <div class="btn-group">
                 <button class="btn btn-success"><a href="/new" class="text-white">Nueva Orden</a></button>
                 <!-- <button class="btn btn-warning"><a href="/search" class="text-white">Buscar Orden</a></button> -->
@@ -22,22 +22,31 @@
         </div>
 
         <!-- Formulario de búsqueda -->
-        <form id="searchForm" method="POST" action="/search">
-            <div class="form-group">
-                <label for="searchId">Buscar por ID:</label>
-                <input type="number" id="searchId" name="searchId" class="form-control">
-            </div>
-            <div class="form-group">
-                <label for="searchName">Buscar por nombre y apellido:</label>
-                <input type="text" id="searchName" name="searchName" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-primary">Buscar</button>
-        </form>
+<form id="searchForm" method="POST" action="/search">
+    <div class="form-group">
+        <label for="searchId">Buscar por ID:</label>
+        <input type="number" id="searchId" name="searchId" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="searchName">Buscar por nombre y apellido:</label>
+        <input type="text" id="searchName" name="searchName" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="searchEstado">Filtrar por estado:</label>
+        <select id="searchEstado" name="searchEstado" class="form-control">
+            <option value="">Todos los Estados</option>
+            <option value="PENDIENTE">Pendientes</option>
+            <option value="RETIRADO">Retirado</option>
+            <!-- Otras opciones de estado aquí -->
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Buscar</button>
+</form>
 
         <!-- Resultados de la búsqueda -->
         <div id="searchResult">
             <% if (results && results.length> 0) { %>
-                <h2>Resultados de la búsqueda:</h2>
+                <h3>Resultados de la búsqueda:</h3>
                 <div class="row">
                     <% results.forEach(result=> { %>
                         <div class="col-md-4">

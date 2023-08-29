@@ -11,30 +11,38 @@
 <body>
     <header>
     <!-- Título "ORDENES PENDIENTES" -->
-    <h4 id="titulo">BASE DE DATOS</h4>
+    <!-- <h4 id="titulo">BASE DE DATOS</h4> -->
 
     <!-- Tabla para mostrar las órdenes -->
-
+    <div class="fixed-header">
+        <h3 id="titulo">Vista completa de base de datos</h3>
+        <div class="staticButtons">
+            <div class="btn-group">
+                <button class="btn btn-success"><a href="/new" class="text-white">Nueva Orden</a></button>
+                <button class="btn btn-warning"><a href="/search" class="text-white">Buscar Orden</a></button>
+                <a href="/" class="btn btn-primary">Volver al Inicio</a>
+            </div>
+        </div>
+    </div>    
     <div class="float-right">
         <div class="btn-group">
-            <button class="btn btn-success"><a href="/new" class="text-white">Nueva Orden</a></button>
-            <button class="btn btn-warning"><a href="/search" class="text-white">Buscar Orden</a></button>
             <a href="#titulo" class="btn btn-secondary">Volver Arriba</a>
             <a href="/" class="btn btn-primary">Volver al Inicio</a>
         </div>
     </div>
+    
     </header>
     <table class="table" id="table">
         <thead class="sticky-header">
             <tr>
-                <th>ID</th>
-                <th>Fecha Ingreso</th>
+                <th>Orden</th>
+                <th>Ingreso</th>
                 <th>Cliente</th>
                 <th>Teléfono</th>
-                <th>Tipo de Equipo</th>
+                <th>Tipo Equipo</th>
                 <th>Marca</th>
                 <th>Modelo</th>
-                <th>Número de Serie</th>
+                <th>N° de Serie</th>
                 <th>Accesorios</th>
                 <th>Tareas</th>
                 <th>Estado</th>

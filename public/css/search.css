@@ -1,19 +1,20 @@
 /* Estilos personalizados para la vista search */
-
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  /*font-size: 14px; /* Ajusta el tamaño de fuente base */
+}
+
+label {
+  font-size: 16px; /* Reduzca el tamaño de fuente de las etiquetas */
+  font-weight: bold;
 }
 
 .container {
   margin-top: 20px;
 }
 
-label {
-  font-size: 18px;
-  font-weight: bold;
-}
 .fixed-header {
   position: fixed;
   top: 0;
@@ -40,30 +41,42 @@ label {
   margin-top: 20px;
 }
 
-.fixed-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
+/* Ajusta el tamaño de las cajas de resultados */
+.card {
+  width: 100%; /* Para que quepan 4 en una fila, ajusta este valor según tus necesidades */
+  margin-right: 1%; /* Espacio mínimo entre cajas */
+  margin-bottom: 10px;
+  display: inline-block;
+  vertical-align: top;
 }
 
-.order {
-  padding: 10px;
+/* Reduce el tamaño de fuente en las cajas */
+/* .card-title,
+.card-text {
+  font-size: 12px;
+} */
+
+/* Reduce el espacio entre las cajas */
+.row {
+  margin-right: -1%; /* Asegura que no haya espacio extra a la derecha */
+}
+.order { 
+   padding: 1px;
   border: 1px solid #ccc;
   margin-bottom: 10px;
   cursor: pointer;
 }
 
 .order-summary {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
 }
 
 .order-details {
   margin-top: 10px;
-  padding-top: 10px;
+  padding-top: 5px;
   border-top: 1px dashed #ccc;
-}
+} 
 
 .delete-btn {
   margin-left: 10px;

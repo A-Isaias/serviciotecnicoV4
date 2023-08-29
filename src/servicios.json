@@ -239,7 +239,7 @@
     "observaciones": "888888888888",
     "foto": "3db8173be24f4033b132311e2eb67607"
   },
-    {
+  {
     "id": 1017,
     "fecha_ingreso": "28-08-2023",
     "nombre_cliente": "PRUEBA 90",
@@ -268,5 +268,20 @@
     "estado": "INGRESADO",
     "observaciones": "9999",
     "foto": "21f26b1e06a4bac75e8ac24acd52e591"
+  },
+  {
+    "id": 1019,
+    "fecha_ingreso": "29-08-2023",
+    "nombre_cliente": "PRUEBA 1000",
+    "telefono": "1000",
+    "tipo_equipo": "1000",
+    "marca": "1000",
+    "modelo": "1000",
+    "numero_serie": "1000",
+    "accesorios": "1000",
+    "tareas": "1000",
+    "estado": "INGRESADO",
+    "observaciones": "10000",
+    "foto": "60fcbe7127bc9d44e665b6b135e379d0"
   }
 ]
