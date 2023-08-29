@@ -226,6 +226,7 @@
   },
   {
     "id": 1016,
+    "fecha_ingreso": "28-08-2023",
     "nombre_cliente": "PRUEBA 88",
     "telefono": "8888888",
     "tipo_equipo": "888888",
@@ -238,22 +239,9 @@
     "observaciones": "888888888888",
     "foto": "3db8173be24f4033b132311e2eb67607"
   },
-  {
-    "id": 1016,
-    "nombre_cliente": "PRUEBA 88",
-    "telefono": "8888888",
-    "tipo_equipo": "888888",
-    "marca": "8888888",
-    "modelo": "888888",
-    "numero_serie": "888888888888",
-    "accesorios": "888888888",
-    "tareas": "888888888888",
-    "estado": "INGRESADO",
-    "observaciones": "888888888888",
-    "foto": "df7659668d3ebbd2952a992df6b3abc9"
-  },
-  {
+    {
     "id": 1017,
+    "fecha_ingreso": "28-08-2023",
     "nombre_cliente": "PRUEBA 90",
     "telefono": "90",
     "tipo_equipo": "90",

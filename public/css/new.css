@@ -6,6 +6,9 @@ body {
   padding: 0;
 }
 
+h1 {
+  font-size: 25px;
+}
 .container {
   margin-top: 1px; /* Ajusta este valor según sea necesario */
 }
@@ -38,7 +41,7 @@ label {
 
 /* Espaciado para los campos de formulario */
 .form-control {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 /* Ajustes de estilo para el botón de cargar servicio */

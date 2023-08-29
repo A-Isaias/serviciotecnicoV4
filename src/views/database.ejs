@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Servicio Técnico</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- <link rel="stylesheet" href="/css/index.css" type="text/css"> -->
+    <link rel="stylesheet" href="/css/database.css" type="text/css"> -->
 </head>
 
 <body>
@@ -13,15 +13,17 @@
     <!-- <h4>BASE DE DATOS</h4> -->
 
     <!-- Tabla para mostrar las órdenes -->
-    <div class="float-right">
+
+    <div class="float-right" id="botones">
         <div class="btn-group">
             <button class="btn btn-success"><a href="/new" class="text-white">Nueva Orden</a></button>
             <button class="btn btn-warning"><a href="/search" class="text-white">Buscar Orden</a></button>
             <a href="/" class="btn btn-primary">Volver al Inicio</a>
         </div>
     </div>
-    <table class="table">
-        <thead>
+
+    <table class="table" id="table">
+        <thead class="sticky-header">
             <tr>
                 <th>ID</th>
                 <th>Fecha Ingreso</th>
@@ -43,32 +45,36 @@
         </tbody>
     </table>
     </div>
+    <div class="boton-inicio-flotante">
+        <div class="btn-group">
+            <a href="#botones" class="btn btn-secondary">Volver Arriba</a>
+        </div>
 
 
-    <!-- <div class="fullscreen-image" id="fullscreenImageContainer">
+        <!-- <div class="fullscreen-image" id="fullscreenImageContainer">
         <img src="" alt="Fullscreen Image" id="fullscreenImage">
     </div> -->
 
-    <script>
-        // Código JavaScript
-        const ordersContainer = document.getElementById("orders-container");
-        const fullscreenImageContainer = document.getElementById("fullscreenImageContainer");
-        const fullscreenImage = document.getElementById("fullscreenImage");
+        <script>
+            // Código JavaScript
+            const ordersContainer = document.getElementById("orders-container");
+            const fullscreenImageContainer = document.getElementById("fullscreenImageContainer");
+            const fullscreenImage = document.getElementById("fullscreenImage");
 
-        // Carga los datos del archivo JSON
-        fetch('/servicios')
-            .then(response => response.json())
-            .then(ordersData => {
-                displayOrders(ordersData);
-            })
-            .catch(error => console.error('Error al cargar los datos:', error));
+            // Carga los datos del archivo JSON
+            fetch('/servicios')
+                .then(response => response.json())
+                .then(ordersData => {
+                    displayOrders(ordersData);
+                })
+                .catch(error => console.error('Error al cargar los datos:', error));
 
-        // Función para mostrar las órdenes en la tabla
-        function displayOrders(ordersData) {
-            ordersContainer.innerHTML = "";
-            ordersData.forEach(order => {
-                const orderRow = document.createElement("tr");
-                orderRow.innerHTML = `
+            // Función para mostrar las órdenes en la tabla
+            function displayOrders(ordersData) {
+                ordersContainer.innerHTML = "";
+                ordersData.forEach(order => {
+                    const orderRow = document.createElement("tr");
+                    orderRow.innerHTML = `
                     <td>${order.id}</td>
                     <td>${order.fecha_ingreso}</td>
                     <td>${order.nombre_cliente}</td>
@@ -88,29 +94,29 @@
                     </td>
                 `;
 
-                ordersContainer.appendChild(orderRow);
-            });
-
-            // Agregar un controlador de evento para el botón de borrar
-            const deleteButtons = document.querySelectorAll('.delete-btn');
-            deleteButtons.forEach(button => {
-                button.addEventListener('click', async () => {
-                    const orderId = button.getAttribute('data-order-id');
-                    const response = await fetch(`/delete/${orderId}`, { method: 'POST' });
-                    if (response.ok) {
-                        // Recargar la página después de borrar
-                        location.reload();
-                    }
+                    ordersContainer.appendChild(orderRow);
                 });
-            });
 
-            // Controlador de evento para cerrar la imagen en pantalla completa
-            fullscreenImageContainer.addEventListener("click", () => {
-                fullscreenImageContainer.style.display = "none";
-                fullscreenImage.src = "";
-            });
-        }
-    </script>
+                // Agregar un controlador de evento para el botón de borrar
+                const deleteButtons = document.querySelectorAll('.delete-btn');
+                deleteButtons.forEach(button => {
+                    button.addEventListener('click', async () => {
+                        const orderId = button.getAttribute('data-order-id');
+                        const response = await fetch(`/delete/${orderId}`, { method: 'POST' });
+                        if (response.ok) {
+                            // Recargar la página después de borrar
+                            location.reload();
+                        }
+                    });
+                });
+
+                // Controlador de evento para cerrar la imagen en pantalla completa
+                fullscreenImageContainer.addEventListener("click", () => {
+                    fullscreenImageContainer.style.display = "none";
+                    fullscreenImage.src = "";
+                });
+            }
+        </script>
 </body>
 
 </html>

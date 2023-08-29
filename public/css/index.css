@@ -7,13 +7,23 @@ body {
 }
 
 .container {
-  margin-top: 100px; /* Ajusta este valor según sea necesario */
+  margin-top: 10px; /* Ajusta este valor según sea necesario */
 }
 
+/*texto principal*/
+h1 {
+  font-size: 25px;
+}
+
+h3 {
+  font-size: 20px;
+}
+/* texto ordenes pendientes */
 h4  {
   color: black;
-  font-size :25px ;
+  font-size :20px ;
   background-color: lightgray;
+  padding-top: 10px;
 }
 
 .fixed-header {
@@ -34,17 +44,17 @@ h4  {
 
 /* Ajustamos el margen superior del contenido para evitar que se solape con la barra fija */
 #newForm {
-  margin-top: 20px; /* Ajusta este valor según sea necesario */
+  margin-top: 5px; /* Ajusta este valor según sea necesario */
 }
 
 /* Espaciado para los campos de formulario */
 .form-control {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 /* Estilo para el contenedor de contenido */
 .content-container {
-  margin-top: 100px; /* Ajusta según la altura del encabezado fijo */
+  margin-top: 10px; /* Ajusta según la altura del encabezado fijo */
 }
 
 /* Mantener el contenedor superior fijo */
@@ -56,11 +66,13 @@ h4  {
   cursor: pointer;
 }
 
+/*texto dentro del resumen de ordenes pendientes*/
 .order-summary {
-  font-size: 18px;
+  font-size: 15px;
   font-weight: bold;
 }
 
+/*texto extendido del resumen de ordenes*/
 .order-details {
   margin-top: 10px; /*DISTANCIA SUPERIOR PARA QUE NO LO TAPE EL HEADER*/
   padding-top: 5px;
