@@ -57,10 +57,10 @@
     "numero_serie": "121231",
     "accesorios": "SDF",
     "tareas": "REVISAR",
-    "estado": "PRESUPUESTADO_APROBADO",
+    "estado": "RETIRADO",
     "observaciones": "presupuestado aprobado",
     "foto": "foto1.jpg",
-    "fecha_retiro": ""
+    "fecha_retiro": "29/8/2023"
   },
   {
     "id": 1005,
@@ -299,5 +299,53 @@
     "observaciones": "10000",
     "foto": "60fcbe7127bc9d44e665b6b135e379d0",
     "fecha_retiro": ""
+  },
+  {
+    "id": 1020,
+    "fecha_ingreso": "29-08-2023",
+    "nombre_cliente": "LAUTARO ISAIAS",
+    "telefono": "154525259",
+    "tipo_equipo": "NOTEBOOK ",
+    "marca": "HP",
+    "modelo": "DV7",
+    "numero_serie": "4543534534",
+    "accesorios": "CARGADOR",
+    "tareas": "REVISAR",
+    "estado": "RETIRADO",
+    "observaciones": "ASDA",
+    "foto": "036df7804da11109748671879fdb00c4",
+    "fecha_retiro": "29/8/2023"
+  },
+  {
+    "id": 1021,
+    "fecha_ingreso": "29-08-2023",
+    "nombre_cliente": "ROGELIO REFRIGERIO",
+    "telefono": "11455555656",
+    "tipo_equipo": "IMPRESORA",
+    "marca": "HP",
+    "modelo": "1200",
+    "numero_serie": "4546545",
+    "accesorios": "TRANSFORMADOR",
+    "tareas": "REVISAR",
+    "estado": "RETIRADO",
+    "observaciones": "HP INGRESADO",
+    "fecha_retiro": "29/8/2023",
+    "foto": "a18cbfc881f0cd9f386f9ef92a8a42f2"
+  },
+  {
+    "id": 1022,
+    "fecha_ingreso": "29-08-2023",
+    "nombre_cliente": "ABEL MENDOZA",
+    "telefono": "25115455678",
+    "tipo_equipo": "MONITOR",
+    "marca": "LG",
+    "modelo": "19BT4",
+    "numero_serie": "4564646",
+    "accesorios": "FUENTE",
+    "tareas": "REVISAR",
+    "estado": "INGRESADO",
+    "observaciones": "",
+    "fecha_retiro": "",
+    "foto": "2729addc1bcbbf6a9d99bcd81c9e5164"
   }
 ]

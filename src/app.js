@@ -64,6 +64,7 @@ app.post('/guardar-servicio', upload.single('foto'), (req, res) => {
             tareas: req.body.tareas,
             estado: req.body.estado,
             observaciones: req.body.observaciones || "",
+            fecha_retiro: "",
 
             // El campo "foto" ahora se manejará en req.file
             foto: req.file ? req.file.filename : "" // Usar req.file.filename para obtener el nombre del archivo

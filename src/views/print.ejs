@@ -70,6 +70,10 @@
                     <td><%= order.observaciones %></td>
                 </tr>
                 <tr>
+                    <th>Fecha de Retiro</th>
+                    <td><%= order.fecha_retiro ? order.fecha_retiro : "NO RETIRADO AUN" %></td>
+                </tr>
+                <tr>
                     <th>Foto</th>
                     <td>
                         <% if (order.foto) { %>
@@ -79,6 +83,7 @@
                         <% } %>
                     </td>
                 </tr>
+                
             </tbody>
         </table>
         <a href="/" class="btn btn-primary">Volver al Inicio</a>
