@@ -14,29 +14,38 @@
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
   } */
 
-  .boton-inicio-flotante {
+  /* .boton-inicio-flotante {
     position: fixed;
     top: 0;
     background-color: #f1f1f1;
-  }
-
+  } */
+header {
+  background-color: lightgray;
+  width: 100%;
+}
   .float-right {
-    position: sticky;
-    bottom: 0;
-    background-color: #f1f1f1;
+    position: fixed;
+    right:10px;
+    top: 0;
+    background-color:lightgray;
+    z-index: 999;
   }
 table {
     width: 100%;
     border: 1px solid #000;
  }
 
- /* table thead {
+table thead {
         position: sticky;
         top: 0;
-        background-color: #fff;
-}  */
+        background-color: lightgray;
+}  
 
-
+h4 {
+  
+  height: 50px;
+  width: 100%;
+}
 td {
     min-width: 1px;
     height: 1px;

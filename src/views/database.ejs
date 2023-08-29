@@ -5,23 +5,25 @@
     <meta charset="UTF-8">
     <title>Servicio Técnico</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/database.css" type="text/css"> -->
+    <link rel="stylesheet" href="/css/database.css" type="text/css">
 </head>
 
 <body>
+    <header>
     <!-- Título "ORDENES PENDIENTES" -->
-    <!-- <h4>BASE DE DATOS</h4> -->
+    <h4 id="titulo">BASE DE DATOS</h4>
 
     <!-- Tabla para mostrar las órdenes -->
 
-    <div class="float-right" id="botones">
+    <div class="float-right">
         <div class="btn-group">
             <button class="btn btn-success"><a href="/new" class="text-white">Nueva Orden</a></button>
             <button class="btn btn-warning"><a href="/search" class="text-white">Buscar Orden</a></button>
+            <a href="#titulo" class="btn btn-secondary">Volver Arriba</a>
             <a href="/" class="btn btn-primary">Volver al Inicio</a>
         </div>
     </div>
-
+    </header>
     <table class="table" id="table">
         <thead class="sticky-header">
             <tr>
@@ -45,12 +47,7 @@
         </tbody>
     </table>
     </div>
-    <div class="boton-inicio-flotante">
-        <div class="btn-group">
-            <a href="#botones" class="btn btn-secondary">Volver Arriba</a>
-        </div>
-
-
+    
         <!-- <div class="fullscreen-image" id="fullscreenImageContainer">
         <img src="" alt="Fullscreen Image" id="fullscreenImage">
     </div> -->
