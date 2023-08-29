@@ -10,7 +10,7 @@
     "accesorios": "NO",
     "tareas": "REVISAR",
     "estado": "RETIRADO",
-    "observaciones": "PANTALLA ASTILLADA",
+    "observaciones": "PANTALLA ASTILLADA\r\nASDAS\r\n\r\nASDASD\r\naSD\r\nasD\r\nasd",
     "foto": "photo_2023-08-28_11-55-54 (2).jpg"
   },
   {
@@ -23,7 +23,7 @@
     "numero_serie": "SIN SERIE",
     "accesorios": "NO",
     "tareas": "NO INICIA WINDOWS",
-    "estado": "INGRESADO",
+    "estado": "PRESUPUESTADO",
     "observaciones": "Observaciones 1",
     "foto": "foto1.jpg"
   },
@@ -37,7 +37,7 @@
     "numero_serie": "121231",
     "accesorios": "CARGADOR",
     "tareas": "REVISAR",
-    "estado": "INGRESADO",
+    "estado": "PRESUPUESTADO_AVISADO",
     "observaciones": "Observaciones 1",
     "foto": "foto1.jpg"
   },
@@ -51,7 +51,7 @@
     "numero_serie": "121231",
     "accesorios": "SDF",
     "tareas": "REVISAR",
-    "estado": "INGRESADO",
+    "estado": "PRESUPUESTADO_APROBADO",
     "observaciones": "",
     "foto": "foto1.jpg"
   },
@@ -65,7 +65,7 @@
     "numero_serie": "645465894",
     "accesorios": "NO",
     "tareas": "NO INICIA",
-    "estado": "INGRESADO",
+    "estado": "RECHAZADO_A_DEVOLVER",
     "observaciones": "Observaciones 1",
     "foto": "foto1.jpg"
   },
@@ -79,7 +79,7 @@
     "numero_serie": "4564812354",
     "accesorios": "FUENTE",
     "tareas": "NO DA IMAGEN",
-    "estado": "INGRESADO",
+    "estado": "REPARADO",
     "observaciones": "Observaciones 1",
     "foto": "foto1.jpg"
   },
@@ -93,7 +93,7 @@
     "numero_serie": "12415465",
     "accesorios": "DISK DRIVE 1541 + FUENTES+JOYSTICKS",
     "tareas": "REVISAR PUERTO DE JOYSTICK",
-    "estado": "INGRESADO",
+    "estado": "REPARADO_AVISADO",
     "observaciones": "Observaciones 1",
     "foto": "foto1.jpg"
   },
@@ -107,7 +107,7 @@
     "numero_serie": "4546565",
     "accesorios": "CABLE 220",
     "tareas": "CAMBIAR TONER",
-    "estado": "INGRESADO",
+    "estado": "REVISAR",
     "observaciones": "",
     "foto": "foto1.jpg"
   },
@@ -135,7 +135,7 @@
     "numero_serie": "123456",
     "accesorios": "NO",
     "tareas": "REVISAR",
-    "estado": "INGRESADO",
+    "estado": "LLAMAR",
     "observaciones": "ENGANCHA LA CINTA",
     "foto": "photo_2023-08-28_11-55-54.jpg"
   },
@@ -191,8 +191,22 @@
     "numero_serie": "52525252",
     "accesorios": "5252525",
     "tareas": "52525252",
-    "estado": "INGRESADO",
+    "estado": "RETIRADO",
     "observaciones": "525252",
     "foto": ""
+  },
+  {
+    "id": 1015,
+    "nombre_cliente": "PRUEBA 53",
+    "telefono": "535353535",
+    "tipo_equipo": "53535353",
+    "marca": "53535353",
+    "modelo": "53535353",
+    "numero_serie": "5353535",
+    "accesorios": "5353535",
+    "tareas": "53535353",
+    "estado": "INGRESADO",
+    "observaciones": "53535353",
+    "foto": "ab37b06d3a853f9b3b2b787a77af2c90"
   }
 ]

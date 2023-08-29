@@ -34,7 +34,7 @@ h4  {
 
 /* Ajustamos el margen superior del contenido para evitar que se solape con la barra fija */
 #newForm {
-  margin-top: 100px; /* Ajusta este valor según sea necesario */
+  margin-top: 20px; /* Ajusta este valor según sea necesario */
 }
 
 /* Espaciado para los campos de formulario */
