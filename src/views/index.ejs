@@ -115,8 +115,7 @@
             <br>
             <a href="/edit/${order.id}" class="btn btn-primary btn-sm edit-btn">Editar</a>
             <a href="/print/${order.id}" class="btn btn-secondary btn-sm print-btn">Imprimir</a>
-            <button class="btn btn-danger btn-sm delete-btn" data-order-id="${order.id}">Borrar</button>
-        </div>
+            </div>
     `;
 
         const orderSummary = orderElement.querySelector(".order-summary");
@@ -148,16 +147,16 @@
         ordersContainer.appendChild(orderElement);
     });
 
-    const deleteButtons = document.querySelectorAll('.delete-btn');
-    deleteButtons.forEach(button => {
-        button.addEventListener('click', async () => {
-            const orderId = button.getAttribute('data-order-id');
-            const response = await fetch(`/delete/${orderId}`, { method: 'POST' });
-            if (response.ok) {
-                location.reload();
-            }
-        });
-    });
+    // const deleteButtons = document.querySelectorAll('.delete-btn');
+    // deleteButtons.forEach(button => {
+    //     button.addEventListener('click', async () => {
+    //         const orderId = button.getAttribute('data-order-id');
+    //         const response = await fetch(`/delete/${orderId}`, { method: 'POST' });
+    //         if (response.ok) {
+    //             location.reload();
+    //         }
+    //     });
+    // });
 
     fullscreenImageContainer.addEventListener("click", () => {
         fullscreenImageContainer.style.display = "none";
