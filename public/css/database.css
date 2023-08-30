@@ -80,23 +80,17 @@ td {
   font-size: small;
 }
 
+.bold-cell {
+  font-weight: bold;
+  font-size: medium;
+}
+
+.colored-cell {
+  color: black; 
+}
 .same-size-btn {
   width: 100px;
   /* Cambia este valor al ancho deseado */
 }
 
-/* table {
-    border: none;
-    width: 50%;
-    border-collapse: collapse;
-}
 
-td { 
-    padding: 5px 10px;
-    text-align: left;
-    border: 1px solid #999;
-}
-
-tr:nth-child(1) {
-    background: #dedede;
-} */

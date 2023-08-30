@@ -72,6 +72,12 @@ h4  {
   font-weight: bold;
 }
 
+/*clase de la palabra orden dentro del sumario de ordenes*/
+.highlight {
+  color: white; 
+  background-color: black;
+
+}
 /*texto extendido del resumen de ordenes*/
 .order-details {
   margin-top: 10px; /*DISTANCIA SUPERIOR PARA QUE NO LO TAPE EL HEADER*/
