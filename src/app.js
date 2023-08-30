@@ -203,7 +203,7 @@ app.post('/delete/:id', (req, res) => {
         fs.writeFileSync(path.join(__dirname, 'servicios.json'), JSON.stringify(servicios, null, 2));
     }
 
-    res.redirect('/search');
+    res.redirect('/');
 });
 
 // //funcion para confirmar la eliminacion de registros

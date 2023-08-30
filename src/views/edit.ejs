@@ -113,7 +113,7 @@
                         <a href="/print/<%= servicio.id %>" class="btn btn-secondary">Ir a la vista de impresión</a>
                         <a href="/" class="btn btn-secondary">Cancelar</a>
                         <form action="/delete/<%= servicio.id %>" method="POST" id="delete-form">
-                            <button type="button" class="btn btn-danger" onclick="confirmDelete()">Borrar este registro</button>
+                            <button type="button" class="btn btn-danger" onclick="confirmDelete('<%= servicio.id %>')">Borrar este registro</button>
                         </form>
                     </div>
                 </form>
@@ -121,11 +121,20 @@
         </div>
     </div>
     <script>
-        window.confirmDelete = function() {
-            if (confirm("¿Estás seguro de que quieres borrar este registro?")) {
-                document.getElementById("delete-form").submit();
-            }
+       
+        // Función de confirmación de borrado
+        function confirmDelete(orderId) {
+                if (confirm(`Estás seguro de que quieres borrar la orden: ${orderId}`)) {
+                    fetch(`/delete/${orderId}`, { method: 'POST' })
+    .then(response => {
+        if (response.ok) {
+            // Redirigir al menú principal
+            window.location.href = '/';
         }
+    })
+    .catch(error => console.error('Error al borrar el registro:', error));
+                }
+            }
     </script>
     
 </body>

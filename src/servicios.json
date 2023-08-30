@@ -10,7 +10,7 @@
     "numero_serie": "123546",
     "accesorios": "NO",
     "tareas": "REVISAR",
-    "estado": "INGRESADO",
+    "estado": "PRESUPUESTADO",
     "observaciones": "PANTALLA ASTILLADA\r\nASDAS\r\n\r\nASDASD\r\naSD\r\nasD\r\nasd",
     "foto": "photo_2023-08-28_11-55-54 (2).jpg",
     "fecha_retiro": ""
@@ -26,10 +26,10 @@
     "numero_serie": "123546",
     "accesorios": "NO",
     "tareas": "REVISAR",
-    "estado": "RETIRADO",
+    "estado": "INGRESADO",
     "observaciones": "pepepep",
     "foto": "foto1.jpg",
-    "fecha_retiro": "21-08-2023"
+    "fecha_retiro": ""
   },
   {
     "id": 1003,
@@ -204,38 +204,6 @@
     "estado": "RETIRADO",
     "observaciones": "",
     "foto": "60b0b0226a259a0051b603eee9e366d0",
-    "fecha_retiro": "29/8/2023"
-  },
-  {
-    "id": 1014,
-    "fecha_ingreso": "28-08-2023",
-    "nombre_cliente": "BORRAR14",
-    "telefono": "52525252",
-    "tipo_equipo": "52525252",
-    "marca": "525252",
-    "modelo": "525252",
-    "numero_serie": "52525252",
-    "accesorios": "5252525",
-    "tareas": "52525252",
-    "estado": "RETIRADO",
-    "observaciones": "525252",
-    "foto": "",
-    "fecha_retiro": "21-08-2023"
-  },
-  {
-    "id": 1015,
-    "fecha_ingreso": "23-08-2023",
-    "nombre_cliente": "BORRAR15",
-    "telefono": "3364529859",
-    "tipo_equipo": "NOTEBOOK ",
-    "marca": "HP",
-    "modelo": "PC XT 8088",
-    "numero_serie": "121231",
-    "accesorios": "SDF",
-    "tareas": "REVISAR",
-    "estado": "RETIRADO",
-    "observaciones": "presupuestado aprobado",
-    "foto": "foto1.jpg",
     "fecha_retiro": "29/8/2023"
   }
 ]
