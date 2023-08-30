@@ -95,8 +95,8 @@
                                         <p><strong>Foto:</strong> <%= result.foto ? '<img src="/img/' + result.foto + '" alt="Foto" width="200" class="expand-image">' : "N/A" %></p>
                                         <a href="/edit/<%= result.id %>" class="btn btn-primary">Editar</a>
                                         
-                                        <form action="/delete/<%= result.id %>" method="POST" style="display: inline;">
-                                            <button type="submit" class="btn btn-danger">Borrar</button>
+                                        <form id="deleteForm-<%= result.id %>" action="/delete/<%= result.id %>" method="POST" style="display: inline;">
+                                            <button type="button" class="btn btn-danger delete-button" data-id="<%= result.id %>">Borrar</button>
                                         </form>
                                         <a href="/print/<%= result.id %>" class="btn btn-secondary">Imprimir</a>
                                     </div>
@@ -119,6 +119,20 @@
                     expandedDetails.style.display = expandedDetails.style.display === 'none' ? 'block' : 'none';
                 });
             });
+          // Agrega un controlador de evento a los botones "Borrar".
+        document.addEventListener("DOMContentLoaded", function() {
+        const deleteButtons = document.querySelectorAll(".delete-button");
+
+        deleteButtons.forEach(button => {
+            button.addEventListener("click", function() {
+                const id = this.getAttribute("data-id");
+                if (confirm('¿Está seguro de que quiere eliminar el registro ' + id + '?')) {
+                    const form = document.getElementById("deleteForm-" + id);
+                    form.submit();
+                }
+            });
+        });
+    });
         </script>
 </body>
 

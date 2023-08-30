@@ -206,6 +206,11 @@ app.post('/delete/:id', (req, res) => {
     res.redirect('/search');
 });
 
+// //funcion para confirmar la eliminacion de registros
+// app.locals.confirmDelete = function(id) {
+//     return `return confirm('¿Está seguro de que quiere eliminar el registro ${id}?');`;
+// };
+
 app.get('/print/:id', (req, res) => {
     const id = parseInt(req.params.id);
 

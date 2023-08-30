@@ -10,10 +10,10 @@
     "numero_serie": "123546",
     "accesorios": "NO",
     "tareas": "REVISAR",
-    "estado": "RETIRADO",
+    "estado": "INGRESADO",
     "observaciones": "PANTALLA ASTILLADA\r\nASDAS\r\n\r\nASDASD\r\naSD\r\nasD\r\nasd",
     "foto": "photo_2023-08-28_11-55-54 (2).jpg",
-    "fecha_retiro": "21-08-2023"
+    "fecha_retiro": ""
   },
   {
     "id": 1002,
@@ -33,6 +33,7 @@
   },
   {
     "id": 1003,
+    "fecha_ingreso": "21-08-2023",
     "nombre_cliente": "LUCILA ISAIAS",
     "telefono": "3364888888",
     "tipo_equipo": "NOTEBOOK",
@@ -41,10 +42,10 @@
     "numero_serie": "121231",
     "accesorios": "CARGADOR",
     "tareas": "REVISAR",
-    "estado": "RETIRADO",
+    "estado": "INGRESADO",
     "observaciones": "Observaciones 1",
     "foto": "foto1.jpg",
-    "fecha_retiro": "21-08-2023"
+    "fecha_retiro": ""
   },
   {
     "id": 1004,
@@ -61,22 +62,6 @@
     "observaciones": "presupuestado aprobado",
     "foto": "foto1.jpg",
     "fecha_retiro": "29/8/2023"
-  },
-  {
-    "id": 1005,
-    "fecha_ingreso": "23-08-2023",
-    "nombre_cliente": "OCTAVIO SALBADOR",
-    "telefono": "3364525252",
-    "tipo_equipo": "NOTEBOOK",
-    "marca": "ACER",
-    "modelo": "ASPÍRE 5571",
-    "numero_serie": "645465894",
-    "accesorios": "NO",
-    "tareas": "NO INICIA",
-    "estado": "RECHAZADO_A_DEVOLVER",
-    "observaciones": "Observaciones 1",
-    "foto": "foto1.jpg",
-    "fecha_retiro": ""
   },
   {
     "id": 1006,
@@ -137,7 +122,7 @@
     "numero_serie": "56564",
     "accesorios": "NO",
     "tareas": "REVISAR NO SE VE",
-    "estado": "INGRESADO",
+    "estado": "PRESUPUESTADO_AVISADO",
     "observaciones": "SIN CABLES",
     "foto": "photo_2023-08-28_11-56-44.jpg",
     "fecha_retiro": ""
@@ -157,22 +142,6 @@
     "observaciones": "ENGANCHA LA CINTA",
     "foto": "photo_2023-08-28_11-55-54.jpg",
     "fecha_retiro": "29/8/2023"
-  },
-  {
-    "id": 1011,
-    "fecha_ingreso": "26-08-2023",
-    "nombre_cliente": "IGNACIO JAWERO",
-    "telefono": "3364888888",
-    "tipo_equipo": "MOTOCICLETA",
-    "marca": "MOTOMEL",
-    "modelo": "110",
-    "numero_serie": "5645646545",
-    "accesorios": "NO",
-    "tareas": "REVISAR",
-    "estado": "INGRESADO",
-    "observaciones": "TIENE PORTAPATENTES REBATIBLE",
-    "foto": "a6083f224c5d9a036fb918b9ed5e7e47",
-    "fecha_retiro": ""
   },
   {
     "id": 1012,
@@ -222,54 +191,6 @@
     "fecha_retiro": "21-08-2023"
   },
   {
-    "id": 1015,
-    "fecha_ingreso": "28-08-2023",
-    "nombre_cliente": "PRUEBA 53",
-    "telefono": "535353535",
-    "tipo_equipo": "53535353",
-    "marca": "53535353",
-    "modelo": "53535353",
-    "numero_serie": "5353535",
-    "accesorios": "5353535",
-    "tareas": "53535353",
-    "estado": "INGRESADO",
-    "observaciones": "53535353",
-    "foto": "ab37b06d3a853f9b3b2b787a77af2c90",
-    "fecha_retiro": ""
-  },
-  {
-    "id": 1016,
-    "fecha_ingreso": "28-08-2023",
-    "nombre_cliente": "PRUEBA 88",
-    "telefono": "8888888",
-    "tipo_equipo": "888888",
-    "marca": "8888888",
-    "modelo": "888888",
-    "numero_serie": "888888888888",
-    "accesorios": "888888888",
-    "tareas": "888888888888",
-    "estado": "INGRESADO",
-    "observaciones": "888888888888",
-    "foto": "3db8173be24f4033b132311e2eb67607",
-    "fecha_retiro": ""
-  },
-  {
-    "id": 1017,
-    "fecha_ingreso": "28-08-2023",
-    "nombre_cliente": "PRUEBA 90",
-    "telefono": "90",
-    "tipo_equipo": "90",
-    "marca": "90",
-    "modelo": "90",
-    "numero_serie": "90",
-    "accesorios": "90",
-    "tareas": "90",
-    "estado": "INGRESADO",
-    "observaciones": "90",
-    "foto": "",
-    "fecha_retiro": ""
-  },
-  {
     "id": 1018,
     "nombre_cliente": "PRUEBA 999",
     "telefono": "9999999",
@@ -283,22 +204,6 @@
     "observaciones": "9999",
     "foto": "21f26b1e06a4bac75e8ac24acd52e591",
     "fecha_retiro": "29/8/2023"
-  },
-  {
-    "id": 1019,
-    "fecha_ingreso": "29-08-2023",
-    "nombre_cliente": "PRUEBA 1000",
-    "telefono": "1000",
-    "tipo_equipo": "1000",
-    "marca": "1000",
-    "modelo": "1000",
-    "numero_serie": "1000",
-    "accesorios": "1000",
-    "tareas": "1000",
-    "estado": "INGRESADO",
-    "observaciones": "10000",
-    "foto": "60fcbe7127bc9d44e665b6b135e379d0",
-    "fecha_retiro": ""
   },
   {
     "id": 1020,
@@ -315,37 +220,5 @@
     "observaciones": "ASDA",
     "foto": "036df7804da11109748671879fdb00c4",
     "fecha_retiro": "29/8/2023"
-  },
-  {
-    "id": 1021,
-    "fecha_ingreso": "29-08-2023",
-    "nombre_cliente": "ROGELIO REFRIGERIO",
-    "telefono": "11455555656",
-    "tipo_equipo": "IMPRESORA",
-    "marca": "HP",
-    "modelo": "1200",
-    "numero_serie": "4546545",
-    "accesorios": "TRANSFORMADOR",
-    "tareas": "REVISAR",
-    "estado": "RETIRADO",
-    "observaciones": "HP INGRESADO",
-    "fecha_retiro": "29/8/2023",
-    "foto": "a18cbfc881f0cd9f386f9ef92a8a42f2"
-  },
-  {
-    "id": 1022,
-    "fecha_ingreso": "29-08-2023",
-    "nombre_cliente": "ABEL MENDOZA",
-    "telefono": "25115455678",
-    "tipo_equipo": "MONITOR",
-    "marca": "LG",
-    "modelo": "19BT4",
-    "numero_serie": "4564646",
-    "accesorios": "FUENTE",
-    "tareas": "REVISAR",
-    "estado": "INGRESADO",
-    "observaciones": "",
-    "fecha_retiro": "",
-    "foto": "2729addc1bcbbf6a9d99bcd81c9e5164"
   }
 ]

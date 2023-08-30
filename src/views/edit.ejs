@@ -24,6 +24,10 @@
             <div class="col-md-8 offset-md-2">
                 <form action="/update/<%= servicio.id %>" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
+                        <label for="numero_orden">Número de Orden (ID):</label>
+                        <input type="text" id="numero_orden" name="numero_orden" value="<%= servicio.id %>" class="form-control" readonly>
+                    </div>
+                    <div class="form-group">
                         <label for="nombre_cliente">Nombre del cliente:</label>
                         <input type="text" id="nombre_cliente" name="nombre_cliente"
                             value="<%= servicio.nombre_cliente %>" required class="form-control">
@@ -108,14 +112,22 @@
                         <button type="submit" class="btn btn-primary">Guardar Cambios</button>
                         <a href="/print/<%= servicio.id %>" class="btn btn-secondary">Ir a la vista de impresión</a>
                         <a href="/" class="btn btn-secondary">Cancelar</a>
-                        <form action="/delete/<%= servicio.id %>" method="POST">
-                            <button type="submit" class="btn btn-danger">Borrar este registro</button>
+                        <form action="/delete/<%= servicio.id %>" method="POST" id="delete-form">
+                            <button type="button" class="btn btn-danger" onclick="confirmDelete()">Borrar este registro</button>
                         </form>
                     </div>
                 </form>
             </div>
         </div>
     </div>
+    <script>
+        window.confirmDelete = function() {
+            if (confirm("¿Estás seguro de que quieres borrar este registro?")) {
+                document.getElementById("delete-form").submit();
+            }
+        }
+    </script>
+    
 </body>
 
 </html>

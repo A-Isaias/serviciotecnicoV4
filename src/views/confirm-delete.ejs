@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Delete</title>
+</head>
+<body>
+    <h1>¿Está seguro de que quiere eliminar el registro?</h1>
+    <form action="/delete/<%= id %>" method="POST">
+        <button type="submit">Sí</button>
+        <a href="/search">No</a>
+    </form>
+</body>
+</html>

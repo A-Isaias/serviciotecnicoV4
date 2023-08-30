@@ -11,6 +11,9 @@ label {
   font-weight: bold;
 }
 
+.expand-btn {
+  background-color: lightblue;
+}
 .container {
   margin-top: 20px;
 }
