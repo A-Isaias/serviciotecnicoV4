@@ -64,6 +64,22 @@
     "fecha_retiro": "29/8/2023"
   },
   {
+    "id": 1005,
+    "fecha_ingreso": "23-08-2023",
+    "nombre_cliente": "MAGDALENA BAZ",
+    "telefono": "3364529859",
+    "tipo_equipo": "NOTEBOOK ",
+    "marca": "HP",
+    "modelo": "PC XT 8088",
+    "numero_serie": "121231",
+    "accesorios": "SDF",
+    "tareas": "REVISAR",
+    "estado": "RETIRADO",
+    "observaciones": "presupuestado aprobado",
+    "foto": "foto1.jpg",
+    "fecha_retiro": "29/8/2023"
+  },
+  {
     "id": 1006,
     "fecha_ingreso": "24-08-2023",
     "nombre_cliente": "MONCHI BALESTRA",
@@ -144,6 +160,22 @@
     "fecha_retiro": "29/8/2023"
   },
   {
+    "id": 1011,
+    "fecha_ingreso": "23-08-2023",
+    "nombre_cliente": "MAGDALENA BAZ",
+    "telefono": "3364529859",
+    "tipo_equipo": "NOTEBOOK ",
+    "marca": "HP",
+    "modelo": "PC XT 8088",
+    "numero_serie": "121231",
+    "accesorios": "SDF",
+    "tareas": "REVISAR",
+    "estado": "RETIRADO",
+    "observaciones": "presupuestado aprobado",
+    "foto": "foto1.jpg",
+    "fecha_retiro": "29/8/2023"
+  },
+  {
     "id": 1012,
     "fecha_ingreso": "26-08-2023",
     "nombre_cliente": "LUIS GIMENEZ",
@@ -177,7 +209,7 @@
   {
     "id": 1014,
     "fecha_ingreso": "28-08-2023",
-    "nombre_cliente": "PRUEBA 52",
+    "nombre_cliente": "BORRAR14",
     "telefono": "52525252",
     "tipo_equipo": "52525252",
     "marca": "525252",
@@ -191,34 +223,19 @@
     "fecha_retiro": "21-08-2023"
   },
   {
-    "id": 1018,
-    "nombre_cliente": "PRUEBA 999",
-    "telefono": "9999999",
-    "tipo_equipo": "9999",
-    "marca": "9999",
-    "modelo": "9999",
-    "numero_serie": "9999",
-    "accesorios": "9999",
-    "tareas": "9999",
-    "estado": "RETIRADO",
-    "observaciones": "9999",
-    "foto": "21f26b1e06a4bac75e8ac24acd52e591",
-    "fecha_retiro": "29/8/2023"
-  },
-  {
-    "id": 1020,
-    "fecha_ingreso": "29-08-2023",
-    "nombre_cliente": "LAUTARO ISAIAS",
-    "telefono": "154525259",
+    "id": 1015,
+    "fecha_ingreso": "23-08-2023",
+    "nombre_cliente": "BORRAR15",
+    "telefono": "3364529859",
     "tipo_equipo": "NOTEBOOK ",
     "marca": "HP",
-    "modelo": "DV7",
-    "numero_serie": "4543534534",
-    "accesorios": "CARGADOR",
+    "modelo": "PC XT 8088",
+    "numero_serie": "121231",
+    "accesorios": "SDF",
     "tareas": "REVISAR",
     "estado": "RETIRADO",
-    "observaciones": "ASDA",
-    "foto": "036df7804da11109748671879fdb00c4",
+    "observaciones": "presupuestado aprobado",
+    "foto": "foto1.jpg",
     "fecha_retiro": "29/8/2023"
   }
 ]

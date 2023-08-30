@@ -64,9 +64,21 @@
         <script>
             // Código JavaScript
             const ordersContainer = document.getElementById("orders-container");
-            const fullscreenImageContainer = document.getElementById("fullscreenImageContainer");
-            const fullscreenImage = document.getElementById("fullscreenImage");
-
+    
+            // Función de confirmación de borrado
+            function confirmDelete(orderId) {
+                if (confirm(`Estás seguro de que quieres borrar la orden: ${orderId}`)) {
+                    fetch(`/delete/${orderId}`, { method: 'POST' })
+                        .then(response => {
+                            if (response.ok) {
+                                // Recargar la página después de borrar
+                                location.reload();
+                            }
+                        })
+                        .catch(error => console.error('Error al borrar el registro:', error));
+                }
+            }
+    
             // Carga los datos del archivo JSON
             fetch('/servicios')
                 .then(response => response.json())
@@ -74,7 +86,7 @@
                     displayOrders(ordersData);
                 })
                 .catch(error => console.error('Error al cargar los datos:', error));
-
+    
             // Función para mostrar las órdenes en la tabla
             function displayOrders(ordersData) {
                 ordersContainer.innerHTML = "";
@@ -93,37 +105,18 @@
                     <td>${order.tareas}</td>
                     <td>${order.estado}</td>
                     <td>${order.observaciones}</td>
-                    <td>${order.fecha_retiro ? order.fecha_retiro : "NO RETIRADO AUN"}</td> 
+                    <td>${order.fecha_retiro ? order.fecha_retiro : "NO RETIRADO AUN"}</td>
                     <td>
                         <button class="btn btn-primary btn-sm"><a href="/edit/${order.id}" class="text-white">Editar</a></button>
                         <button class="btn btn-secondary btn-sm"><a href="/print/${order.id}" class="text-white">Imprimir</a></button>
-                        <button class="btn btn-danger delete-btn btn-sm" data-order-id="${order.id}">Borrar</button>
+                        <button class="btn btn-danger delete-btn btn-sm" onclick="confirmDelete(${order.id})">Borrar</button>
                     </td>
                 `;
-
+    
                     ordersContainer.appendChild(orderRow);
                 });
-
-                // Agregar un controlador de evento para el botón de borrar
-                const deleteButtons = document.querySelectorAll('.delete-btn');
-                deleteButtons.forEach(button => {
-                    button.addEventListener('click', async () => {
-                        const orderId = button.getAttribute('data-order-id');
-                        const response = await fetch(`/delete/${orderId}`, { method: 'POST' });
-                        if (response.ok) {
-                            // Recargar la página después de borrar
-                            location.reload();
-                        }
-                    });
-                });
-
-                // // Controlador de evento para cerrar la imagen en pantalla completa
-                // fullscreenImageContainer.addEventListener("click", () => {
-                //     fullscreenImageContainer.style.display = "none";
-                //     fullscreenImage.src = "";
-                // });
             }
         </script>
-</body>
-
-</html>
+    </body>
+    
+    </html>
