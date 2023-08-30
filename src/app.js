@@ -123,20 +123,18 @@ app.post('/update/:id', upload.single('foto'), (req, res) => {
         };
 
         // Manejar la carga de una nueva foto si se proporciona
-        if (req.files && req.files.foto) {
-            const nuevaFoto = req.files.foto;
-            const extension = nuevaFoto.name.split('.').pop();
+        if (req.file) {
+            const nuevaFoto = req.file;
+            const extension = nuevaFoto.originalname.split('.').pop();
             const nuevaFotoNombre = `photo_${Date.now()}.${extension}`;
-            nuevaFoto.mv(path.join(__dirname, 'public', 'img', nuevaFotoNombre), err => {
-                if (err) {
-                    console.error('Error al cargar la nueva foto:', err);
-                } else {
-                    updatedServicio.foto = nuevaFotoNombre; // Actualizar la foto si se cargó exitosamente
-                }
-            });
+
+            const destinoFoto = path.join(__dirname, 'public', 'img', nuevaFotoNombre);
+            fs.renameSync(nuevaFoto.path, destinoFoto);
+            updatedServicio.foto = nuevaFotoNombre;
+            console.log('Foto cargada exitosamente:', nuevaFotoNombre);
         }
 
-        // Agregar la fecha de retiro si el estado es "RETIRADO"
+         // Agregar la fecha de retiro si el estado es "RETIRADO"
         if (req.body.estado === "RETIRADO") {
             updatedServicio.fecha_retiro = req.body.fecha_retiro || req.body.current_date;
         } else {

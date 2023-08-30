@@ -28,7 +28,7 @@
     "tareas": "REVISAR",
     "estado": "INGRESADO",
     "observaciones": "pepepep",
-    "foto": "foto1.jpg",
+    "foto": "photo_1693399023289.jpg",
     "fecha_retiro": ""
   },
   {
@@ -44,7 +44,7 @@
     "tareas": "REVISAR",
     "estado": "INGRESADO",
     "observaciones": "Observaciones 1",
-    "foto": "foto1.jpg",
+    "foto": "photo_1693399052027.jpg",
     "fecha_retiro": ""
   },
   {
@@ -90,9 +90,9 @@
     "numero_serie": "4564812354",
     "accesorios": "FUENTE",
     "tareas": "NO DA IMAGEN",
-    "estado": "REPARADO",
+    "estado": "INGRESADO",
     "observaciones": "Observaciones 1",
-    "foto": "foto1.jpg",
+    "foto": "photo_1693399076991.jpg",
     "fecha_retiro": ""
   },
   {
