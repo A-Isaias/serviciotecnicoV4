@@ -67,7 +67,7 @@
     
             // Función de confirmación de borrado
             function confirmDelete(orderId) {
-                if (confirm(`¿ESTA SEGURO DE QUE QUIERE BORRAR LA ORDEN N°: ${orderId}?`)) {
+                if (confirm(`¿ESTA SEGURO DE QUE QUIERE ELIMINAR LA ORDEN N°: ${orderId}?`)) {
                     fetch(`/delete/${orderId}`, { method: 'POST' })
                         .then(response => {
                             if (response.ok) {
@@ -105,11 +105,11 @@
                     <td>${order.tareas}</td>
                     <td>${order.estado}</td>
                     <td>${order.observaciones}</td>
-                    <td>${order.fecha_retiro ? order.fecha_retiro : "NO RETIRADO AUN"}</td>
+                    <td>${order.fecha_retiro ? order.fecha_retiro : "NO RETIRADO"}</td>
                     <td>
                         <button class="btn btn-primary btn-sm same-size-btn"><a href="/edit/${order.id}" class="text-white">Editar</a></button>
                         <button class="btn btn-secondary btn-sm same-size-btn"><a href="/print/${order.id}" class="text-white">Imprimir</a></button>
-                        <button class="btn btn-danger delete-btn btn-sm same-size-btn" onclick="confirmDelete(${order.id})">Borrar</button>
+                        <button class="btn btn-danger delete-btn btn-sm same-size-btn" onclick="confirmDelete(${order.id})">Eliminar</button>
                     </td>
                 `;
     

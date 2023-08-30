@@ -193,6 +193,7 @@
   },
   {
     "id": 1013,
+    "fecha_ingreso": "26-08-2023",
     "nombre_cliente": "JOSE OMAR RUBIES",
     "telefono": "33645454848",
     "tipo_equipo": "NOTEBOOK",

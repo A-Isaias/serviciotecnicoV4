@@ -68,7 +68,7 @@
                                         <%= result.estado %>
                                     </p>
                                     <p class="card-text"><strong>Fecha de Retiro:</strong>
-                                        <%= result.fecha_retiro ? result.fecha_retiro : "NO RETIRADO AUN" %>
+                                        <%= result.fecha_retiro ? result.fecha_retiro : "NO RETIRADO" %>
                                     </p>
                                     <div class="expanded-details" style="display: none;">
                                         <p><strong>Teléfono:</strong>
@@ -96,7 +96,7 @@
                                         <a href="/edit/<%= result.id %>" class="btn btn-primary">Editar</a>
                                         
                                         <form id="deleteForm-<%= result.id %>" action="/delete/<%= result.id %>" method="POST" style="display: inline;">
-                                            <button type="button" class="btn btn-danger delete-button" data-id="<%= result.id %>">Borrar</button>
+                                            <button type="button" class="btn btn-danger delete-button" data-id="<%= result.id %>">Eliminar</button>
                                         </form>
                                         <a href="/print/<%= result.id %>" class="btn btn-secondary">Imprimir</a>
                                     </div>
@@ -126,7 +126,7 @@
         deleteButtons.forEach(button => {
             button.addEventListener("click", function() {
                 const id = this.getAttribute("data-id");
-                if (confirm('¿ESTA SEGURO DE QUE QUIERE BORRAR LA ORDEN N°: ' + id + '?')) {
+                if (confirm('¿ESTA SEGURO DE QUE QUIERE ELIMINAR LA ORDEN N°: ' + id + '?')) {
                     const form = document.getElementById("deleteForm-" + id);
                     form.submit();
                 }

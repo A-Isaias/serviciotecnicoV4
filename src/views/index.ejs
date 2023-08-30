@@ -111,7 +111,7 @@
             <strong>Estado:</strong> ${order.estado}<br>
             <strong>Observaciones:</strong> ${order.observaciones}<br>
             <strong>Foto:</strong> ${order.foto ? `<img src="/img/${order.foto}" alt="Foto" width="200" class="fullscreenable-image" data-src="/img/${order.foto}">` : "N/A"}<br>
-            <strong>Fecha de Retiro:</strong> ${order.fecha_retiro ? order.fecha_retiro : "NO RETIRADO AUN"}<br>
+            <strong>Fecha de Retiro:</strong> ${order.fecha_retiro ? order.fecha_retiro : "NO RETIRADO"}<br>
             <br>
             <a href="/edit/${order.id}" class="btn btn-primary btn-sm edit-btn">Editar</a>
             <a href="/print/${order.id}" class="btn btn-secondary btn-sm print-btn">Imprimir</a>
