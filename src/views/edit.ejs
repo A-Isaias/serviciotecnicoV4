@@ -124,7 +124,7 @@
        
         // Función de confirmación de borrado
         function confirmDelete(orderId) {
-                if (confirm(`Estás seguro de que quieres borrar la orden: ${orderId}`)) {
+                if (confirm(`¿ESTA SEGURO DE QUE QUIERE BORRAR LA ORDEN N°: ${orderId} ?`)) {
                     fetch(`/delete/${orderId}`, { method: 'POST' })
     .then(response => {
         if (response.ok) {

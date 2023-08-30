@@ -126,7 +126,7 @@
         deleteButtons.forEach(button => {
             button.addEventListener("click", function() {
                 const id = this.getAttribute("data-id");
-                if (confirm('¿Está seguro de que quiere eliminar el registro ' + id + '?')) {
+                if (confirm('¿ESTA SEGURO DE QUE QUIERE BORRAR LA ORDEN N°: ' + id + '?')) {
                     const form = document.getElementById("deleteForm-" + id);
                     form.submit();
                 }
