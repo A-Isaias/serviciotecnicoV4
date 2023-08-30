@@ -205,5 +205,21 @@
     "observaciones": "",
     "foto": "60b0b0226a259a0051b603eee9e366d0",
     "fecha_retiro": "29/8/2023"
+  },
+  {
+    "id": 1014,
+    "fecha_ingreso": "30-08-2023",
+    "nombre_cliente": "PRUEBA 99",
+    "telefono": "999999999999",
+    "tipo_equipo": "999999999999",
+    "marca": "99999999999",
+    "modelo": "999999999999",
+    "numero_serie": "99999999999",
+    "accesorios": "9999999999",
+    "tareas": "99999999999",
+    "estado": "INGRESADO",
+    "observaciones": "99999999999",
+    "fecha_retiro": "",
+    "foto": "7593551ebd0e3bc96f808dd270355a39"
   }
 ]
