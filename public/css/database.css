@@ -14,66 +14,78 @@
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
   } */
 
-  .fixed-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: right;
-    /* Otros estilos */
-    background-color: lightgray;
-  }
+.fixed-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: right;
+  /* Otros estilos */
+  background-color: lightgray;
+}
+
 header {
   background-color: lightgray;
   width: 100%;
 }
-  .float-right {
-    position: fixed;
-    right:10px;
-    bottom: 0;
-    background-color:lightgray;
-    z-index: 999;
-  }
-  .staticButtons {
-    align-self: right;
-    position: static;
-    right:100px;
-    top: 0;
-    background-color:lightgray;
-    z-index: 999;
-  }
+
+.float-right {
+  position: fixed;
+  right: 10px;
+  bottom: 0;
+  background-color: lightgray;
+  z-index: 999;
+}
+
+.staticButtons {
+  align-self: right;
+  position: static;
+  right: 100px;
+  top: 0;
+  background-color: lightgray;
+  z-index: 999;
+}
+
 table {
-    width: 100%;
-    border: 1px solid #000;
- }
+  width: 100%;
+  border: 1px solid #000;
+}
 
 table thead {
-        position: sticky;
-        top: 0;
-        background-color: lightgray;
-}  
+  position: sticky;
+  top: 0;
+  background-color: lightgray;
+}
 
 h4 {
-  
+
   height: 50px;
   width: 100%;
 }
-td {
-    min-width: 1px;
-    height: 1px;
-    text-align: left;
-    vertical-align: top;
-    border: 1px solid #000;
-    border-collapse: collapse;
-    padding: 0.3em;
-    font-size: small;
- }
- caption {
-    padding: 0.3em;
- }
- td {
-    font-size: small;
- }
 
- /* table {
+td {
+  min-width: 1px;
+  height: 1px;
+  text-align: left;
+  vertical-align: top;
+  border: 1px solid #000;
+  border-collapse: collapse;
+  padding: 0.3em;
+  font-size: small;
+}
+
+caption {
+  padding: 0.3em;
+}
+
+td {
+  font-size: small;
+}
+
+.same-size-btn {
+  width: 100px;
+  /* Cambia este valor al ancho deseado */
+}
+
+/* table {
     border: none;
     width: 50%;
     border-collapse: collapse;
