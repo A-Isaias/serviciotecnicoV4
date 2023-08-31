@@ -71,13 +71,13 @@
                 </tr>
                 <tr>
                     <th>Fecha de Retiro</th>
-                    <td><%= order.fecha_retiro ? order.fecha_retiro : "NO RETIRADO AUN" %></td>
+                    <td><%= order.fecha_retiro ? order.fecha_retiro : "NO RETIRADO" %></td>
                 </tr>
                 <tr>
                     <th>Foto</th>
                     <td>
                         <% if (order.foto) { %>
-                            <img src="/img/<%= order.foto %>" alt="Foto" width="200">
+                            <img src="/img/<%= order.foto %>" alt="Foto" width="300">
                         <% } else { %>
                             N/A
                         <% } %>
