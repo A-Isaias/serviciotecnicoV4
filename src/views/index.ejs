@@ -12,7 +12,8 @@
     <div class="container mt-4">
         <!-- Título y botones fijos -->
         <div class="fixed-header">
-            <h1>Servicio Técnico</h1><h3>MENU PRINCIPAL ADMINISTRADOR</h3>
+            <h1>Servicio Técnico</h1>
+            <h3>MENU PRINCIPAL ADMINISTRADOR</h3>
             <div class="btn-group">
                 <button class="btn btn-success"><a href="/new" class="text-white">Nueva Orden</a></button>
                 <button class="btn btn-warning"><a href="/search" class="text-white">Buscar Orden</a></button>
@@ -89,80 +90,84 @@
         });
 
         function displayOrders(ordersData) {
-    ordersContainer.innerHTML = "";
-    ordersData.forEach(order => {
-        const orderElement = document.createElement("div");
-        orderElement.classList.add("order");
-        orderElement.innerHTML = `
-        <div class="order-summary">
-            <strong class="highlight">N° Orden:</strong> ${order.id}<br>
-            <strong>Fecha de Ingreso:</strong> ${order.fecha_ingreso}<br>
-            <strong>Cliente:</strong> ${order.nombre_cliente}<br>
-            <strong>Estado:</strong> ${order.estado}<br>
-        </div>
-        <div class="order-details" style="display: none;">
-            <strong>Teléfono:</strong> ${order.telefono}<br>
-            <strong>Tipo de Equipo:</strong> ${order.tipo_equipo}<br>
-            <strong>Marca:</strong> ${order.marca}<br>
-            <strong>Modelo:</strong> ${order.modelo}<br>
-            <strong>Número de Serie:</strong> ${order.numero_serie}<br>
-            <strong>Accesorios:</strong> ${order.accesorios}<br>
-            <strong>Tareas:</strong> ${order.tareas}<br>
-            <strong>Estado:</strong> ${order.estado}<br>
-            <strong>Observaciones:</strong> ${order.observaciones}<br>
-            <strong>Foto:</strong> ${order.foto ? `<img src="/img/${order.foto}" alt="Foto" width="200" class="fullscreenable-image" data-src="/img/${order.foto}">` : "N/A"}<br>
-            <strong>Fecha de Retiro:</strong> ${order.fecha_retiro ? order.fecha_retiro : "NO RETIRADO"}<br>
-            <br>
-            <a href="/edit/${order.id}" class="btn btn-primary btn-sm edit-btn">Editar</a>
-            <a href="/print/${order.id}" class="btn btn-secondary btn-sm print-btn">Imprimir</a>
-            </div>
-    `;
+            ordersContainer.innerHTML = "";
+            ordersData.forEach(order => {
+                const orderElement = document.createElement("div");
+                orderElement.classList.add("order");
+                orderElement.innerHTML = `
+                <div class="order-summary">
+                    <div class="float-right">
+                        <a href="/edit/${order.id}" class="btn btn-primary edit-btn same-size-btn">Editar</a>
+                        <a href="/print/${order.id}" class="btn btn-secondary  print-btn same-size-btn">Imprimir</a>
+                    </div>
+                    <strong class="highlight">N° Orden:</strong> ${order.id}<br>
+                    <strong class="text-to-style">Fecha de Ingreso:</strong> ${order.fecha_ingreso}<br>
+                    <strong class="text-to-style">Cliente:</strong> ${order.nombre_cliente}<br>
+                    <strong class="text-to-style">Estado:</strong> ${order.estado}<br>
+                </div>
+                <div class="order-details">
+                    <div class="order-details-text">
+                    <strong>Teléfono:</strong> ${order.telefono}<br>
+                    <strong>Tipo de Equipo:</strong> ${order.tipo_equipo}<br>
+                    <strong>Marca:</strong> ${order.marca}<br>
+                    <strong>Modelo:</strong> ${order.modelo}<br>
+                    <strong>Número de Serie:</strong> ${order.numero_serie}<br>
+                    <strong>Accesorios:</strong> ${order.accesorios}<br>
+                    <strong>Tareas:</strong> ${order.tareas}<br>
+                    <strong>Estado:</strong> ${order.estado}<br>
+                    <strong>Observaciones:</strong> ${order.observaciones}<br>
+                    <strong>Fecha de Retiro:</strong> ${order.fecha_retiro ? order.fecha_retiro : "NO RETIRADO"}
+                    <br>
+                    </div>
+                    
+                    <div class="order-details-image">
+                        <strong>Foto:</strong><br>
+                        ${order.foto ? `<img src="/img/${order.foto}" alt="Foto" width="200" class="fullscreenable-image" data-src="/img/${order.foto}">` : "N/A"}
+                    </div>
+                    
+                </div>
+            `;
 
-        const orderSummary = orderElement.querySelector(".order-summary");
-        const orderDetails = orderElement.querySelector(".order-details");
-        let isDetailsVisible = false;
+                const orderSummary = orderElement.querySelector(".order-summary");
+                const orderDetails = orderElement.querySelector(".order-details");
+                let isDetailsVisible = false;
 
-        orderSummary.addEventListener("click", () => {
-            isDetailsVisible = !isDetailsVisible;
+                orderSummary.addEventListener("click", () => {
+                    isDetailsVisible = !isDetailsVisible;
+                    orderDetails.style.display = isDetailsVisible ? "flex" : "none";
+                });
 
-            if (isDetailsVisible) {
-                orderDetails.style.display = "block";
-            } else {
-                orderDetails.style.display = "none";
-            }
-        });
+                const fullscreenableImages = orderElement.querySelectorAll(".fullscreenable-image");
+                fullscreenableImages.forEach(image => {
+                    image.addEventListener("click", () => {
+                        fullscreenImage.src = image.getAttribute("data-src");
+                        fullscreenImageContainer.style.display = "flex";
+                    });
+                });
 
-        const fullscreenableImages = orderElement.querySelectorAll(".fullscreenable-image");
-        fullscreenableImages.forEach(image => {
-            image.addEventListener("click", () => {
-                fullscreenImage.src = image.getAttribute("data-src");
-                fullscreenImageContainer.style.display = "flex";
+                const separator = document.createElement("hr");
+                separator.style.marginTop = "1px";
+                orderElement.appendChild(separator);
+
+                ordersContainer.appendChild(orderElement);
             });
-        });
 
-        const separator = document.createElement("hr");
-        separator.style.marginTop = "1px";
-        orderElement.appendChild(separator);
+            // const deleteButtons = document.querySelectorAll('.delete-btn');
+            // deleteButtons.forEach(button => {
+            //     button.addEventListener('click', async () => {
+            //         const orderId = button.getAttribute('data-order-id');
+            //         const response = await fetch(`/delete/${orderId}`, { method: 'POST' });
+            //         if (response.ok) {
+            //             location.reload();
+            //         }
+            //     });
+            // });
 
-        ordersContainer.appendChild(orderElement);
-    });
-
-    // const deleteButtons = document.querySelectorAll('.delete-btn');
-    // deleteButtons.forEach(button => {
-    //     button.addEventListener('click', async () => {
-    //         const orderId = button.getAttribute('data-order-id');
-    //         const response = await fetch(`/delete/${orderId}`, { method: 'POST' });
-    //         if (response.ok) {
-    //             location.reload();
-    //         }
-    //     });
-    // });
-
-    fullscreenImageContainer.addEventListener("click", () => {
-        fullscreenImageContainer.style.display = "none";
-        fullscreenImage.src = "";
-    });
-}
+            fullscreenImageContainer.addEventListener("click", () => {
+                fullscreenImageContainer.style.display = "none";
+                fullscreenImage.src = "";
+            });
+        }
     </script>
 </body>
 

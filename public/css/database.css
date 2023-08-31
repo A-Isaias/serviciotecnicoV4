@@ -69,16 +69,14 @@ td {
   border: 1px solid #000;
   border-collapse: collapse;
   padding: 0.3em;
-  font-size: small;
+  font-size: 13px;
+    
 }
 
 caption {
-  padding: 0.3em;
+  padding: 0.4em;
 }
 
-td {
-  font-size: small;
-}
 
 .bold-cell {
   font-weight: bold;
@@ -90,7 +88,6 @@ td {
 }
 .same-size-btn {
   width: 100px;
-  /* Cambia este valor al ancho deseado */
 }
 
 

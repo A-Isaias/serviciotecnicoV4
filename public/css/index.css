@@ -13,11 +13,14 @@ body {
 /*texto principal*/
 h1 {
   font-size: 25px;
+  font-weight: bold;
 }
 
 h3 {
   font-size: 20px;
+  
 }
+
 /* texto ordenes pendientes */
 h4  {
   color: black;
@@ -44,7 +47,7 @@ h4  {
 
 /* Ajustamos el margen superior del contenido para evitar que se solape con la barra fija */
 #newForm {
-  margin-top: 5px; /* Ajusta este valor según sea necesario */
+  margin-top: 5px; 
 }
 
 /* Espaciado para los campos de formulario */
@@ -57,42 +60,36 @@ h4  {
   margin-top: 10px; /* Ajusta según la altura del encabezado fijo */
 }
 
-/* Mantener el contenedor superior fijo */
-
-.order {
-  padding: 5px;
-  border: 1px solid #ccc;
-  margin-bottom: 5px;
-  cursor: pointer;
-}
-
 /*texto dentro del resumen de ordenes pendientes*/
-.order-summary {
-  font-size: 15px;
-  font-weight: bold;
-}
-
-/*clase de la palabra orden dentro del sumario de ordenes*/
 .highlight {
   color: white; 
   background-color: black;
 
 }
-/*texto extendido del resumen de ordenes*/
+.order-summary .text-to-style {
+  font-size: 15px;
+  font-weight: bold;
+} 
+.order {
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin-bottom: 5px;
+  border: 1px solid #ccc;
+  cursor: pointer
+}
+
 .order-details {
-  margin-top: 10px; /*DISTANCIA SUPERIOR PARA QUE NO LO TAPE EL HEADER*/
-  padding-top: 5px;
-  border-top: 1px dashed #ccc;
+  display:none;
+  }
+
+.order-details-image {
+  flex: 1;
+  text-align: center;
 }
-/* .edit-btn {
-  margin-left: 10px;
+
+.order-details-text {
+  flex: 2;
 }
-.print-btn {
-  margin-left: 10px;
-}
-.delete-btn {
-  margin-left: 10px;
-} */
 
 .fullscreen-image {
   display: none;
@@ -111,3 +108,7 @@ h4  {
   max-width: 90%;
   max-height: 80%;
 }
+.same-size-btn {
+  width: 100px;
+}
+
