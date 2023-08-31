@@ -222,5 +222,21 @@
     "observaciones": "cambiado",
     "fecha_retiro": "",
     "foto": "7593551ebd0e3bc96f808dd270355a39"
+  },
+  {
+    "id": 1015,
+    "fecha_ingreso": "31-08-2023",
+    "nombre_cliente": "MAXIMILIANO GUERRA",
+    "telefono": "1145555555",
+    "tipo_equipo": "IMPRESORA",
+    "marca": "HP",
+    "modelo": "PSC1610",
+    "numero_serie": "16101610",
+    "accesorios": "FUENTE DE ALIMENTACION",
+    "tareas": "REVISAR - SE TRABAN LAS HOJAS",
+    "estado": "INGRESADO",
+    "observaciones": "DEJA CON CARTUCHOS",
+    "fecha_retiro": "",
+    "foto": "photo_1693495414083.jpg"
   }
 ]
