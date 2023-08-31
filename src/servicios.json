@@ -10,10 +10,10 @@
     "numero_serie": "123546",
     "accesorios": "NO",
     "tareas": "REVISAR",
-    "estado": "PRESUPUESTADO",
+    "estado": "RETIRADO",
     "observaciones": "PANTALLA ASTILLADA\r\nASDAS\r\n\r\nASDASD\r\naSD\r\nasD\r\nasd",
     "foto": "photo_2023-08-28_11-55-54 (2).jpg",
-    "fecha_retiro": ""
+    "fecha_retiro": "31/8/2023"
   },
   {
     "id": 1002,
@@ -26,10 +26,10 @@
     "numero_serie": "123546",
     "accesorios": "NO",
     "tareas": "REVISAR",
-    "estado": "INGRESADO",
+    "estado": "RETIRADO",
     "observaciones": "pepepep",
     "foto": "photo_1693399023289.jpg",
-    "fecha_retiro": ""
+    "fecha_retiro": "31/8/2023"
   },
   {
     "id": 1003,
@@ -42,10 +42,10 @@
     "numero_serie": "121231",
     "accesorios": "CARGADOR",
     "tareas": "REVISAR",
-    "estado": "INGRESADO",
+    "estado": "RETIRADO",
     "observaciones": "Observaciones 1",
     "foto": "photo_1693399052027.jpg",
-    "fecha_retiro": ""
+    "fecha_retiro": "31/8/2023"
   },
   {
     "id": 1004,
@@ -106,7 +106,7 @@
     "numero_serie": "12415465",
     "accesorios": "DISK DRIVE 1541 + FUENTES+JOYSTICKS",
     "tareas": "REVISAR PUERTO DE JOYSTICK",
-    "estado": "REPARADO_AVISADO",
+    "estado": "PRESUPUESTADO",
     "observaciones": "Observaciones 1",
     "foto": "photo_1693399267090.jpg",
     "fecha_retiro": ""
@@ -122,7 +122,7 @@
     "numero_serie": "4546565",
     "accesorios": "CABLE 220",
     "tareas": "CAMBIAR TONER",
-    "estado": "REVISAR",
+    "estado": "PRESUPUESTADO_APROBADO",
     "observaciones": "",
     "foto": "photo_1693399282209.jpg",
     "fecha_retiro": ""
@@ -138,7 +138,7 @@
     "numero_serie": "56564",
     "accesorios": "NO",
     "tareas": "REVISAR NO SE VE",
-    "estado": "PRESUPUESTADO_AVISADO",
+    "estado": "PRESUPUESTADO_APROBADO",
     "observaciones": "SIN CABLES",
     "foto": "photo_2023-08-28_11-56-44.jpg",
     "fecha_retiro": ""
@@ -154,10 +154,10 @@
     "numero_serie": "123456",
     "accesorios": "NO",
     "tareas": "REVISAR",
-    "estado": "RETIRADO",
+    "estado": "RECHAZADO_A_DEVOLVER",
     "observaciones": "ENGANCHA LA CINTA",
     "foto": "photo_2023-08-28_11-55-54.jpg",
-    "fecha_retiro": "29/8/2023"
+    "fecha_retiro": ""
   },
   {
     "id": 1011,
@@ -170,10 +170,10 @@
     "numero_serie": "121231",
     "accesorios": "SDF",
     "tareas": "REVISAR",
-    "estado": "RETIRADO",
+    "estado": "REPARADO",
     "observaciones": "presupuestado aprobado",
     "foto": "photo_1693442844149.jpg",
-    "fecha_retiro": "29/8/2023"
+    "fecha_retiro": ""
   },
   {
     "id": 1012,
@@ -186,10 +186,10 @@
     "numero_serie": "NO POSEE",
     "accesorios": "NO",
     "tareas": "REVISAR",
-    "estado": "RETIRADO",
+    "estado": "REPARADO_AVISADO",
     "observaciones": "",
     "foto": "24385d510a95faf5af3c20b00022cc75",
-    "fecha_retiro": "29/8/2023"
+    "fecha_retiro": ""
   },
   {
     "id": 1013,
@@ -202,10 +202,10 @@
     "numero_serie": "CS265656565",
     "accesorios": "NO",
     "tareas": "REVISAR",
-    "estado": "RETIRADO",
+    "estado": "REVISAR",
     "observaciones": "",
     "foto": "60b0b0226a259a0051b603eee9e366d0",
-    "fecha_retiro": "29/8/2023"
+    "fecha_retiro": ""
   },
   {
     "id": 1014,
@@ -218,7 +218,7 @@
     "numero_serie": "99999999999",
     "accesorios": "9999999999",
     "tareas": "99999999999",
-    "estado": "INGRESADO",
+    "estado": "LLAMAR",
     "observaciones": "cambiado",
     "fecha_retiro": "",
     "foto": "7593551ebd0e3bc96f808dd270355a39"

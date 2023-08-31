@@ -25,6 +25,7 @@
 header {
   background-color: lightgray;
   width: 100%;
+  z-index: 500;
 }
 
 .float-right {
@@ -53,6 +54,13 @@ table thead {
   position: sticky;
   top: 0;
   background-color: lightgray;
+  z-index: 400;
+}
+.sticky-column {
+  position: sticky;
+  left: 0;
+  z-index: 3;
+  background-color: white;
 }
 
 h4 {
