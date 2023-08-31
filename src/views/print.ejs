@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,10 +9,11 @@
     <link rel="stylesheet" href="/css/print.css" type="text/css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
+
 <body>
     <div class="container mt-4">
-         <!-- Título y botones fijos -->
-         <div class="fixed-header">
+        <!-- Título y botones fijos -->
+        <div class="fixed-header">
             <h2>Detalles de una orden</h2>
             <div class="btn-group">
                 <button class="btn btn-success"><a href="/new" class="text-white">Nueva Orden</a></button>
@@ -19,75 +21,102 @@
                 <a href="/" class="btn btn-primary">Volver al Inicio</a>
             </div>
         </div>
-                <table class="table" id="newForm">
+        <table class="table" id="newForm">
             <tbody>
                 <tr>
                     <th>Numero de Orden</th>
-                    <td><%= order.id %></td>
+                    <td>
+                        <%= order.id %>
+                    </td>
                 </tr>
                 <tr>
                     <th>Fecha de Ingreso</th>
-                    <td><%= order.fecha_ingreso %></td>
+                    <td>
+                        <%= order.fecha_ingreso %>
+                    </td>
                 </tr>
                 <tr>
                     <th>Cliente</th>
-                    <td><%= order.nombre_cliente %></td>
+                    <td>
+                        <%= order.nombre_cliente %>
+                    </td>
                 </tr>
                 <tr>
                     <th>Teléfono</th>
-                    <td><%= order.telefono %></td>
+                    <td>
+                        <%= order.telefono %>
+                    </td>
                 </tr>
                 <tr>
                     <th>Tipo de Equipo</th>
-                    <td><%= order.tipo_equipo %></td>
+                    <td>
+                        <%= order.tipo_equipo %>
+                    </td>
                 </tr>
                 <tr>
                     <th>Marca</th>
-                    <td><%= order.marca %></td>
+                    <td>
+                        <%= order.marca %>
+                    </td>
                 </tr>
                 <tr>
                     <th>Modelo</th>
-                    <td><%= order.modelo %></td>
+                    <td>
+                        <%= order.modelo %>
+                    </td>
                 </tr>
                 <tr>
                     <th>Número de Serie</th>
-                    <td><%= order.numero_serie %></td>
+                    <td>
+                        <%= order.numero_serie %>
+                    </td>
                 </tr>
                 <tr>
                     <th>Accesorios</th>
-                    <td><%= order.accesorios %></td>
+                    <td>
+                        <%= order.accesorios %>
+                    </td>
                 </tr>
                 <tr>
                     <th>Tareas a Realizar</th>
-                    <td><%= order.tareas %></td>
+                    <td>
+                        <%= order.tareas %>
+                    </td>
                 </tr>
                 <tr>
                     <th>Estado</th>
-                    <td><%= order.estado %></td>
+                    <td>
+                        <%= order.estado %>
+                    </td>
                 </tr>
                 <tr>
                     <th>Observaciones</th>
-                    <td><%= order.observaciones %></td>
+                    <td>
+                        <%= order.observaciones %>
+                    </td>
                 </tr>
                 <tr>
                     <th>Fecha de Retiro</th>
-                    <td><%= order.fecha_retiro ? order.fecha_retiro : "NO RETIRADO" %></td>
+                    <td>
+                        <%= order.fecha_retiro ? order.fecha_retiro : "NO RETIRADO" %>
+                    </td>
                 </tr>
                 <tr>
                     <th>Foto</th>
                     <td>
                         <% if (order.foto) { %>
                             <img src="/img/<%= order.foto %>" alt="Foto" width="300">
-                        <% } else { %>
-                            N/A
-                        <% } %>
+                            <% } else { %>
+                                N/A
+                                <% } %>
                     </td>
                 </tr>
-                
+
             </tbody>
         </table>
         <a href="/" class="btn btn-primary">Volver al Inicio</a>
         <button class="btn btn-secondary" onclick="window.print()">Imprimir Orden</button> <!-- Botón para imprimir -->
     </div>
 </body>
+
 </html>
