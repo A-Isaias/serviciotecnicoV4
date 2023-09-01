@@ -92,7 +92,7 @@
                                         <p><strong>Observaciones:</strong>
                                             <%= result.observaciones %>
                                         </p>
-                                        <p><strong>Foto:</strong> <%= result.foto ? '<img src="/img/' + result.foto + '" alt="Foto" width="200" class="expand-image">' : "N/A" %></p>
+                                        <!-- <p><strong>Foto:</strong> <%= result.foto ? '<img src="/img/' + result.foto + '" alt="Foto" width="200" class="expand-image">' : "N/A" %></p> -->
                                         <a href="/edit/<%= result.id %>" class="btn btn-primary">Editar</a>
                                         
                                         <form id="deleteForm-<%= result.id %>" action="/delete/<%= result.id %>" method="POST" style="display: inline;">
