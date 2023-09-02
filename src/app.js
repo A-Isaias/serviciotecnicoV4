@@ -1,10 +1,20 @@
 const express = require('express');
+const session = require('express-session'); 
 const path = require('path');
 const fs = require('fs');
-const multer = require('multer'); // Importar el módulo multer
+const multer = require('multer'); 
 
 const port = 3000;
 const app = express();
+const password = 'ariel1975'; 
+
+// Configura express-session
+app.use(session({
+    secret: 'ariel1975', // Cambia esto por una cadena secreta más segura
+    resave: false,
+    saveUninitialized: true
+}));
+
 
 // Configurar el middleware para la carga de archivos utilizando multer
 const upload = multer({ dest: path.join(__dirname, 'public', 'img') });
@@ -17,11 +27,46 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
+// Ruta para procesar el formulario de inicio de sesión
+app.post('/login', (req, res) => {
+    const providedPassword = req.body.password; // Obtén la contraseña proporcionada en el formulario
 
+    // Verifica si la contraseña proporcionada coincide con la contraseña configurada
+    if (providedPassword === password) {
+        // La contraseña es correcta, marca al usuario como autenticado en la sesión
+        req.session.authenticated = true;
+        res.redirect('/'); // Redirige a la vista principal
+    } else {
+        // La contraseña es incorrecta, muestra un mensaje de error
+        res.render('login', { errorMessage: 'Invalid Password.' });
+    }
+});
+
+// Ruta para pedir la contraseña una vez
+app.get('/login', (req, res) => {
+    // Verifica si el usuario ya está autenticado en una sesión
+    if (req.session.authenticated) {
+        // El usuario ya está autenticado, redirige a la vista principal
+        res.redirect('/');
+    } else {
+        // El usuario no está autenticado, muestra el formulario de inicio de sesión
+        res.render('login', { errorMessage: null }); // Pasamos errorMessage como nulo por defecto
+    }
+});
+
+
+// Protege la vista principal utilizando la autenticación basada en sesiones
 app.get('/', (req, res) => {
-    const archivoJSON = fs.readFileSync(path.join(__dirname, 'servicios.json'), 'utf-8');
-    const servicios = JSON.parse(archivoJSON);
-    res.render('index', { servicios, fixedHeader: true });
+    // Verifica si el usuario está autenticado en una sesión
+    if (req.session.authenticated) {
+        // El usuario está autenticado, muestra la vista principal
+        const archivoJSON = fs.readFileSync(path.join(__dirname, 'servicios.json'), 'utf-8');
+        const servicios = JSON.parse(archivoJSON);
+        res.render('index', { servicios, fixedHeader: true });
+    } else {
+        // El usuario no está autenticado, redirige a la página de inicio de sesión
+        res.redirect('/login');
+    }
 });
 
 //vista que muestra toda la base de datos
