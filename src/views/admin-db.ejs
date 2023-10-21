@@ -108,37 +108,41 @@
             });
         });
 
-        // Agregar un controlador de evento al botón "Cargar Base de Datos"
-        function restoreDatabase() {
-          const restoreFileInput = document.getElementById("restoreFile");
-          const file = restoreFileInput.files[0];
+        <!-- Agregar un controlador de evento al botón "Cargar Base de Datos" -->
+function restoreDatabase() {
+  const restoreFileInput = document.getElementById("restoreFile");
+  const file = restoreFileInput.files[0];
 
-          if (!file) {
-            alert("No se ha seleccionado un archivo de respaldo.");
-            return;
-          }
+  if (!file) {
+    alert("No se ha seleccionado un archivo de respaldo.");
+    return;
+  }
 
-          const formData = new FormData();
-          formData.append("file", file);
+  const confirmationMessage = "Está seguro de que desea reemplazar la base de datos?\n\nESTE PROCESO ES IRREVERSIBLE.";
+  const isConfirmed = window.confirm(confirmationMessage);
+  if (isConfirmed) {
+    const formData = new FormData();
+    formData.append("file", file);
 
-          fetch("/restore", {
-            method: "POST",
-            body: formData,
-          })
-            .then((response) => {
-              if (response.ok) {
-                return response.text();
-              } else {
-                throw new Error("Error al cargar la base de datos");
-              }
-            })
-            .then((data) => {
-              alert("Carga de base de datos exitosa. " + data); // Muestra un mensaje de éxito
-            })
-            .catch((error) => {
-              alert("Error al cargar la base de datos: " + error.message); // Muestra un mensaje de error
-            });
+    fetch("/restore", {
+      method: "POST",
+      body: formData,
+    })
+      .then((response) => {
+        if (response.ok) {
+          return response.text();
+        } else {
+          throw new Error("Error al cargar la base de datos");
         }
+      })
+      .then((data) => {
+        alert("Carga de base de datos exitosa. " + data); // Muestra un mensaje de éxito
+      })
+      .catch((error) => {
+        alert("Error al cargar la base de datos: " + error.message); // Muestra un mensaje de error
+      });
+  }
+}
       </script>
     </div>
   </body>
