@@ -3,6 +3,7 @@ const session = require('express-session');
 const path = require('path');
 const fs = require('fs');
 const multer = require('multer'); 
+const backupFolder = 'backups'; // Carpeta donde se guarda backup de la db
 
 const port = 3000;
 const app = express();
@@ -267,6 +268,69 @@ app.get('/print/:id', (req, res) => {
 
 app.get('/print', (req, res) => {
     res.render('print');
+});
+
+// Ruta para realizar un respaldo del archivo JSON
+app.get('/backup', (req, res) => {
+    try {
+        // Crear un directorio de respaldos si no existe
+        const backupFolder = path.join(__dirname, 'backups');
+        if (!fs.existsSync(backupFolder)) {
+            fs.mkdirSync(backupFolder);
+        }
+
+        // Leer el contenido del archivo JSON actual
+        const archivoJSON = fs.readFileSync(path.join(__dirname, 'servicios.json'), 'utf-8');
+
+        // Generar un nombre de archivo único para el respaldo (usando la fecha y hora actual)
+        const currentDateTime = new Date().toISOString().replace(/[:.]/g, '_');
+        const backupFileName = `backup_${currentDateTime}.json`;
+
+        // Crear un nuevo archivo de respaldo en la carpeta de respaldos
+        const backupFilePath = path.join(backupFolder, backupFileName);
+        fs.writeFileSync(backupFilePath, archivoJSON, 'utf-8');
+
+        // Mostrar una alerta en el navegador con un botón para volver al menú principal
+        const alertHTML = `
+            ('Respaldo exitoso. El archivo se guardó como ${backupFileName}');
+                 `;
+        res.send(alertHTML);
+    } catch (error) {
+        console.error('Error al realizar el respaldo:', error);
+
+        // Mostrar una alerta de error en el navegador con un botón para volver al menú principal
+        const errorHTML = `
+            ('Error al realizar el respaldo: ${error.message}');
+               
+            
+        `;
+        res.send(errorHTML);
+    }
+});
+
+// Configura el middleware para manejar archivos en la ruta /restore
+app.post('/restore', upload.single('file'), (req, res) => {
+    try {
+      // Verificar que se proporcionó un archivo de respaldo
+      if (!req.file) {
+        throw new Error('No se proporcionó un archivo de respaldo.');
+      }
+  
+      // Leer el contenido del archivo de respaldo
+      const backupData = fs.readFileSync(req.file.path, 'utf-8');
+  
+      // Guardar el contenido del archivo de respaldo en el archivo de base de datos principal (servicios.json)
+      fs.writeFileSync(path.join(__dirname, 'servicios.json'), backupData, 'utf-8');
+  
+      res.send('Carga de base de datos exitosa.');
+    } catch (error) {
+      console.error('Error al cargar la base de datos desde el archivo de respaldo:', error);
+      res.status(500).send('Error al cargar la base de datos: ' + error.message);
+    }
+  });
+
+app.get('/admin-db', (req, res) => {
+    res.render('admin-db');
 });
 
 app.use(express.static('public'));

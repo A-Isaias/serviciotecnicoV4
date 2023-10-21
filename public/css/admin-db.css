@@ -1,0 +1,77 @@
+
+
+/* Estilos personalizados para la vista edit */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  
+  /*font-size: 14px; /* Ajusta el tamaño de fuente base */
+}
+
+label {
+  font-size: 18px; /* Reduzca el tamaño de fuente de las etiquetas */
+  font-weight: bold;
+}
+
+.expand-btn {
+  background-color: lightblue;
+}
+
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px; /* Ajusta la altura del encabezado */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: lightgray; /* Puedes ajustar el color de fondo según tus necesidades */
+  z-index: 999;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Ajustamos el margen superior del contenido para evitar que se solape con la barra fija */
+#searchForm {
+  margin-top: 80px; /* Ajusta este valor según sea necesario */
+}
+
+
+/* Estilos para los botones de carga y guardado */
+#restoreButton,
+#backupButton {
+    position: relative;
+    width: 150px; /* Ancho de los botones */
+    z-index: 1000; /* Ajusta la capa para que esté por encima de otros elementos si es necesario */
+}
+
+#restoreButton {
+    top: 3px; /* Ajusta la posición desde la parte superior según tus necesidades */
+    left: 0px; /* Ajusta el espaciado desde la izquierda según tus necesidades */
+}
+
+#backupButton {
+    top: 0px; /* Ajusta la posición desde la parte superior según tus necesidades */
+    left: 0px; /* Ajusta el espaciado desde el botón "Cargar Base de Datos" */
+}
+
+/* Estilos para el cuadro de diálogo de archivo */
+input[type="file"] {
+    display: flex; /* Oculta el cuadro de diálogo de archivo por defecto */
+}
+
+/* Estilos para el botón que activa el cuadro de diálogo de archivo */
+#fileInputButton {
+    display: inline-block;
+    background-color: #007bff; /* Color de fondo del botón */
+    color: #fff; /* Color del texto */
+    padding: 10px 15px; /* Espaciado interior del botón */
+    border: none;
+    cursor: pointer;
+}
+
+
+
