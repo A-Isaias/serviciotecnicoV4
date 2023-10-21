@@ -92,7 +92,7 @@
                                         <p><strong>Observaciones:</strong>
                                             <%= result.observaciones %>
                                         </p>
-                                        <!-- <p><strong>Foto:</strong> <%= result.foto ? '<img src="/img/' + result.foto + '" alt="Foto" width="200" class="expand-image">' : "N/A" %></p> -->
+                                        <p><strong>Foto:</strong> <img src="<%= result.foto ? '/img/' + result.foto: "/img/foto1.jpg" %>" alt="Foto" width="200" class="expand-image"> </p>
                                         <a href="/edit/<%= result.id %>" class="btn btn-primary">Editar</a>
                                         
                                         <form id="deleteForm-<%= result.id %>" action="/delete/<%= result.id %>" method="POST" style="display: inline;">
@@ -133,6 +133,34 @@
             });
         });
     });
+            // Función para mostrar la imagen a pantalla completa
+    function displayFullscreenImage() {
+        const images = document.querySelectorAll('.expand-image');
+        
+        images.forEach(image => {
+            image.addEventListener('click', () => {
+                const modal = document.createElement("div");
+                modal.className = "modal";
+                modal.innerHTML = '<div class="modal-content"><img id="modal-image" src="" alt="Imagen ampliada"></div>';
+                document.body.appendChild(modal);
+
+                const modalContent = modal.querySelector(".modal-content");
+                const modalImage = modal.querySelector("#modal-image");
+
+                modal.style.display = "block";
+                modalImage.src = image.src;
+
+                modal.addEventListener('click', () => {
+                    modal.style.display = "none";
+                    modalImage.src = "";
+                });
+            });
+        });
+    }
+
+    // Llamar a la función para activar la expansión de imagen
+    displayFullscreenImage();
+
         </script>
 </body>
 

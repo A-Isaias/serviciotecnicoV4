@@ -101,7 +101,7 @@
                     <div class="form-group">
                         <label for="foto">Foto:</label>
                         <input type="file" id="foto" name="foto" class="form-control-file">
-                        <img src="/img/<%= servicio.foto %>" alt="Foto actual" width="200">
+                        <img src="/img/<%= servicio.foto %>" alt="Foto actual" width="200" class="clickable-image" id="full-image">
                     </div>
                     
                     <!-- Campo oculto para almacenar la fecha actual -->
@@ -135,7 +135,33 @@
     .catch(error => console.error('Error al borrar el registro:', error));
                 }
             }
-    </script>
+
+    //funcion para agrandar la foto a pantalla completa        
+            
+    // Obtener la imagen y el modal
+    var img = document.getElementById("full-image");
+    var modal = document.createElement("div");
+    modal.className = "modal";
+    
+    // Agregar el modal al cuerpo del documento
+    document.body.appendChild(modal);
+
+    // Cuando se hace clic en la imagen, mostrar el modal
+    img.onclick = function () {
+        modal.style.display = "block";
+        var modalImg = document.createElement("img");
+        modalImg.src = img.src;
+        modalImg.className = "modal-content";
+        modal.appendChild(modalImg);
+    }
+
+    // Cuando se hace clic en el modal, ocultarlo
+    modal.onclick = function () {
+        modal.style.display = "none";
+        modal.innerHTML = ""; // Limpiar el contenido del modal
+    }
+</script>        
+    
     
 </body>
 

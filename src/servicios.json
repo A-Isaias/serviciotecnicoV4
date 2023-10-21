@@ -238,5 +238,21 @@
     "observaciones": "DEJA CON CARTUCHOS",
     "fecha_retiro": "",
     "foto": "photo_1693495414083.jpg"
+  },
+  {
+    "id": 1016,
+    "fecha_ingreso": "20-10-2023",
+    "nombre_cliente": "JOSE ANTONIO BERNARDEZ",
+    "telefono": "3364525252",
+    "tipo_equipo": "PC DE ESCRITORIO",
+    "marca": "GENERICA",
+    "modelo": "MONDIAL21",
+    "numero_serie": "SIN SERIE",
+    "accesorios": "NO",
+    "tareas": "REVISAR",
+    "estado": "INGRESADO",
+    "observaciones": "",
+    "fecha_retiro": "",
+    "foto": ""
   }
 ]
