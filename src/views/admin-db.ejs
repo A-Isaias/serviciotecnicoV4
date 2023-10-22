@@ -26,26 +26,34 @@
           <a href="/" class="btn btn-primary">Volver al Inicio</a>
         </div>
       </div>
-      <div class="d-flex flex-column mt-4">
-        <div class="d-flex align-items-center">
+      <div class="d-flex flex-column mt-4 border p-3">
+        <div class="d-flex align-items-center ">
           <button
-            class="btn btn-warning"
+            class="btn btn-warning text-white" 
             id="restoreButton"
             onclick="restoreDatabase()"
           >
             Cargar Base de Datos
           </button>
-          <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-          <div class="ml-3">
+          <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+          <div class="ml-3 border p-3">
             <!-- Agrega un margen izquierdo para separar los elementos -->
             <label for="restoreFile">Seleccionar archivo de respaldo:</label>
-            <input type="file" name="file" id="restoreFile" accept=".json" />
+            <input type="file" name="file" id="restoreFile" accept=".json" directory="/src/backup" />
           </div>
         </div>
-        <div class="mt-3">
-          <button class="btn btn-danger" id="backupButton">
+        <div class="mt-3 border p-3"">
+          <button class="btn btn-success" id="backupButton">
             Guardar Base de Datos
           </button>
+          <label for="backupButton">Hacer copia de seguridad de la base de datos.</label>
+        </div>
+        <br /><br /><br /><br /><br />
+        <div class="mt-3 border p-3"">
+        <button class="btn btn-danger" id="deleteDatabaseButton" onclick="confirmDeleteDatabase()">
+          Eliminar Base de Datos
+        </button>
+        <label for="deleteDatabaseButton">ELIMINAR de forma TOTAL la base de datos.</label>
         </div>
       </div>
 
@@ -143,6 +151,27 @@ function restoreDatabase() {
       });
   }
 }
+function confirmDeleteDatabase() {
+    const confirmationMessage = "¿Está seguro de que desea ELIMINAR la base de datos?\n\nESTE PROCESO ES IRREVERSIBLE.";
+    const isConfirmed = window.confirm(confirmationMessage);
+
+    if (isConfirmed) {
+      // Si el usuario confirma, aquí puedes realizar la eliminación de la base de datos
+      // Puedes usar fetch para enviar una solicitud al servidor para realizar la operación
+      fetch("/delete-database", {
+        method: "POST",
+      })
+        .then((response) => response.text())
+        .then((data) => {
+          displayMessage(data, false);
+          document.getElementById("successMessage").classList.remove("d-none");
+        })
+        .catch((error) => {
+          displayMessage("Error al eliminar la base de datos: " + error.message, true);
+          document.getElementById("errorMessage").classList.remove("d-none");
+        });
+    }
+  }
       </script>
     </div>
   </body>

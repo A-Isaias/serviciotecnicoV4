@@ -107,7 +107,7 @@
     "accesorios": "DISK DRIVE 1541 + FUENTES+JOYSTICKS",
     "tareas": "REVISAR PUERTO DE JOYSTICK",
     "estado": "PRESUPUESTADO",
-    "observaciones": "Observaciones 1",
+    "observaciones": "30/08/2023 - SE PRESUPUESTO REPARACION PUERTO JOYSTICK $850",
     "foto": "photo_1693399267090.jpg",
     "fecha_retiro": ""
   },
@@ -138,10 +138,10 @@
     "numero_serie": "56564",
     "accesorios": "NO",
     "tareas": "REVISAR NO SE VE",
-    "estado": "PRESUPUESTADO_APROBADO",
+    "estado": "RETIRADO",
     "observaciones": "SIN CABLES",
     "foto": "photo_2023-08-28_11-56-44.jpg",
-    "fecha_retiro": ""
+    "fecha_retiro": "21/10/2023"
   },
   {
     "id": 1010,
@@ -254,5 +254,21 @@
     "observaciones": "",
     "fecha_retiro": "",
     "foto": ""
+  },
+  {
+    "id": 1017,
+    "fecha_ingreso": "21-10-2023",
+    "nombre_cliente": "OCTAVIO SALBADOR",
+    "telefono": "33645252525252",
+    "tipo_equipo": "NOTEBOOK ",
+    "marca": "BGH",
+    "modelo": "BA-5 CORE I3 7MA 4GB RAM",
+    "numero_serie": "1234564",
+    "accesorios": "CARGADOR",
+    "tareas": "REINSTALAR WINDOWS + ILLUSTRATOR",
+    "estado": "INGRESADO",
+    "observaciones": "",
+    "fecha_retiro": "",
+    "foto": "8cc394f8aefa70fbd61b579897d0f702"
   }
 ]

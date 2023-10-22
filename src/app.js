@@ -28,6 +28,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
+
+// Comprueba si el archivo 'servicios.json' existe, y si no, créalo vacío.
+const serviciosFilePath = path.join(__dirname, 'servicios.json');
+if (!fs.existsSync(serviciosFilePath)) {
+  fs.writeFileSync(serviciosFilePath, '[]', 'utf-8');
+}
+
 // Ruta para procesar el formulario de inicio de sesión
 app.post('/login', (req, res) => {
     const providedPassword = req.body.password; // Obtén la contraseña proporcionada en el formulario
@@ -329,6 +336,16 @@ app.post('/restore', upload.single('file'), (req, res) => {
     }
   });
 
+  app.post("/delete-database", (req, res) => {
+    // Aquí realizas la operación de eliminación de la base de datos
+    try {
+      // Supongamos que tu archivo de base de datos se llama "database.json"
+      fs.unlinkSync(path.join(__dirname, 'servicios.json'));; // Esto eliminará el archivo de base de datos
+      res.send("La base de datos ha sido eliminada con éxito.");
+    } catch (error) {
+      res.status(500).send("Error al eliminar la base de datos: " + error.message);
+    }
+  });  
 app.get('/admin-db', (req, res) => {
     res.render('admin-db');
 });

@@ -42,15 +42,17 @@ label {
 
 /* Estilos para los botones de carga y guardado */
 #restoreButton,
-#backupButton {
+#backupButton
+ {
     position: relative;
     width: 150px; /* Ancho de los botones */
     z-index: 1000; /* Ajusta la capa para que esté por encima de otros elementos si es necesario */
+    
 }
 
 #restoreButton {
     top: 3px; /* Ajusta la posición desde la parte superior según tus necesidades */
-    left: 0px; /* Ajusta el espaciado desde la izquierda según tus necesidades */
+    left: 15px; /* Ajusta el espaciado desde la izquierda según tus necesidades */
 }
 
 #backupButton {
@@ -58,9 +60,15 @@ label {
     left: 0px; /* Ajusta el espaciado desde el botón "Cargar Base de Datos" */
 }
 
+#deleteDatabaseButton {
+  top: 150px; /* Ajusta la posición desde la parte superior según tus necesidades */
+    left: 0px; /* Ajusta el espaciado desde la izquierda según tus necesidades */
+    width: 150px;
+}
 /* Estilos para el cuadro de diálogo de archivo */
 input[type="file"] {
     display: flex; /* Oculta el cuadro de diálogo de archivo por defecto */
+    margin-left: 10px; 
 }
 
 /* Estilos para el botón que activa el cuadro de diálogo de archivo */
@@ -71,7 +79,10 @@ input[type="file"] {
     padding: 10px 15px; /* Espaciado interior del botón */
     border: none;
     cursor: pointer;
+    margin-left: 50px; 
+    
 }
+
 
 
 
