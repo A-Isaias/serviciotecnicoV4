@@ -339,13 +339,23 @@ app.post('/restore', upload.single('file'), (req, res) => {
   app.post("/delete-database", (req, res) => {
     // Aquí realizas la operación de eliminación de la base de datos
     try {
-      // Supongamos que tu archivo de base de datos se llama "database.json"
-      fs.unlinkSync(path.join(__dirname, 'servicios.json'));; // Esto eliminará el archivo de base de datos
+      // Supongamos que tu archivo de base de datos se llama "servicios.json"
+      const serviciosFilePath = path.join(__dirname, 'servicios.json');
+      
+      // Elimina el archivo de base de datos si existe
+      if (fs.existsSync(serviciosFilePath)) {
+        fs.unlinkSync(serviciosFilePath); // Esto eliminará el archivo de base de datos
+      }
+
+      // Crea un nuevo archivo servicios.json en blanco
+      fs.writeFileSync(serviciosFilePath, '[]', 'utf-8');
+
       res.send("La base de datos ha sido eliminada con éxito.");
     } catch (error) {
-      res.status(500).send("Error al eliminar la base de datos: " + error.message);
+      res.status(500).send("Error al eliminar y recrear la base de datos: " + error.message);
     }
-  });  
+  });
+
 app.get('/admin-db', (req, res) => {
     res.render('admin-db');
 });
