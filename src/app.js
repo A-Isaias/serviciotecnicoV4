@@ -7,7 +7,7 @@ const backupFolder = 'backups'; // Carpeta donde se guarda backup de la db
 
 const port = 3000;
 const app = express();
-const password = 'ariel1975'; 
+const password = '1422'; 
 
 // Configura express-session
 app.use(session({
