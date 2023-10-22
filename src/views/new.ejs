@@ -26,10 +26,14 @@
             <input type="text" id="id" name="id" value="<%= nextId %>" readonly class="form-control">
 
             <label for="fecha_ingreso">Fecha de Ingreso:</label>
-<input type="text" id="fecha_ingreso" name="fecha_ingreso" readonly class="form-control" value="<%= formattedDate %>">
+            <input type="text" id="fecha_ingreso" name="fecha_ingreso" readonly class="form-control"
+                value="<%= formattedDate %>">
 
             <label for="nombre_cliente">Nombre del cliente:</label>
             <input type="text" id="nombre_cliente" name="nombre_cliente" required class="form-control">
+
+            <label for="direccion">Dirección:</label>
+            <input type="text" id="direccion" name="direccion" class="form-control">
 
             <label for="telefono">Teléfono:</label>
             <input type="text" id="telefono" name="telefono" required class="form-control">
@@ -50,7 +54,7 @@
             <input type="text" id="accesorios" name="accesorios" required class="form-control" value="NO">
 
             <label for="tareas">Tareas a realizar:</label>
-<input type="text" id="tareas" name="tareas" required class="form-control" value="REVISAR">
+            <input type="text" id="tareas" name="tareas" required class="form-control" value="REVISAR">
 
             <label for="estado">Estado:</label>
             <select id="estado" name="estado" class="form-control">
@@ -65,8 +69,15 @@
                 <option value="LLAMAR">Llamar</option>
                 <option value="RETIRADO">Retirado</option>
             </select>
+            <label for="presupuesto">Presupuesto:</label>
+            <input type="text" id="presupuesto" name="presupuesto" class="form-control">
 
-            <br><label for="observaciones">Observaciones:</label>
+            <label for="reparacion">Reparación:</label>
+            <input type="text" id="reparacion" name="reparacion" class="form-control">
+
+            <label for="costo_total">Costo Total:</label>
+            <input type="text" id="costo_total" name="costo_total" class="form-control">
+            <br><label for="observaciones">Observaciones/Password:</label>
             <textarea id="observaciones" name="observaciones"></textarea>
 
             <br><label for="foto">Foto:</label>
@@ -74,7 +85,7 @@
 
             <br><button type="submit" class="btn btn-success">Cargar servicio</button>
             <a href="/" class="btn btn-primary">Volver al Inicio</a>
-        </d=>
+            </d=>
 </body>
 
 </html>

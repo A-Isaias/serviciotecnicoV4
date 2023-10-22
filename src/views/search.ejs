@@ -71,6 +71,9 @@
                                         <%= result.fecha_retiro ? result.fecha_retiro : "NO RETIRADO" %>
                                     </p>
                                     <div class="expanded-details" style="display: none;">
+                                        <p><strong>Dirección:</strong> 
+                                            <%= result.direccion %>
+                                        </p>
                                         <p><strong>Teléfono:</strong>
                                             <%= result.telefono %>
                                         </p>
@@ -88,6 +91,15 @@
                                         </p>
                                         <p><strong>Tareas:</strong>
                                             <%= result.tareas %>
+                                        </p>
+                                        <p><strong>Presupuesto:</strong> 
+                                            <%= result.presupuesto %>
+                                        </p>
+                                        <p><strong>Reparación:</strong> 
+                                            <%= result.reparacion %>
+                                        </p>
+                                        <p><strong>Costo Total:</strong> 
+                                            <%= result.costo_total %>
                                         </p>
                                         <p><strong>Observaciones:</strong>
                                             <%= result.observaciones %>

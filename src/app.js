@@ -89,11 +89,16 @@ app.get('/servicios', (req, res) => {
 });
 
 app.get('/new', (req, res) => {
+    let nextId = 1001; // Valor predeterminado para el próximo ID
+
     const archivoJSON = fs.readFileSync(path.join(__dirname, 'servicios.json'), 'utf-8');
     const servicios = JSON.parse(archivoJSON);
 
-    const lastId = servicios[servicios.length - 1].id;
-    const nextId = lastId + 1;
+    if (servicios.length > 0) {
+        // Si hay servicios en el archivo, calcula el próximo ID
+        const lastId = servicios[servicios.length - 1].id;
+        nextId = lastId + 1;
+    }
 
     // Agregar la fecha de ingreso actual en el formato DD-MM-AAAA
     const today = new Date();
@@ -120,7 +125,10 @@ app.post('/guardar-servicio', upload.single('foto'), (req, res) => {
             fecha_retiro: "",
 
             // El campo "foto" ahora se manejará en req.file
-            foto: req.file ? req.file.filename : "" // Usar req.file.filename para obtener el nombre del archivo
+            foto: req.file ? req.file.filename : "" ,// Usar req.file.filename para obtener el nombre del archivo
+            presupuesto: req.body.presupuesto, // Agregar presupuesto
+            reparacion: req.body.reparacion, // Agregar reparacion
+            costo_total: req.body.costo_total // Agregar costo_total
         };
 
         const archivoJSON = fs.readFileSync(path.join(__dirname, 'servicios.json'), 'utf-8');
@@ -165,6 +173,7 @@ app.post('/update/:id', upload.single('foto'), (req, res) => {
             ...servicios[servicioIndex], // Mantener los valores existentes
             nombre_cliente: req.body.nombre_cliente,
             telefono: req.body.telefono,
+            direccion: req.body.direccion, // Agregar direccion
             tipo_equipo: req.body.tipo_equipo,
             marca: req.body.marca,
             modelo: req.body.modelo,
@@ -172,7 +181,10 @@ app.post('/update/:id', upload.single('foto'), (req, res) => {
             accesorios: req.body.accesorios,
             tareas: req.body.tareas,
             estado: req.body.estado,
-            observaciones: req.body.observaciones || "",
+            presupuesto: req.body.presupuesto,
+            reparacion: req.body.reparacion,
+            costo_total: req.body.costo_total,
+            observaciones: req.body.observaciones || ""
         };
 
         // Manejar la carga de una nueva foto si se proporciona
@@ -299,7 +311,7 @@ app.get('/backup', (req, res) => {
 
         // Mostrar una alerta en el navegador con un botón para volver al menú principal
         const alertHTML = `
-            ('Respaldo exitoso. El archivo se guardó como ${backupFileName}');
+            Respaldo exitoso. El archivo se guardó como ${backupFileName}
                  `;
         res.send(alertHTML);
     } catch (error) {
@@ -335,7 +347,7 @@ app.post('/restore', upload.single('file'), (req, res) => {
       res.status(500).send('Error al cargar la base de datos: ' + error.message);
     }
   });
-
+// Wliminar base de datos
   app.post("/delete-database", (req, res) => {
     // Aquí realizas la operación de eliminación de la base de datos
     try {

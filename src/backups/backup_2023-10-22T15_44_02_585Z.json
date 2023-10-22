@@ -1,0 +1,21 @@
+[
+  {
+    "id": 1001,
+    "fecha_ingreso": "22-10-2023",
+    "nombre_cliente": "ARIEL ISAIAS",
+    "telefono": "03364338670",
+    "tipo_equipo": "NOTEBOOK ",
+    "marca": "HP",
+    "modelo": "X360BALA1",
+    "numero_serie": "SIN SERIE",
+    "accesorios": "NO",
+    "tareas": "REVISAR",
+    "estado": "INGRESADO",
+    "observaciones": "",
+    "fecha_retiro": "",
+    "foto": "",
+    "presupuesto": "",
+    "reparacion": "",
+    "costo_total": ""
+  }
+]
