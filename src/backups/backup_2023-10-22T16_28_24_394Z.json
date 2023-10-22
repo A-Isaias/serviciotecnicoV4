@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1001,
+    "fecha_ingreso": "22-10-2023",
+    "nombre_cliente": "OCTAVIO SALBADOR",
+    "direccion": "ALMAFUERTE 609",
+    "telefono": "0336-4420188",
+    "tipo_equipo": "MICRO COMPUTADORA",
+    "marca": "COMMODORE",
+    "modelo": "C=64",
+    "numero_serie": "121465456",
+    "accesorios": "NO",
+    "tareas": "REVISAR",
+    "estado": "INGRESADO",
+    "observaciones": "",
+    "fecha_retiro": "",
+    "foto": "530b807f08dedec0c9dcde5989c03201",
+    "presupuesto": "",
+    "reparacion": "",
+    "costo_total": ""
+  }
+]
