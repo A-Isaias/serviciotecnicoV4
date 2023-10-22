@@ -113,6 +113,7 @@ app.post('/guardar-servicio', upload.single('foto'), (req, res) => {
             id: parseInt(req.body.id),
             fecha_ingreso: req.body.fecha_ingreso, // Agregar la fecha de ingreso
             nombre_cliente: req.body.nombre_cliente,
+            direccion: req.body.direccion, 
             telefono: req.body.telefono,
             tipo_equipo: req.body.tipo_equipo,
             marca: req.body.marca,

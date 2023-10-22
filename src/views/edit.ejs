@@ -37,6 +37,10 @@
                             value="<%= servicio.nombre_cliente %>" required class="form-control">
                     </div>
                     <div class="form-group">
+                        <label for="direccion">Dirección:</label>
+                        <input type="text" id="direccion" name="direccion" value="<%= servicio.direccion %>" class="form-control">
+                    </div>
+                    <div class="form-group">
                         <label for="telefono">Teléfono:</label>
                         <input type="text" id="telefono" name="telefono" value="<%= servicio.telefono %>" required
                             class="form-control">
@@ -86,7 +90,18 @@
                             <option value="RETIRADO" <%= servicio.estado === "RETIRADO" ? "selected" : "" %>>Retirado</option>
                         </select>
                     </div>
-                    
+                    <div class="form-group">
+                        <label for="presupuesto">Presupuesto:</label>
+                        <input type="text" id="presupuesto" name="presupuesto" value="<%= servicio.presupuesto %>" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="reparacion">Reparación:</label>
+                        <input type="text" id="reparacion" name="reparacion" value="<%= servicio.reparacion %>" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="costo_total">Costo Total:</label>
+                        <input type="text" id="costo_total" name="costo_total" value="<%= servicio.costo_total %>" class="form-control">
+                    </div>
                     <!-- Campo para la fecha de retiro -->
                     <% if (servicio.estado === 'RETIRADO') { %>
                         <div class="form-group">
