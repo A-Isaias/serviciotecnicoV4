@@ -254,5 +254,21 @@
     "observaciones": "",
     "fecha_retiro": "",
     "foto": ""
+  },
+  {
+    "id": 1017,
+    "fecha_ingreso": "21-10-2023",
+    "nombre_cliente": "OCTAVIO SALBADOR",
+    "telefono": "33645252525252",
+    "tipo_equipo": "NOTEBOOK ",
+    "marca": "BGH",
+    "modelo": "BA-5 CORE I3 7MA 4GB RAM",
+    "numero_serie": "1234564",
+    "accesorios": "CARGADOR",
+    "tareas": "REINSTALAR WINDOWS + ILLUSTRATOR",
+    "estado": "INGRESADO",
+    "observaciones": "",
+    "fecha_retiro": "",
+    "foto": "8cc394f8aefa70fbd61b579897d0f702"
   }
 ]

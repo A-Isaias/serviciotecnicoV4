@@ -1,122 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Imprimir Orden</title>
-    <link rel="stylesheet" href="/css/print.css" type="text/css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-</head>
+    <link rel="stylesheet" href="/css/print.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      @media print {
+        .fixed-header,
+        .btn-group .no-print .print-container {
+          display: none;
+        }
+      }
+    </style>
+  </head>
 
-<body>
+  <body>
     <div class="container mt-4">
-        <!-- Título y botones fijos -->
-        <div class="fixed-header">
-            <h2>Detalles de una orden</h2>
-            <div class="btn-group">
-                <button class="btn btn-success"><a href="/new" class="text-white">Nueva Orden</a></button>
-                <button class="btn btn-warning"><a href="/search" class="text-white">Buscar Orden</a></button>
-                <a href="/" class="btn btn-primary">Volver al Inicio</a>
-            </div>
+      <!-- Título y botones fijos -->
+      <div class="fixed-header">
+        <h2>Detalles de una orden</h2>
+        <div class="btn-group">
+          <button class="btn btn-secondary no-print" onclick="window.print()">
+            Imprimir Orden
+          </button>
+          <button class="btn btn-success">
+            <a href="/new" class="text-white">Nueva Orden</a>
+          </button>
+          <button class="btn btn-warning">
+            <a href="/search" class="text-white">Buscar Orden</a>
+          </button>
+          <a href="/" class="btn btn-primary">Volver al Inicio</a>
         </div>
-        <table class="table" id="newForm">
-            <tbody>
-                <tr>
-                    <th>Numero de Orden</th>
-                    <td>
-                        <%= order.id %>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Fecha de Ingreso</th>
-                    <td>
-                        <%= order.fecha_ingreso %>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Cliente</th>
-                    <td>
-                        <%= order.nombre_cliente %>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Teléfono</th>
-                    <td>
-                        <%= order.telefono %>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Tipo de Equipo</th>
-                    <td>
-                        <%= order.tipo_equipo %>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Marca</th>
-                    <td>
-                        <%= order.marca %>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Modelo</th>
-                    <td>
-                        <%= order.modelo %>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Número de Serie</th>
-                    <td>
-                        <%= order.numero_serie %>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Accesorios</th>
-                    <td>
-                        <%= order.accesorios %>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Tareas a Realizar</th>
-                    <td>
-                        <%= order.tareas %>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Estado</th>
-                    <td>
-                        <%= order.estado %>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Observaciones</th>
-                    <td>
-                        <%= order.observaciones %>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Fecha de Retiro</th>
-                    <td>
-                        <%= order.fecha_retiro ? order.fecha_retiro : "NO RETIRADO" %>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Foto</th>
-                    <td>
-                        <% if (order.foto) { %>
-                            <img src="/img/<%= order.foto %>" alt="Foto" width="300">
-                            <% } else { %>
-                                N/A
-                                <% } %>
-                    </td>
-                </tr>
-
-            </tbody>
-        </table>
-        <a href="/" class="btn btn-primary">Volver al Inicio</a>
-        <button class="btn btn-secondary" onclick="window.print()">Imprimir Orden</button> <!-- Botón para imprimir -->
+      </div>
+      <div class="encabezado">
+        <h1>ORDEN DE SERVICIO TECNICO</h1>
+      </div>
+      <table class="table" id="newForm">
+        <tbody>
+          <tr>
+            <th>Numero de Orden</th>
+            <td><%= order.id %></td>
+          </tr>
+          <tr>
+            <th>Fecha de Ingreso</th>
+            <td><%= order.fecha_ingreso %></td>
+          </tr>
+          <tr>
+            <th>Cliente</th>
+            <td><%= order.nombre_cliente %></td>
+          </tr>
+          <tr>
+            <th>Teléfono</th>
+            <td><%= order.telefono %></td>
+          </tr>
+          <tr>
+            <th>Tipo de Equipo</th>
+            <td><%= order.tipo_equipo %></td>
+          </tr>
+          <tr>
+            <th>Marca</th>
+            <td><%= order.marca %></td>
+          </tr>
+          <tr>
+            <th>Modelo</th>
+            <td><%= order.modelo %></td>
+          </tr>
+          <tr>
+            <th>Número de Serie</th>
+            <td><%= order.numero_serie %></td>
+          </tr>
+          <tr>
+            <th>Accesorios</th>
+            <td><%= order.accesorios %></td>
+          </tr>
+          <tr>
+            <th>Tareas a Realizar</th>
+            <td><%= order.tareas %></td>
+          </tr>
+          <tr>
+            <th>Estado</th>
+            <td><%= order.estado %></td>
+          </tr>
+          <tr>
+            <th>Observaciones</th>
+            <td><%= order.observaciones %></td>
+          </tr>
+          <tr>
+            <th>Fecha de Retiro</th>
+            <td>
+              <%= order.fecha_retiro ? order.fecha_retiro : "NO RETIRADO" %>
+            </td>
+          </tr>
+          <tr>
+            <th>Foto</th>
+            <td>
+              <% if (order.foto) { %>
+              <img src="/img/<%= order.foto %>" alt="Foto" width="300" />
+              <% } else { %> N/A <% } %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <footer>
+        <br><br>
+        <h3>EXENCION DE RESPONSABILIDAD</h3>
+        <p>"Si el producto no fuera retirado dentro del plazo de 90 dias sera considerado abandonado en los terminos de los articulos 2525 y 2526 del codigo civil quedando facultados a darle el destino que consideremos pertinente." </p>
+        <p> Capítulo I - De la apropiación Artículo 2525. La aprehensión de las cosas muebles sin dueño, o abandonadas por el dueño, hecha por persona capaz de adquirir con el ánimo de apropiárselas, es un título para adquirir 
+        el dominio de ellas. Artículo 2526. Son cosas abandonadas por el dueño aquellas de cuya posesión se desprende materialmente, con la mira de no continuar en el dominio de ellas. </p>
+        
+      </footer>
     </div>
-</body>
-
+  </body>
 </html>
