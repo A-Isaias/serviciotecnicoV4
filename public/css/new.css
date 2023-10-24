@@ -9,6 +9,7 @@ body {
 h1 {
   font-size: 25px;
 }
+
 .container {
   margin-top: 1px; /* Ajusta este valor según sea necesario */
 }
@@ -22,7 +23,7 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
   padding: 10px;
   background-color: lightgray; /* Puedes ajustar el color de fondo según tus necesidades */
   z-index: 999;
@@ -31,12 +32,12 @@ h1 {
 
 /* Ajustamos el margen superior del contenido para evitar que se solape con la barra fija */
 #newForm {
-  margin-top: 80px; /* Ajusta este valor según sea necesario */
+  margin-top: 80px; /* Ajusta este valor según sea necesario para resoluciones mayores a 1366x768 */
 }
 
 label {
-    font-size: 18px;
-    font-weight: bold;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 /* Espaciado para los campos de formulario */
@@ -49,3 +50,23 @@ label {
   margin-top: 10px;
 } */
 
+
+/* Media query para aplicar la transformación de escala en resoluciones de 1366x768 o inferiores */
+@media (max-width: 1366px) {
+  body {
+    transform: scale(0.8); /* Escala la vista al 80% del tamaño original */
+    transform-origin: top left; /* Establece el origen de transformación en la esquina superior izquierda */
+  }
+
+  #newForm {
+    margin-top: 0; /* Ajusta este valor según tus necesidades para resoluciones menores o iguales a 1366x768 */
+  }
+
+  .fixed-header {
+    height: 40px; /* Reduce la altura del fixed header según tus necesidades */
+  }
+
+  .fixed-header h1 {
+    font-size: 20px; /* Reduce el tamaño del texto del título si es necesario */
+  }
+}
