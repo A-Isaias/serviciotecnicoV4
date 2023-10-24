@@ -7,7 +7,7 @@ body {
   }
   
   .container {
-    margin-top: 170px; 
+    margin-top: 20px; /*&&estaba en 170*/
   }
   
   .fixed-header {
@@ -27,8 +27,8 @@ body {
   }
   
   .encabezado {
-    margin-top: 70px;
-    text-align: center; /* Alinea los botones al centro del footer */
+    margin-top: 0px;
+    text-align: center; /* Alinea los botones al centro del footer &&estaba en 70 */
          
   }
 

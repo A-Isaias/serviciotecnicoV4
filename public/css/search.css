@@ -34,9 +34,15 @@ label {
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
+.encabezado {
+  margin-top: 0px;
+  text-align: center; /* Alinea los botones al centro del footer */
+       
+}
+
 /* Ajustamos el margen superior del contenido para evitar que se solape con la barra fija */
 #searchForm {
-  margin-top: 80px; /* Ajusta este valor según sea necesario */
+  margin-top: 0px; /* Ajusta este valor según sea necesario &&&&&estaba en 80 */
 }
 
 
