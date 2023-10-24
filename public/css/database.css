@@ -99,3 +99,10 @@ caption {
 }
 
 
+/* Media query para aplicar la transformación de escala en resoluciones de 1366x768 o inferiores */
+@media (max-width: 1366px) {
+  body {
+    transform: scale(0.8); /* Escala la vista al 80% del tamaño original */
+    transform-origin: top left; /* Establece el origen de transformación en la esquina superior izquierda */
+  }
+}
