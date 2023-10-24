@@ -9,6 +9,16 @@ const port = 3000;
 const app = express();
 const password = '1422'; 
 
+
+// configura sequelize
+const Sequelize = require('sequelize');
+const sequelize = new Sequelize('servicios.db', 'root', '123456789', {
+  host: 'localhost',
+  dialect: 'mysql',
+  // Otros parámetros de configuración de Sequelize
+});
+const { Service } = require('./models'); // Asegúrate de que la ruta sea correcta
+
 // Configura express-session
 app.use(session({
     secret: 'ariel1975', // Cambia esto por una cadena secreta más segura
@@ -82,11 +92,15 @@ app.get('/database', (req, res) => {
     res.render('database'); // Renderiza la vista database.ejs
 });
 
-app.get('/servicios', (req, res) => {
-    const archivoJSON = fs.readFileSync(path.join(__dirname, 'servicios.json'), 'utf-8');
-    const servicios = JSON.parse(archivoJSON);
-    res.json(servicios);
-});
+app.get('/servicios', async (req, res) => {
+    try {
+      const servicios = await Service.findAll();
+      res.json(servicios);
+    } catch (error) {
+      console.error('Error al obtener los servicios desde la base de datos:', error);
+      res.status(500).json({ error: 'Error al obtener los servicios.' });
+    }
+  });
 
 app.get('/new', (req, res) => {
     let nextId = 1001; // Valor predeterminado para el próximo ID
@@ -107,188 +121,181 @@ app.get('/new', (req, res) => {
     res.render('new', { nextId, formattedDate }); // Pasar la fecha a la vista
 });
 
-app.post('/guardar-servicio', upload.single('foto'), (req, res) => {
-    try {
-        const nuevoServicio = {
-            id: parseInt(req.body.id),
-            fecha_ingreso: req.body.fecha_ingreso, // Agregar la fecha de ingreso
-            nombre_cliente: req.body.nombre_cliente,
-            direccion: req.body.direccion, 
-            telefono: req.body.telefono,
-            tipo_equipo: req.body.tipo_equipo,
-            marca: req.body.marca,
-            modelo: req.body.modelo,
-            numero_serie: req.body.numero_serie,
-            accesorios: req.body.accesorios,
-            tareas: req.body.tareas,
-            estado: req.body.estado,
-            observaciones: req.body.observaciones || "",
-            fecha_retiro: "",
+app.post('/guardar-servicio', upload.single('foto'), async (req, res) => {
+  try {
+    const nuevoServicio = {
+      fecha_ingreso: req.body.fecha_ingreso,
+      nombre_cliente: req.body.nombre_cliente,
+      direccion: req.body.direccion,
+      telefono: req.body.telefono,
+      tipo_equipo: req.body.tipo_equipo,
+      marca: req.body.marca,
+      modelo: req.body.modelo,
+      numero_serie: req.body.numero_serie,
+      accesorios: req.body.accesorios,
+      tareas: req.body.tareas,
+      estado: req.body.estado,
+      observaciones: req.body.observaciones || '',
+      fecha_retiro: '',
+      foto: req.file ? req.file.filename : '',
+      presupuesto: req.body.presupuesto,
+      reparacion: req.body.reparacion,
+      costo_total: req.body.costo_total,
+    };
 
-            // El campo "foto" ahora se manejará en req.file
-            foto: req.file ? req.file.filename : "" ,// Usar req.file.filename para obtener el nombre del archivo
-            presupuesto: req.body.presupuesto, // Agregar presupuesto
-            reparacion: req.body.reparacion, // Agregar reparacion
-            costo_total: req.body.costo_total // Agregar costo_total
-        };
-
-        const archivoJSON = fs.readFileSync(path.join(__dirname, 'servicios.json'), 'utf-8');
-        const servicios = JSON.parse(archivoJSON);
-
-        servicios.push(nuevoServicio);
-
-        fs.writeFileSync(path.join(__dirname, 'servicios.json'), JSON.stringify(servicios, null, 2));
-
-        res.render('print', { order: nuevoServicio });
-    } catch (error) {
-        console.error('Error al guardar los datos:', error);
-        res.status(500).send('Error al guardar los datos: ' + error.message);
-    }
+    const servicio = await Service.create(nuevoServicio);
+    res.render('print', { order: servicio });
+  } catch (error) {
+    console.error('Error al guardar los datos:', error);
+    res.status(500).send('Error al guardar los datos: ' + error.message);
+  }
 });
+
 
 app.get('/edit', (req, res) => {
-    res.render('edit');
-});
-
-app.get('/edit/:id', (req, res) => {
+    res.render('edit'); // No necesita cambios en la obtención de datos
+  });
+  
+  app.get('/edit/:id', async (req, res) => {
     const id = parseInt(req.params.id);
-
-    const archivoJSON = fs.readFileSync(path.join(__dirname, 'servicios.json'), 'utf-8');
-    const servicios = JSON.parse(archivoJSON);
-
-    const servicio = servicios.find(servicio => servicio.id === id);
-
-    res.render('edit', { servicio });
-});
-
-app.post('/update/:id', upload.single('foto'), (req, res) => {
+  
+    try {
+      const servicio = await Service.findByPk(id);
+      res.render('edit', { servicio });
+    } catch (error) {
+      console.error('Error al obtener el servicio desde la base de datos:', error);
+      res.status(500).send('Error al obtener el servicio.');
+    }
+  });
+  
+  app.post('/update/:id', upload.single('foto'), async (req, res) => {
     const id = parseInt(req.params.id);
-
-    const archivoJSON = fs.readFileSync(path.join(__dirname, 'servicios.json'), 'utf-8');
-    const servicios = JSON.parse(archivoJSON);
-
-    const servicioIndex = servicios.findIndex(servicio => servicio.id === id);
-
-    if (servicioIndex !== -1) {
-        const updatedServicio = {
-            ...servicios[servicioIndex], // Mantener los valores existentes
-            nombre_cliente: req.body.nombre_cliente,
-            telefono: req.body.telefono,
-            direccion: req.body.direccion, // Agregar direccion
-            tipo_equipo: req.body.tipo_equipo,
-            marca: req.body.marca,
-            modelo: req.body.modelo,
-            numero_serie: req.body.numero_serie,
-            accesorios: req.body.accesorios,
-            tareas: req.body.tareas,
-            estado: req.body.estado,
-            presupuesto: req.body.presupuesto,
-            reparacion: req.body.reparacion,
-            costo_total: req.body.costo_total,
-            observaciones: req.body.observaciones || ""
-        };
-
+  
+    try {
+      const servicio = await Service.findByPk(id);
+  
+      if (servicio) {
+        servicio.nombre_cliente = req.body.nombre_cliente;
+        servicio.telefono = req.body.telefono;
+        servicio.direccion = req.body.direccion;
+        servicio.tipo_equipo = req.body.tipo_equipo;
+        servicio.marca = req.body.marca;
+        servicio.modelo = req.body.modelo;
+        servicio.numero_serie = req.body.numero_serie;
+        servicio.accesorios = req.body.accesorios;
+        servicio.tareas = req.body.tareas;
+        servicio.estado = req.body.estado;
+        servicio.presupuesto = req.body.presupuesto;
+        servicio.reparacion = req.body.reparacion;
+        servicio.costo_total = req.body.costo_total;
+        servicio.observaciones = req.body.observaciones || '';
+  
         // Manejar la carga de una nueva foto si se proporciona
         if (req.file) {
-            const nuevaFoto = req.file;
-            const extension = nuevaFoto.originalname.split('.').pop();
-            const nuevaFotoNombre = `photo_${Date.now()}.${extension}`;
-
-            const destinoFoto = path.join(__dirname, 'public', 'img', nuevaFotoNombre);
-            fs.renameSync(nuevaFoto.path, destinoFoto);
-            updatedServicio.foto = nuevaFotoNombre;
-            console.log('Foto cargada exitosamente:', nuevaFotoNombre);
+          servicio.foto = req.file.filename;
+          console.log('Foto cargada exitosamente:', req.file.filename);
         }
-
-         // Agregar la fecha de retiro si el estado es "RETIRADO"
-        if (req.body.estado === "RETIRADO") {
-            updatedServicio.fecha_retiro = req.body.fecha_retiro || req.body.current_date;
+  
+        // Agregar la fecha de retiro si el estado es "RETIRADO"
+        if (req.body.estado === 'RETIRADO') {
+          servicio.fecha_retiro = req.body.fecha_retiro || req.body.current_date;
         } else {
-            updatedServicio.fecha_retiro = ""; // Limpiar la fecha de retiro
+          servicio.fecha_retiro = ''; // Limpiar la fecha de retiro
         }
-
-        servicios[servicioIndex] = updatedServicio;
-
-        fs.writeFileSync(path.join(__dirname, 'servicios.json'), JSON.stringify(servicios, null, 2));
+  
+        await servicio.save();
+      }
+  
+      res.redirect('/');
+    } catch (error) {
+      console.error('Error al actualizar el servicio:', error);
+      res.status(500).send('Error al actualizar el servicio.');
     }
-
-    res.redirect('/');
-});
-
+  });
+  
 
 
-app.post('/search', (req, res) => {
+
+  app.post('/search', async (req, res) => {
     const searchId = parseInt(req.body.searchId);
     const searchName = req.body.searchName.toLowerCase();
-    const selectedEstado = req.body.searchEstado; // Obtén el estado seleccionado
-
-    const archivoJSON = fs.readFileSync(path.join(__dirname, 'servicios.json'), 'utf-8');
-    const servicios = JSON.parse(archivoJSON);
-
-    let searchResults = servicios;
-
-    if (selectedEstado === 'PENDIENTE') {
-        searchResults = servicios.filter(servicio => servicio.estado !== 'RETIRADO');
-    } else if (selectedEstado === 'RETIRADO') {
-        searchResults = servicios.filter(servicio => servicio.estado === 'RETIRADO');
-    }
-
-    if (!isNaN(searchId)) {
-        const resultById = searchResults.find(servicio => servicio.id === searchId);
+    const selectedEstado = req.body.searchEstado;
+  
+    try {
+      let searchResults = [];
+  
+      if (selectedEstado === 'PENDIENTE') {
+        searchResults = await Service.findAll({
+          where: { estado: { [Op.not]: 'RETIRADO' } },
+        });
+      } else if (selectedEstado === 'RETIRADO') {
+        searchResults = await Service.findAll({ where: { estado: 'RETIRADO' } });
+      }
+  
+      if (!isNaN(searchId)) {
+        const resultById = await Service.findByPk(searchId);
         if (resultById) {
-            searchResults = [resultById];
+          searchResults = [resultById];
         } else {
-            searchResults = [];
+          searchResults = [];
         }
-    } else if (searchName.trim() !== '') {
-        searchResults = searchResults.filter(servicio =>
-            servicio.nombre_cliente.toLowerCase().includes(searchName)
-        );
+      } else if (searchName.trim() !== '') {
+        searchResults = await Service.findAll({
+          where: {
+            nombre_cliente: { [Op.like]: `%${searchName}%` },
+          },
+        });
+      }
+  
+      res.render('search', { results: searchResults });
+    } catch (error) {
+      console.error('Error al buscar servicios en la base de datos:', error);
+      res.status(500).send('Error al buscar servicios.');
     }
-
-    res.render('search', { results: searchResults });
-});
-
-app.get('/search', (req, res) => {
-    res.render('search', { results: [] }); // Pasamos una lista vacía inicialmente
-});
-
-app.post('/delete/:id', (req, res) => {
+  });
+  
+  app.get('/search', (req, res) => {
+    res.render('search', { results: [] });
+  });
+  
+app.post('/delete/:id', async (req, res) => {
     const id = parseInt(req.params.id);
-
-    const archivoJSON = fs.readFileSync(path.join(__dirname, 'servicios.json'), 'utf-8');
-    const servicios = JSON.parse(archivoJSON);
-
-    const servicioIndex = servicios.findIndex(servicio => servicio.id === id);
-
-    if (servicioIndex !== -1) {
-        servicios.splice(servicioIndex, 1);
-
-        fs.writeFileSync(path.join(__dirname, 'servicios.json'), JSON.stringify(servicios, null, 2));
+  
+    try {
+      const servicio = await Service.findByPk(id);
+  
+      if (servicio) {
+        await servicio.destroy();
+      }
+  
+      res.redirect('/');
+    } catch (error) {
+      console.error('Error al eliminar el servicio:', error);
+      res.status(500).send('Error al eliminar el servicio.');
     }
-
-    res.redirect('/');
-});
+  });
 
 // //funcion para confirmar la eliminacion de registros
 // app.locals.confirmDelete = function(id) {
 //     return `return confirm('¿Está seguro de que quiere eliminar el registro ${id}?');`;
 // };
 
-app.get('/print/:id', (req, res) => {
+app.get('/print/:id', async (req, res) => {
     const id = parseInt(req.params.id);
-
-    const archivoJSON = fs.readFileSync(path.join(__dirname, 'servicios.json'), 'utf-8');
-    const servicios = JSON.parse(archivoJSON);
-
-    const servicio = servicios.find(servicio => servicio.id === id);
-
-    res.render('print', { order: servicio });
-});
-
-app.get('/print', (req, res) => {
+  
+    try {
+      const servicio = await Service.findByPk(id);
+      res.render('print', { order: servicio });
+    } catch (error) {
+      console.error('Error al obtener el servicio desde la base de datos:', error);
+      res.status(500).send('Error al obtener el servicio.');
+    }
+  });
+  
+  app.get('/print', (req, res) => {
     res.render('print');
-});
+  });
+  
 
 // Ruta para realizar un respaldo del archivo JSON
 app.get('/backup', (req, res) => {
