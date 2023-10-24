@@ -78,5 +78,25 @@
     "presupuesto": "",
     "reparacion": "",
     "costo_total": ""
+  },
+  {
+    "id": 1005,
+    "fecha_ingreso": "24-10-2023",
+    "nombre_cliente": "MAGDALENA BAZ",
+    "direccion": "Menendez 572",
+    "telefono": "3364529859",
+    "tipo_equipo": "NOTEBOOK",
+    "marca": "HP",
+    "modelo": "DV-7",
+    "numero_serie": "56156446",
+    "accesorios": "CARGADOR",
+    "tareas": "REVISAR",
+    "estado": "INGRESADO",
+    "observaciones": "",
+    "fecha_retiro": "",
+    "foto": "4969eee326ec657be36e514e351dd925",
+    "presupuesto": "",
+    "reparacion": "",
+    "costo_total": ""
   }
 ]
