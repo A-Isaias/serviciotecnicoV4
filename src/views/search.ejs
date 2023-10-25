@@ -165,6 +165,9 @@
                 modal.style.display = "block";
                 modalImage.src = image.src;
 
+                // Enfocar la vista en la imagen
+                modalImage.scrollIntoView({ behavior: "smooth" });
+
                 modal.addEventListener('click', () => {
                     modal.style.display = "none";
                     modalImage.src = "";
