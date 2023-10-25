@@ -20,8 +20,11 @@
                 <a href="/" class="btn btn-primary">Volver al Inicio</a>
             </div>
         </div>
-
+<div class="search-container">
         <!-- Formulario de búsqueda -->
+<div class="espaciador">
+    <br><br>
+</div>        
 <form id="searchForm" method="POST" action="/search">
     <div class="form-group">
         <label for="searchId">Buscar por ID:</label>
@@ -42,7 +45,7 @@
     </div>
     <button type="submit" class="btn btn-primary">Buscar</button>
 </form>
-
+</div>
         <!-- Resultados de la búsqueda -->
         <div id="searchResult">
             <% if (results && results.length> 0) { %>

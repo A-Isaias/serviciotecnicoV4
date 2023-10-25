@@ -18,6 +18,10 @@ label {
   margin-top: 20px;
 }
 
+.espaciador
+{
+  display: none;
+}
 .fixed-header {
   position: fixed;
   top: 0;
@@ -27,7 +31,7 @@ label {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 100px;
   padding: 10px;
   background-color: lightgray; /* Puedes ajustar el color de fondo según tus necesidades */
   z-index: 999;
@@ -42,13 +46,10 @@ label {
 
 /* Ajustamos el margen superior del contenido para evitar que se solape con la barra fija */
 #searchForm {
-  margin-top: 0px; /* Ajusta este valor según sea necesario &&&&&estaba en 80 */
+  margin-top: 80px; /* Ajusta este valor según sea necesario */
+  margin-bottom: 10px;
 }
 
-
-.container {
-  margin-top: 20px;
-}
 
 /* Ajusta el tamaño de las cajas de resultados */
 .card {
@@ -148,31 +149,16 @@ label {
 @media (max-width: 1366px) {
   body {
     transform: scale(0.8); /* Escala la vista al 80% del tamaño original */
-    transform-origin: top left; /* Establece el origen de transformación en la esquina superior izquierda */
+    transform-origin: top left;  /* Establece el origen de transformación en la esquina superior izquierda */
   }
+  /* Ajustamos el margen superior del contenido para evitar que se solape con la barra fija */
+#searchForm {
+  margin-top: 20px; /* Ajusta este valor según sea necesario &&&&&estaba en 80 */
+  margin-bottom: 10px;
+}
+.espaciador
+{
+  display: block;
 }
 
-/* Estilos para la imagen a pantalla completa */
-.fullscreen-image {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-.fullscreen-image img {
-  max-width: 90%; /* Limita el ancho de la imagen al 90% del ancho de la ventana */
-  max-height: 80%; /* Limita la altura de la imagen al 80% de la altura de la ventana */
-  object-fit: contain; /* Mantiene la relación de aspecto y ajusta la imagen de forma proporcional */
-}
-
-/* Añade un estilo de cursor para indicar que la imagen es clickeable */
-.clickable-image {
-  cursor: pointer;
 }
